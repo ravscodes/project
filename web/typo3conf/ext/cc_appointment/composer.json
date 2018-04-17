@@ -1,0 +1,27 @@
+{
+    "name": "crossconcept/cc-appointment",
+    "type": "typo3-cms-extension",
+    "description": "Simple management of appointment inquiries.",
+    "homepage": "https://www.crossconcept.de",
+    "keywords": [
+        "TYPO3 CMS"
+    ],
+    "authors": [
+        {
+            "name": "Daniel Theuerkorn",
+            "email": "daniel.theuerkorn@crossconcept.de",
+            "role": "Developer"
+        }
+    ],
+    "replace": {
+        "cc_appointment": "self.version"
+    },
+    "minimum-stability": "dev",
+    "version": "1.0.0",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+             "Crossconcept\\CcAppointment\\": "Classes"
+        }
+    }
+}

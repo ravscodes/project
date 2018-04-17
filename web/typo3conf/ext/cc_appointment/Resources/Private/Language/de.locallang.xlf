@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2018-04-01T10:10:27Z" product-name="cc_appointment">
+		<header/>
+		<body>
+
+			<!-- Appointment Start -->
+
+			<trans-unit id="appointment" xml:space="preserve">
+				<target>Termin</target>
+			</trans-unit>
+			<trans-unit id="appointment.title" xml:space="preserve">
+				<target>Termin-Bezeichnung</target>
+			</trans-unit>
+			<trans-unit id="appointment.interval" xml:space="preserve">
+				<target>Termin-Dauer</target>
+			</trans-unit>
+			<trans-unit id="appointment.interval.5" xml:space="preserve">
+				<target>5 Minuten</target>
+			</trans-unit>
+			<trans-unit id="appointment.interval.10" xml:space="preserve">
+				<target>10 Minuten</target>
+			</trans-unit>
+			<trans-unit id="appointment.interval.15" xml:space="preserve">
+				<target>15 Minuten (Standard)</target>
+			</trans-unit>
+			<trans-unit id="appointment.interval.30" xml:space="preserve">
+				<target>30 Minuten</target>
+			</trans-unit>
+			<trans-unit id="appointment.interval.45" xml:space="preserve">
+				<target>45 Minuten</target>
+			</trans-unit>
+			<trans-unit id="appointment.interval.60" xml:space="preserve">
+				<target>60 Minuten</target>
+			</trans-unit>
+			<trans-unit id="appointment.lead_time" xml:space="preserve">
+				<target>Vorlaufzeit für Buchungen (in Tagen)</target>
+			</trans-unit>
+			<trans-unit id="appointment.openingtime_monday" xml:space="preserve">
+				<target>Öffnungszeiten am Montag</target>
+			</trans-unit>
+			<trans-unit id="appointment.openingtime_tuesday" xml:space="preserve">
+				<target>Öffnungszeiten am Dienstag</target>
+			</trans-unit>
+			<trans-unit id="appointment.openingtime_wednesday" xml:space="preserve">
+				<target>Öffnungszeiten am Mittwoch</target>
+			</trans-unit>
+			<trans-unit id="appointment.openingtime_thursday" xml:space="preserve">
+				<target>Öffnungszeiten am Donnerstag</target>
+			</trans-unit>
+			<trans-unit id="appointment.openingtime_friday" xml:space="preserve">
+				<target>Öffnungszeiten am Freitag</target>
+			</trans-unit>
+			<trans-unit id="appointment.openingtime_saturday" xml:space="preserve">
+				<target>Öffnungszeiten am Samstag</target>
+			</trans-unit>
+			<trans-unit id="appointment.openingtime_sunday" xml:space="preserve">
+				<target>Öffnungszeiten am Sonntag</target>
+			</trans-unit>
+
+			<trans-unit id="tabs.openingtimes" xml:space="preserve">
+				<target>Öffnungszeiten</target>
+			</trans-unit>
+
+			<!-- Appointment End -->
+
+			<!-- Openingtime Start -->
+
+			<trans-unit id="openingtime" xml:space="preserve">
+				<target>Öffnungszeit</target>
+			</trans-unit>
+			<trans-unit id="openingtime.time_from" xml:space="preserve">
+				<target>Uhrzeit von</target>
+			</trans-unit>
+			<trans-unit id="openingtime.time_to" xml:space="preserve">
+				<target>Uhrzeit bis</target>
+			</trans-unit>
+
+			<!-- Openingtime End -->
+
+			<!-- Palettes Start -->
+
+			<trans-unit id="palette.openingtime_monday" xml:space="preserve">
+				<target>Montag</target>
+			</trans-unit>
+			<trans-unit id="palette.openingtime_tuesday" xml:space="preserve">
+				<target>Dienstag</target>
+			</trans-unit>
+			<trans-unit id="palette.openingtime_wednesday" xml:space="preserve">
+				<target>Mittwoch</target>
+			</trans-unit>
+			<trans-unit id="palette.openingtime_thursday" xml:space="preserve">
+				<target>Donnerstag</target>
+			</trans-unit>
+			<trans-unit id="palette.openingtime_friday" xml:space="preserve">
+				<target>Freitag</target>
+			</trans-unit>
+			<trans-unit id="palette.openingtime_saturday" xml:space="preserve">
+				<target>Samstag</target>
+			</trans-unit>
+			<trans-unit id="palette.openingtime_sunday" xml:space="preserve">
+				<target>Sonntag</target>
+			</trans-unit>
+
+			<!-- Palettes End -->
+
+			<!-- Further labels Start -->
+
+			<trans-unit id="label.minutes" xml:space="preserve">
+				<target>minutes</target>
+			</trans-unit>
+
+			<!-- Further labels End -->
+
+		</body>
+	</file>
+</xliff>

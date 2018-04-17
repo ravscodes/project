@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2018-04-01T10:10:27Z" product-name="cc_appointment">
+		<header/>
+		<body>
+
+			<!-- Appointment Start -->
+
+			<trans-unit id="appointment" xml:space="preserve">
+				<source>Appointment</source>
+			</trans-unit>
+			<trans-unit id="appointment.title" xml:space="preserve">
+				<source>Appointment Title</source>
+			</trans-unit>
+			<trans-unit id="appointment.interval" xml:space="preserve">
+				<source>Length of an appointment</source>
+			</trans-unit>
+			<trans-unit id="appointment.interval.5" xml:space="preserve">
+				<source>5 minutes</source>
+			</trans-unit>
+			<trans-unit id="appointment.interval.10" xml:space="preserve">
+				<source>10 minutes</source>
+			</trans-unit>
+			<trans-unit id="appointment.interval.15" xml:space="preserve">
+				<source>15 minutes (Default)</source>
+			</trans-unit>
+			<trans-unit id="appointment.interval.30" xml:space="preserve">
+				<source>30 minutes</source>
+			</trans-unit>
+			<trans-unit id="appointment.interval.45" xml:space="preserve">
+				<source>45 minutes</source>
+			</trans-unit>
+			<trans-unit id="appointment.interval.60" xml:space="preserve">
+				<source>60 minutes</source>
+			</trans-unit>
+			<trans-unit id="appointment.lead_time" xml:space="preserve">
+				<source>Amount of days to request an appointment from now</source>
+			</trans-unit>
+			<trans-unit id="appointment.openingtime_monday" xml:space="preserve">
+				<source>Openingtimes on Monday</source>
+			</trans-unit>
+			<trans-unit id="appointment.openingtime_tuesday" xml:space="preserve">
+				<source>Openingtimes on Tuesday</source>
+			</trans-unit>
+			<trans-unit id="appointment.openingtime_wednesday" xml:space="preserve">
+				<source>Openingtimes on Wednesday</source>
+			</trans-unit>
+			<trans-unit id="appointment.openingtime_thursday" xml:space="preserve">
+				<source>Openingtimes on Thursday</source>
+			</trans-unit>
+			<trans-unit id="appointment.openingtime_friday" xml:space="preserve">
+				<source>Openingtimes on Friday</source>
+			</trans-unit>
+			<trans-unit id="appointment.openingtime_saturday" xml:space="preserve">
+				<source>Openingtimes on Saturday</source>
+			</trans-unit>
+			<trans-unit id="appointment.openingtime_sunday" xml:space="preserve">
+				<source>Openingtimes on Sunday</source>
+			</trans-unit>
+
+			<trans-unit id="tabs.openingtimes" xml:space="preserve">
+				<source>Openingtimes</source>
+			</trans-unit>
+
+			<!-- Appointment End -->
+
+			<!-- Openingtime Start -->
+
+			<trans-unit id="openingtime" xml:space="preserve">
+				<source>Openingtime</source>
+			</trans-unit>
+			<trans-unit id="openingtime.time_from" xml:space="preserve">
+				<source>Start time</source>
+			</trans-unit>
+			<trans-unit id="openingtime.time_to" xml:space="preserve">
+				<source>End time</source>
+			</trans-unit>
+
+			<!-- Openingtime End -->
+
+			<!-- Palettes Start -->
+
+			<trans-unit id="palette.openingtime_monday" xml:space="preserve">
+				<source>Monday</source>
+			</trans-unit>
+			<trans-unit id="palette.openingtime_tuesday" xml:space="preserve">
+				<source>Tuesday</source>
+			</trans-unit>
+			<trans-unit id="palette.openingtime_wednesday" xml:space="preserve">
+				<source>Wednesday</source>
+			</trans-unit>
+			<trans-unit id="palette.openingtime_thursday" xml:space="preserve">
+				<source>Thursday</source>
+			</trans-unit>
+			<trans-unit id="palette.openingtime_friday" xml:space="preserve">
+				<source>Friday</source>
+			</trans-unit>
+			<trans-unit id="palette.openingtime_saturday" xml:space="preserve">
+				<source>Saturday</source>
+			</trans-unit>
+			<trans-unit id="palette.openingtime_sunday" xml:space="preserve">
+				<source>Sunday</source>
+			</trans-unit>
+
+			<!-- Palettes End -->
+
+			<!-- Further labels Start -->
+
+			<trans-unit id="label.minutes" xml:space="preserve">
+				<source>minutes</source>
+			</trans-unit>
+
+			<!-- Further labels End -->
+
+		</body>
+	</file>
+</xliff>

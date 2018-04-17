@@ -1,0 +1,11 @@
+plugin.tx_ccappointment {
+    view {
+        templateRootPath = {$plugin.tx_ccappointment.view.templateRootPath}
+        partialRootPath = {$plugin.tx_ccappointment.view.partialRootPath}
+        layoutRootPath = {$plugin.tx_ccappointment.view.layoutRootPath}
+    }
+    persistence {
+        storagePid = {$plugin.tx_ccappointment.persistence.storagePid}
+    }
+}
+

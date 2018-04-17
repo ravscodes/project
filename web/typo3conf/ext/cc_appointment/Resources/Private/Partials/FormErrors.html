@@ -1,0 +1,7 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<f:form.validationResults for="{object}">
+  <f:if condition="{validationResults.flattenedErrors}">
+    <f:for each="{validationResults.errors}" as="error"><p class="help-block"><f:format.htmlentities>{error -> v:format.removeXss()}</f:format.htmlentities></p></f:for>
+  </f:if>
+</f:form.validationResults>

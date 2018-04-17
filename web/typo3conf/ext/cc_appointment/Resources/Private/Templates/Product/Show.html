@@ -1,0 +1,27 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers">
+
+    <f:layout name="Default" />
+
+    <f:section name="Main">
+        <f:if condition="{product}">
+            <div class="product-header text-center">
+                <h1 class="product-title">
+                    <f:if condition="{product.showevoline}">
+                        <span class="evo-label">{f:translate(key: 'label.evoline') -> f:format.html(parseFuncTSPath: '')}</span>
+                    </f:if>
+                    {product.title}
+                </h1>
+                <f:if condition="{product.subtitle}">
+                    <h2 class="product-subtitle">{product.subtitle}</h2>
+                </f:if>
+                <f:if condition="{product.configlink}">
+                    <f:link.typolink parameter="{product.configlink}" class="btn btn-default product-configlink">
+                        <f:translate key="label.configlink" />
+                    </f:link.typolink>
+                </f:if>
+            </div>
+        </f:if>
+    </f:section>
+</div>

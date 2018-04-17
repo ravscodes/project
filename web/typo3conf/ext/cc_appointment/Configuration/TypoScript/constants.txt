@@ -1,0 +1,14 @@
+plugin.tx_ccappointment {
+    view {
+        # cat=plugin.tx_ccappointment/file; type=string; label=Path to template root (FE)
+        templateRootPath = EXT:cc_appointment/Resources/Private/Templates/
+        # cat=plugin.tx_ccappointment/file; type=string; label=Path to template partials (FE)
+        partialRootPath = EXT:cc_appointment/Resources/Private/Partials/
+        # cat=plugin.tx_ccappointment/file; type=string; label=Path to template layouts (FE)
+        layoutRootPath = EXT:cc_appointment/Resources/Private/Layouts/
+    }
+    persistence {
+        # cat=plugin.tx_ccappointment//a; type=string; label=Default storage PID
+        storagePid =
+    }
+}
