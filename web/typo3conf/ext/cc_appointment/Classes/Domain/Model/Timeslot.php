@@ -33,6 +33,14 @@ namespace Crossconcept\CcAppointment\Domain\Model;
 class Timeslot extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
     /**
+     * Appointment the timeslot belongs to
+     *
+     * @var \Crossconcept\CcAppointment\Domain\Model\Appointment
+     * @validate NotEmpty
+     */
+    protected $appointment;
+
+    /**
      * Date of requested appointment
      *
      * @var string
@@ -56,6 +64,22 @@ class Timeslot extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @validate NotEmpty
      */
     protected $timeTo;
+
+    /**
+     * @return Appointment
+     */
+    public function getAppointment()
+    {
+        return $this->appointment;
+    }
+
+    /**
+     * @param Appointment $appointment
+     */
+    public function setAppointment($appointment)
+    {
+        $this->appointment = $appointment;
+    }
 
     /**
      * @return string

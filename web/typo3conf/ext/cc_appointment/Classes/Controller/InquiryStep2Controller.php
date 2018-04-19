@@ -1,5 +1,4 @@
 <?php
-
 namespace Crossconcept\CcAppointment\Controller;
 
 /***************************************************************
@@ -86,23 +85,23 @@ class InquiryStep2Controller extends ActionController
 
         // Get the day of the week by the given date
         // to call the corresponding getter. (ISO-8601)
-        $dow = date('N', $date);
+        $dow = date('N', $date->getTimestamp());
 
         switch ($dow) {
-            // Sunday
-            case 1: $openingtimes = $appointment->getOpeningtimesSunday(); break;
             // Monday
-            case 2: $openingtimes = $appointment->getOpeningtimesMonday(); break;
+            case 1: $openingtimes = $appointment->getOpeningtimesMonday(); break;
             // Tuesday
-            case 3: $openingtimes = $appointment->getOpeningtimesTuesday(); break;
+            case 2: $openingtimes = $appointment->getOpeningtimesTuesday(); break;
             // Wednesday
-            case 4: $openingtimes = $appointment->getOpeningtimesWednesday(); break;
+            case 3: $openingtimes = $appointment->getOpeningtimesWednesday(); break;
             // Thursday
-            case 5: $openingtimes = $appointment->getOpeningtimesThursday(); break;
+            case 4: $openingtimes = $appointment->getOpeningtimesThursday(); break;
             // Friday
-            case 6: $openingtimes = $appointment->getOpeningtimesFriday(); break;
+            case 5: $openingtimes = $appointment->getOpeningtimesFriday(); break;
             // Saturday
-            case 7: $openingtimes = $appointment->getOpeningtimesSaturday(); break;
+            case 6: $openingtimes = $appointment->getOpeningtimesSaturday(); break;
+            // Sunday
+            case 7: $openingtimes = $appointment->getOpeningtimesSunday(); break;
         }
 
         return $openingtimes;
@@ -120,17 +119,18 @@ class InquiryStep2Controller extends ActionController
     {
         $timeslotsAvailable = [];
         $openingtimes       = $this->getOpeningtimesByDate($appointment, $date);
-        $slotLength         = $appointment->getInterval();
+        $slotLength         = (int) $appointment->getInterval() * 60; // Minutes to seconds
 
         foreach ($openingtimes as $openingtime) {
 
-            $start  = $openingtime->getTimeFrom();
-            $end    = $openingtime->getTimeTo();
+            $start  = (int) $openingtime->getTimeFrom();
+            $end    = (int) $openingtime->getTimeTo();
 
             while ($start + $slotLength < $end) {
 
                 // Create new available timeslot
                 $timeslot = new Timeslot();
+                $timeslot->setAppointment($appointment);
                 $timeslot->setDate($date);
                 $timeslot->setTimeFrom($start);
                 $timeslot->setTimeTo($start + $slotLength);
@@ -168,51 +168,43 @@ class InquiryStep2Controller extends ActionController
      */
     public function newAction()
     {
-        $timeslots = [];
+        $date = new DateTime();
 
         // Check if data of inquiryStep1 is available in session and assign it to view
         if ($this->frontendController->fe_user->getKey('ses', InquiryStep1Controller::sessionKey)) {
-
-            // Get data from session
             $inquiryStep1data = unserialize($this->frontendController->fe_user->getKey('ses', InquiryStep1Controller::sessionKey));
-
             if ($inquiryStep1data instanceof InquiryStep1) {
-                // Assign data to view
                 $this->view->assign('newInquiryStep1', $inquiryStep1data);
-
-                $timeslotsAvailable     = [];
-                $timeslotsUnavailable   = [];
-                $date                   = new DateTime(); // @Todo Get chosen date
-
-                // Filter available timeslots by unavaible timeslots
-                $timeslotsAvailable      = $this->getTimeslotsAvailable($inquiryStep1data->getAppointment(), $date);
-                $timeslotsUnavailable    = $this->getTimeslotsUnavailable($inquiryStep1data->getAppointment(), $date);
-
-                if (count($timeslotsUnavailable) === 0) {
-                    $timeslots = $timeslotsAvailable;
-                } else {
-                    // @Todo ...
-                }
             }
         }
 
         // Check if data of inquiryStep2 is available in session and assign it to view
         if ($this->frontendController->fe_user->getKey('ses', self::sessionKey)) {
-
-            // Get data from session
             $inquiryStep2data = unserialize($this->frontendController->fe_user->getKey('ses', self::sessionKey));
-
             if ($inquiryStep2data instanceof InquiryStep2) {
-                // Assign data to view
                 $this->view->assign('newInquiryStep2', $inquiryStep2data);
             }
         }
+
+        $timeslots = $this->getTimeslotsAvailable($inquiryStep1data->getAppointment(), $date); // @Todo check appointment
 
         $assignedValues = [
             'timeslots' => $timeslots
         ];
 
         $this->view->assignMultiple($assignedValues);
+    }
+
+    /**
+     * action ajaxCall
+     *
+     * @param InquiryStep2 $newInquiryStep2
+     * @return String $json Returns timeslots as a JSON
+     */
+    public function ajaxCallAction(InquiryStep2 $newInquiryStep2)
+    {
+        $json = json_encode(array('myResult' => 'World'));
+        return $json;
     }
 
     /**
@@ -225,6 +217,15 @@ class InquiryStep2Controller extends ActionController
      */
     public function createAction(InquiryStep2 $newInquiryStep2)
     {
+        $pageType = $GLOBALS['TSFE'];
+        $settings = $this->settings;
+
+        \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($pageType);
+        \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($settings);die;
+
+        if ($pageType == $settings['typeNum']) {
+            $this->ajaxCallAction($newInquiryStep2);
+        }
         // Write data to session
         $this->frontendController->fe_user->setKey('ses', self::sessionKey, serialize($newInquiryStep2));
         $this->frontendController->fe_user->storeSessionData();

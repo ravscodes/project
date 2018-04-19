@@ -1,0 +1,86 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+
+
+<f:if condition="{industries}">
+	<fieldset>
+		<div class="form-group{f:render(partial: 'FormErrorsClass', arguments: {object: 'newInquiryStep2.industry'})}">
+			<label><f:translate key="industry" /> <f:translate key="form.required" /></label>
+			<div class="row">
+				<f:for each="{industries}" as="industry">
+					<f:if condition="{newInquiryStep1.cranetype.id} == 5">
+						<f:then>
+							<f:if condition="{industry.uid} != 4">
+								<f:render partial="InquiryStep2/IndustryItem" arguments="{_all}" />
+							</f:if>
+						</f:then>
+						<f:else>
+							<f:if condition="{industry.uid} != 6">
+								<f:render partial="InquiryStep2/IndustryItem" arguments="{_all}" />
+							</f:if>
+						</f:else>
+					</f:if>
+				</f:for>
+				<div class="col-sm-4">
+					<f:if condition="{newInquiryStep2} && ({newInquiryStep2.industry} == 0)">
+						<f:then>
+							<label class="industry-type industry-type-0{f:if(condition: '({newInquiryStep2.industry}) && ({newInquiryStep2.customindustry} != \'\')', else: ' active')}">
+						</f:then>
+						<f:else>
+							<label class="industry-type industry-type-0">
+						</f:else>
+					</f:if>
+						<div class="industry-label">
+							<input type="radio" class="hidden" id="industry-other" {f:if(condition: newInquiryStep2.industry, else: 'checked="checked"')} name="tx_teichmanncraneconfigurator_inquiry[newInquiryStep2][industry]" value="0" data-toggle-industry="0" />
+							<span class="industry-type-title">{f:translate(key: 'industry.other')}</span>
+							<f:form.textfield property="customindustry" id="customindustry" class="form-control{f:if(condition: '({newInquiryStep2.industry} == 0) && ({newInquiryStep2.customindustry} != \'\')', else: ' hidden')}" />
+						</div>
+					</label>
+				</div>
+			</div>
+		</div>
+	</fieldset>
+</f:if>
+
+<fieldset>
+	<div class="row">
+		<div class="col-sm-6">
+			<div class="form-group{f:render(partial: 'FormErrorsClass', arguments: {object: 'newInquiryStep2.purpose'})}">
+				<label><f:translate key="purpose" /> <f:translate key="form.required" /></label>
+				<f:form.textfield property="purpose" class="form-control" additionalAttributes="{required: 'required', data-validation: 'required', data-validation-error-msg-required: '{f:translate(key: \'form.validation.required\')}'}" />
+				<f:render partial="FormErrors" arguments="{object: 'newInquiry.classification'}" />
+			</div>
+		</div>
+		<div class="col-sm-6">
+			<f:if condition="{newInquiryStep1.cranetype.uid} == 4">
+				<f:then>
+					<div class="form-group{f:render(partial: 'FormErrorsClass', arguments: {object: 'newInquiryStep1.containeramount'})}">
+						<label for="containeramount">
+							<f:translate key="containeramount" /><f:translate key="form.required"/>
+						</label>
+						<div class="row">
+							<div class="col-sm-6">
+								<f:form.textfield placeholder="{f:translate(key: 'containeramount.info')}" class="form-control" id="containeramount" property="containeramount" additionalAttributes="{required: 'required', data-validation: 'required', data-validation-error-msg-required: '{f:translate(key: \'form.validation.required\')}'}" />
+								<f:render partial="FormErrors" arguments="{object: 'newInquiryStep1.containeramount'}" />
+							</div>
+							<div class="col-sm-6">
+								<f:form.select property="containerunit" id="containerunit" class="form-control" additionalAttributes="{required: 'required', data-validation: 'required', data-validation-error-msg-required: '{f:translate(key: \'form.validation.required\')}'}" >
+									<option value="1"{f:if(condition: '{newInquiryStep1.containerunit} == 1', then: ' selected="selected"')}>{f:translate(key: 'containerunit.1')}</option>
+									<option value="2"{f:if(condition: '{newInquiryStep1.containerunit} == 2', then: ' selected="selected"')}>{f:translate(key: 'containerunit.2')}</option>
+								</f:form.select>
+								<f:render partial="FormErrors" arguments="{object: 'newInquiryStep3.reachassembly'}" />
+							</div>
+						</div>
+					</div>
+				</f:then>
+				<f:else>
+					<div class="form-group{f:render(partial: 'FormErrorsClass', arguments: {object: 'newInquiryStep2.classification'})}">
+						<label><f:translate key="classification" /> <f:translate key="form.required" /></label>
+						<f:form.select property="classification" id="subject" options="{classifications}" optionValueField="uid" optionLabelField="title" class="form-control" prependOptionLabel="{f:translate(key: 'label.select')}" additionalAttributes="{required: 'required', data-validation: 'required', data-validation-error-msg: '{f:translate(key: \'form.validation.required\')}'}" />
+						<f:render partial="FormErrors" arguments="{object: 'newInquiry.classification'}" />
+					</div>
+				</f:else>
+			</f:if>
+		</div>
+	</div>
+</fieldset>

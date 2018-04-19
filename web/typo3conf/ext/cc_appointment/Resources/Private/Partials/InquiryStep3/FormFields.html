@@ -1,6 +1,87 @@
 {namespace v=FluidTYPO3\Vhs\ViewHelpers}
-{namespace teichmannCraneconfigurator=Crossconcept\TeichmannCraneconfigurator\ViewHelpers}
 
-<f:if condition="{teichmannCraneconfigurator:PartialExists(partial: 'InquiryStep3/Crane{newInquiryStep1.cranetype.id}')}">
-    <f:render partial="InquiryStep3/Crane{newInquiryStep1.cranetype.id}" arguments="{_all}" />
-</f:if>
+<fieldset>
+
+    <legend>{f:translate(key: 'form.legend.personal')}</legend>
+
+    <div class="form-group{f:render(partial: 'FormErrorsClass', arguments: {object: 'newInquiryStep3.name'})}">
+        <label for="name">
+            <f:translate key="form.label.name"/>
+            <f:translate key="form.required"/>
+        </label>
+        <f:form.textfield class="form-control" id="name" property="name" additionalAttributes="{required: 'required', data-validation: 'required', data-validation-error-msg: '{f:translate(key: \'form.validation.required\')}'}"/>
+        <f:render partial="FormErrors" arguments="{object: 'newInquiryStep3.name'}"/>
+    </div>
+
+    <div class="form-group{f:render(partial: 'FormErrorsClass', arguments: {object: 'newInquiryStep3.phone'})}">
+        <label for="phone">
+            <f:translate key="form.label.phone"/>
+            <f:translate key="form.required"/>
+        </label>
+        <f:form.textfield class="form-control" id="phone" property="phone" additionalAttributes="{required: 'required', data-validation: 'required', data-validation-error-msg: '{f:translate(key: \'form.validation.required\')}'}"/>
+        <f:render partial="FormErrors" arguments="{object: 'newInquiryStep3.phone'}"/>
+    </div>
+
+    <div class="form-group{f:render(partial: 'FormErrorsClass', arguments: {object: 'newInquiryStep3.email'})}">
+        <label for="email">
+            <f:translate key="form.label.email"/>
+            <f:translate key="form.required"/>
+        </label>
+        <f:form.textfield class="form-control" id="email" property="email" additionalAttributes="{required: 'required', data-validation: 'required email', data-validation-error-msg-email: '{f:translate(key: \'formLabel.msgEmail\')}', data-validation-error-msg: '{f:translate(key: \'formLabel.msgRequired\')}'}"/>
+        <f:render partial="FormErrors" arguments="{object: 'newInquiryStep3.email'}"/>
+    </div>
+
+    <div class="form-group{f:render(partial: 'FormErrorsClass', arguments: {object: 'newInquiryStep3.address'})}">
+        <label for="address">
+            <f:translate key="form.label.address"/>
+            <f:translate key="form.required"/>
+        </label>
+        <f:form.textfield class="form-control" id="address" property="address" additionalAttributes="{required: 'required', data-validation: 'required', data-validation-error-msg: '{f:translate(key: \'form.validation.required\')}'}"/>
+        <f:render partial="FormErrors" arguments="{object: 'newInquiry.address'}"/>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="form-group{f:render(partial: 'FormErrorsClass', arguments: {object: 'newInquiryStep3.zip'})}">
+                <label for="zip">
+                    <f:translate key="form.label.zip"/>
+                    <f:translate key="form.required"/>
+                </label>
+                <f:form.textfield class="form-control" id="zip" property="zip" additionalAttributes="{required: 'required', data-validation: 'required', data-validation-error-msg: '{f:translate(key: \'form.validation.required\')}'}"/>
+                <f:render partial="FormErrors" arguments="{object: 'newInquiry.zip'}"/>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="form-group{f:render(partial: 'FormErrorsClass', arguments: {object: 'newInquiryStep3.city'})}">
+                <label for="city">
+                    <f:translate key="form.label.city"/>
+                    <f:translate key="form.required"/>
+                </label>
+                <f:form.textfield class="form-control" id="city" property="city" additionalAttributes="{required: 'required', data-validation: 'required', data-validation-error-msg: '{f:translate(key: \'form.validation.required\')}'}"/>
+                <f:render partial="FormErrors" arguments="{object: 'newInquiry.city'}"/>
+            </div>
+        </div>
+    </div>
+
+</fieldset>
+
+<fieldset>
+    <f:if condition="{v:variable.typoscript(path: 'plugin.tx_teichmanncraneconfigurator.settings.privacyPolicyTextUid')}">
+        <div class="form-group">
+            <v:content.render contentUids="{v:variable.typoscript(path: 'plugin.tx_teichmanncraneconfigurator.settings.privacyPolicyTextUid')}"/>
+        </div>
+    </f:if>
+    <div class="form-group">
+        <v:variable.set name="privacyPolicyPid" value="{v:variable.typoscript(path: 'plugin.tx_teichmanncraneconfigurator.settings.privacyPolicyPid')}"/>
+        <v:variable.set name="privacyPolicyLink" value="{v:link.typolink(configuration: {parameter: privacyPolicyPid, target: '_blank'})}"/>
+        <div class="checkbox">
+            <label>
+                <f:form.checkbox value="1" property="privacy" additionalAttributes="{required: 'required', data-validation: 'required', data-validation-error-msg-required: '{f:translate(key: \'form.validation.required\')}'}"/>
+                <f:format.raw>
+                    <f:translate key="privacy" arguments="{0: privacyPolicyLink}"/>
+                </f:format.raw>
+                {f:translate(key: 'form.required')}
+            </label>
+        </div>
+    </div>
+</fieldset>

@@ -1,0 +1,20 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<ol class="steps">
+	<li class="step step-1{f:if(condition: '{step} == 1', then: ' active')}{f:if(condition: '{step} > 1', then: ' done')}">
+		<span class="step-title">{f:translate(key: 'form.step.1')}</span>
+		<span class="step-description">{f:translate(key: 'form.step.1.title')}</span>
+	</li>
+	<li class="step step-2{f:if(condition: '{step} == 2', then: ' active')}{f:if(condition: '{step} > 2', then: ' done')}">
+		<span class="step-title">{f:translate(key: 'form.step.2')}</span>
+		<span class="step-description">{f:translate(key: 'form.step.2.title')}</span>
+	</li>
+	<li class="step step-3{f:if(condition: '{step} == 3', then: ' active')}{f:if(condition: '{step} > 3', then: ' done')}">
+		<span class="step-title">{f:translate(key: 'form.step.3')}</span>
+		<span class="step-description">{f:translate(key: 'form.step.3.title')}</span>
+	</li>
+	<li class="step step-4{f:if(condition: '{step} == 4', then: ' active')}{f:if(condition: '{step} > 4', then: ' done')}">
+		<span class="step-title">{f:translate(key: 'form.step.4')}</span>
+		<span class="step-description">{f:translate(key: 'form.step.4.title')}</span>
+	</li>
+</ol>

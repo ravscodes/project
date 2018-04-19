@@ -1,0 +1,35 @@
+plugin.tx_teichmanncraneconfigurator {
+    view {
+        # cat=plugin.tx_teichmanncraneconfigurator/file; type=string; label=Path to template root (FE)
+        templateRootPath = EXT:teichamann_craneinquiry/Resources/Private/Templates/
+        # cat=plugin.tx_teichmanncraneconfigurator/file; type=string; label=Path to template partials (FE)
+        partialRootPath = EXT:teichamann_craneinquiry/Resources/Private/Partials/
+        # cat=plugin.tx_teichmanncraneconfigurator/file; type=string; label=Path to template layouts (FE)
+        layoutRootPath = EXT:teichamann_craneinquiry/Resources/Private/Layouts/
+    }
+    persistence {
+        # cat=plugin.tx_teichmanncraneconfigurator//a; type=string; label=Default storage PID
+        storagePid =
+    }
+    settings {
+        # cat=plugin.tx_teichmanncraneconfigurator//a; type=int; label=Privacy policy PID
+        privacyPolicyPid = 507
+        # cat=plugin.tx_teichmanncraneconfigurator//a; type=int; label=Inquiry form PID
+        inquiryFormPid = 
+        # cat=plugin.tx_teichmanncraneconfigurator//a; type=int; label=Privacy policy text UID
+        privacyPolicyTextUid =
+
+        # cat=plugin.tx_teichmanncraneconfigurator//a; type=int; label=Thank you page Industry 1 PID
+        thankYouPageIndustry1Pid = 661
+        # cat=plugin.tx_teichmanncraneconfigurator//a; type=int; label=Thank you page Industry 2 PID
+        thankYouPageIndustry2Pid = 662
+        # cat=plugin.tx_teichmanncraneconfigurator//a; type=int; label=Thank you page Industry 3 PID
+        thankYouPageIndustry3Pid = 663
+        # cat=plugin.tx_teichmanncraneconfigurator//a; type=int; label=Thank you page Industry 4 PID
+        thankYouPageIndustry4Pid = 664
+        # cat=plugin.tx_teichmanncraneconfigurator//a; type=int; label=Thank you page Industry 5 PID
+        thankYouPageIndustry5Pid = 665
+        # cat=plugin.tx_teichmanncraneconfigurator//a; type=int; label=Thank you page Industry 6 PID
+        thankYouPageIndustry6Pid = 690
+    }
+}

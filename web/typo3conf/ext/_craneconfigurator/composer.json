@@ -1,0 +1,24 @@
+{
+    "name": "crossconcept/teichmann-craneconfigurator",
+    "type": "typo3-cms-extension",
+    "description": "Crane configurator",
+    "homepage": "http://www.crossconcept.de",
+    "keywords": [
+        "TYPO3 CMS"
+    ],
+    "authors": [
+        {
+            "name": "Matej Mericnjak",
+            "email": "matej.mericnjak@crossconcept.de",
+            "role": "Developer, Maintainer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "version": "1.0.0",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+             "Crossconcept\\TeichmannCraneconfigurator\\": "Classes"
+        }
+    }
+}

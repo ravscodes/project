@@ -11,4 +11,8 @@ plugin.tx_ccappointment {
         # cat=plugin.tx_ccappointment//a; type=string; label=Default storage PID
         storagePid =
     }
+    settings {
+        # cat = plugin.tx_ccappointment//3; type=int+; label=typeNum for AJAX call 
+        typeNum = 42795
+    }
 }

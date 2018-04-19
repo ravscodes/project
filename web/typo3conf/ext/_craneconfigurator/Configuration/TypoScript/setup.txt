@@ -1,0 +1,22 @@
+plugin.tx_teichmanncraneconfigurator {
+    view {
+        templateRootPath = {$plugin.tx_teichmanncraneconfigurator.view.templateRootPath}
+        partialRootPath = {$plugin.tx_teichmanncraneconfigurator.view.partialRootPath}
+        layoutRootPath = {$plugin.tx_teichmanncraneconfigurator.view.layoutRootPath}
+    }
+    persistence {
+        storagePid = {$plugin.tx_teichmanncraneconfigurator.persistence.storagePid}
+    }
+    settings {
+        privacyPolicyPid = {$plugin.tx_teichmanncraneconfigurator.settings.privacyPolicyPid}
+        privacyPolicyTextUid = {$plugin.tx_teichmanncraneconfigurator.settings.privacyPolicyTextUid}
+        inquiryFormPid = {$plugin.tx_teichmanncraneconfigurator.settings.inquiryFormPid}
+
+        thankYouPageIndustry1Pid = {$plugin.tx_teichmanncraneconfigurator.settings.thankYouPageIndustry1Pid}
+        thankYouPageIndustry2Pid = {$plugin.tx_teichmanncraneconfigurator.settings.thankYouPageIndustry2Pid}
+        thankYouPageIndustry3Pid = {$plugin.tx_teichmanncraneconfigurator.settings.thankYouPageIndustry3Pid}
+        thankYouPageIndustry4Pid = {$plugin.tx_teichmanncraneconfigurator.settings.thankYouPageIndustry4Pid}
+        thankYouPageIndustry5Pid = {$plugin.tx_teichmanncraneconfigurator.settings.thankYouPageIndustry5Pid}
+        thankYouPageIndustry6Pid = {$plugin.tx_teichmanncraneconfigurator.settings.thankYouPageIndustry6Pid}
+    }
+}

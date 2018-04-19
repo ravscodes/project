@@ -153,6 +153,9 @@
 			<trans-unit id="form.label.timeslots.unavailable" xml:space="preserve">
 				<source>For the chosen date no appointments are available.</source>
 			</trans-unit>
+			<trans-unit id="form.label.timeFormat" xml:space="preserve">
+				<source>%1$s - %2$s</source>
+			</trans-unit>
 
 			<!-- Further labels End -->
 

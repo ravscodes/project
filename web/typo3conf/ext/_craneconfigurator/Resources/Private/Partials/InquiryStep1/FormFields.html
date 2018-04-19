@@ -1,0 +1,95 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<f:if condition="{cranetypes}">
+  <fieldset class="cranetypes">
+    <div class="form-group{f:render(partial: 'FormErrorsClass', arguments: {object: 'newInquiryStep1.cranetype'})}">
+      <label><f:translate key="cranetype" /> <f:translate key="form.required" /></label>
+      <div class="row row-fluid">
+        <f:for each="{cranetypes}" as="cranetype" iteration="iterator">
+          <div class="col-sm-4">
+            <f:if condition="({selectedCranetype.uid} == {cranetype.uid}) || ({newInquiryStep1.cranetype.uid} == {cranetype.uid})">
+              <f:then>
+                <label class="crane-type crane-type-{cranetype.uid} active">
+              </f:then>
+              <f:else>
+                <label class="crane-type crane-type-{cranetype.uid}">
+              </f:else>
+            </f:if>
+              <f:if condition="{cranetype.image}">
+                <f:then>
+                  <div class="crane-type-image" style="background-image: url('{f:uri.image(image: cranetype.image, treatIdAsReference: 1)}')"></div>
+                </f:then>
+                <f:else>
+                  <div class="crane-type-image"></div>
+                </f:else>
+              </f:if>
+              <f:if condition="{cranetype.icon}">
+                <div class="crane-type-icon">
+                  <f:image image="{cranetype.icon}" treatIdAsReference="1" class="img-responsive" />
+                </div>
+              </f:if>
+              <div class="crane-type-label">
+                <f:if condition="({selectedCranetype.uid} == {cranetype.uid}) || ({newInquiryStep1.cranetype.uid} == {cranetype.uid})">
+                  <f:then>
+                    <f:form.radio class="sr-only" property="cranetype" checked="checked" value="{cranetype.uid}" additionalAttributes="{required: 'required', data-validation: 'required', data-validation-error-msg-required: '{f:translate(key: \'form.validation.required\')}', data-toggle-cranetype: cranetype.id}" />
+                  </f:then>
+                  <f:else>
+                    <f:form.radio class="sr-only" property="cranetype" value="{cranetype.uid}" additionalAttributes="{required: 'required', data-validation: 'required', data-validation-error-msg-required: '{f:translate(key: \'form.validation.required\')}', data-toggle-cranetype: cranetype.id}" />
+                  </f:else>
+                </f:if>
+                <span class="crane-type-title">{cranetype.title}</span>
+              </div>
+            </label>
+          </div>
+        </f:for>
+      </div>
+    </div>
+  </fieldset>
+
+  <f:if condition="{newInquiryStep1.cranetype.id} == 5">
+    <f:then>
+      <fieldset class="constructiontypes hidden">
+    </f:then>
+    <f:else>
+      <f:if condition="({newInquiryStep1.constructiontype} || {selectedCranetype})">
+        <f:then><fieldset class="constructiontypes"></f:then>
+        <f:else><fieldset class="constructiontypes hidden"></f:else>
+      </f:if>
+    </f:else>
+  </f:if>
+    <div class="form-group{f:render(partial: 'FormErrorsClass', arguments: {object: 'newInquiryStep1.constructiontype'})}">
+      <label><f:translate key="constructiontype" /></label>
+      <f:for each="{cranetypes}" as="cranetype" iteration="iterator">
+        <f:if condition="{cranetype.constructiontype}">
+          <f:if condition="({selectedCranetype.uid} == {cranetype.uid}) || ({newInquiryStep1.cranetype.uid} == {cranetype.uid})">
+            <f:then>
+              <div class="row active" data-cranetype="{cranetype.id}">
+            </f:then>
+            <f:else>
+              <div class="row hidden" data-cranetype="{cranetype.id}">
+            </f:else>
+          </f:if>
+            <f:for each="{cranetype.constructiontype}" as="constructiontype">
+              <div class="col-sm-4">
+                <label class="construction-type construction-type-{constructiontype.id}{f:if(condition: '{newInquiryStep1.constructiontype.uid} == {constructiontype.uid}', then: ' active')}">
+                  <div class="construction-type-label">
+                    <f:if condition="{constructiontype.uid} == {newInquiryStep1.constructiontype.uid}">
+                      <f:then>
+                        <f:form.radio class="crane-construction-type-checkbox sr-only" property="constructiontype" checked="checked" value="{constructiontype.uid}" additionalAttributes="{data-toggle-constructiontype: constructiontype.uid}" />
+                      </f:then>
+                      <f:else>
+                        <f:form.radio class="crane-construction-type-checkbox sr-only" property="constructiontype" value="{constructiontype.uid}" additionalAttributes="{data-toggle-constructiontype: constructiontype.uid}" />
+                      </f:else>
+                    </f:if>
+                    <span class="construction-type-title">{constructiontype.title}</span>
+                  </div>
+                </label>
+              </div>
+            </f:for>
+          </div>
+        </f:if>
+      </f:for>
+    </div>
+  </fieldset>
+
+</f:if>

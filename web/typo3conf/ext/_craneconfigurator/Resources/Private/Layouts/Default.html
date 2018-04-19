@@ -1,0 +1,9 @@
+
+
+<f:render section="Main" />
+
+<v:asset.script path="fileadmin/Resources/Public/JavaScript/Vendor/jquery.form-validator.min.js" name="validator" dependencies="jquery" />
+<v:asset.script path="fileadmin/Resources/Public/JavaScript/Vendor/moment.min.js" name="momentjs" dependencies="jquery" />
+<v:asset.script path="fileadmin/Resources/Public/JavaScript/Vendor/moment.locale.de.js" name="momentjsde" dependencies="momentjs" />
+<v:asset.script path="fileadmin/Resources/Public/JavaScript/Vendor/bootstrap-datetimepicker-4.17.45.min.js" name="datetimepicker" dependencies="jquery,momentjsde" />
+<v:asset.script path="EXT:teichmann_craneconfigurator/Resources/Public/JavaScript/inquiryform.js" standalone="1" name="validation" dependencies="validator,datetimepicker" />

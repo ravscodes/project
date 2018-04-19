@@ -33,6 +33,22 @@ namespace Crossconcept\CcAppointment\Domain\Model;
 class Inquiry extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
     /**
+     * Requested appointment
+     *
+     * @var \Crossconcept\CcAppointment\Domain\Model\Appointment
+     * @validate NotEmpty
+     */
+    protected $appointment = '';
+
+    /**
+     * Requested timeslot
+     *
+     * @var \Crossconcept\CcAppointment\Domain\Model\Timeslot
+     * @validate NotEmpty
+     */
+    protected $timeslot = '';
+
+    /**
      * Salutation
      *
      * @var string
@@ -99,6 +115,38 @@ class Inquiry extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @validate NotEmpty
      */
     protected $message = '';
+
+    /**
+     * @return Appointment
+     */
+    public function getAppointment()
+    {
+        return $this->appointment;
+    }
+
+    /**
+     * @param Appointment $appointment
+     */
+    public function setAppointment($appointment)
+    {
+        $this->appointment = $appointment;
+    }
+
+    /**
+     * @return Timeslot
+     */
+    public function getTimeslot()
+    {
+        return $this->timeslot;
+    }
+
+    /**
+     * @param Timeslot $timeslot
+     */
+    public function setTimeslot($timeslot)
+    {
+        $this->timeslot = $timeslot;
+    }
 
     /**
      * @return string

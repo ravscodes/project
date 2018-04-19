@@ -1,29 +1,60 @@
 {namespace v=FluidTYPO3\Vhs\ViewHelpers}
 
 <div class="row">
+
 	<div class="col-md-7">
-		<div class="form-group{f:render(partial: 'FormErrorsClass', arguments: {object: 'newInquiryStep2.timeslot'})}">
-			<label><f:translate key="form.label.date" /> <f:translate key="form.required" /></label>
-			<div id="appointment-calendar"></div>
-
-			<f:comment><!-- CSS Assets --></f:comment>
-			<v:asset.style path="EXT:cc_appointment/Resources/Public/Css/Vendor/bootstrap-datepicker.min.css" name="bootstrap-datepicker-css" />
-			<v:asset.style path="EXT:cc_appointment/Resources/Public/Css/calendar.css" name="bootstrap-datepicker-custom-css" />
-
-			<f:comment><!-- JS Assets --></f:comment>
-			<v:asset.script path="EXT:cc_appointment/Resources/Public/JavaScript/Vendor/bootstrap-datepicker.min.js" name="bootstrap-datepicker-js" dependencies="jquery" />
-			<v:asset.script path="EXT:cc_appointment/Resources/Public/JavaScript/calendar.js" name="bootstrap-datepicker-custom-js" dependencies="bootstrap-datepicker-js" />
-		</div>
+		<f:render section="Calendar" arguments="{_all}" />
 	</div>
-	<div class="col-md-4 col-md-offset-1">
-		<div class="form-group{f:render(partial: 'FormErrorsClass', arguments: {object: 'newInquiryStep2.timeslot'})}">
-			<label><f:translate key="form.label.timeslots" /> <f:translate key="form.required" /></label>
-			<f:if condition="{timeslots}">
-				<f:then></f:then>
-				<f:else>
-					<div class="alert alert-info"><f:translate key="form.label.timeslots.unavailable" /></div>
-				</f:else>
-			</f:if>
-		</div>
+	<div class="col-lg-4 col-lg-offset-1 col-md-5 col-md-offset-0">
+		<f:render section="Timeslots" arguments="{_all}" />
 	</div>
+
+	<f:comment><!-- CSS Assets --></f:comment>
+	<v:asset.style path="EXT:cc_appointment/Resources/Public/Css/Vendor/bootstrap-datetimepicker.min.css" name="bootstrap-datetimepicker-css" />
+	<v:asset.style path="EXT:cc_appointment/Resources/Public/Css/appointment.css" name="ccappointment-custom-css" />
+
+	<f:comment><!-- JS Assets --></f:comment>
+	<v:asset.script path="EXT:cc_appointment/Resources/Public/JavaScript/Vendor/moment.min.js" name="moment-js" dependencies="jquery" />
+	<v:asset.script path="EXT:cc_appointment/Resources/Public/JavaScript/Vendor/bootstrap-datetimepicker.min.js" name="bootstrap-datetimepicker-js" dependencies="moment-js" />
+	<v:asset.script path="EXT:cc_appointment/Resources/Public/JavaScript/appointment.js" name="ccappointment-custom-js" dependencies="bootstrap-datetimepicker-js" />
+
 </div>
+
+<f:comment><!-- Render calendar --></f:comment>
+<f:section name="Calendar">
+	<div class="form-group form-group-inline-datepicker">
+		<label for="calendar"><f:translate key="form.label.date" /> <f:translate key="form.required" /></label>
+		<f:form.hidden id="calendar" class="form-control date" value="{newInquiryStep2..timeslot.date -> f:format.date()}" />
+	</div>
+</f:section>
+
+<f:comment><!-- Render timeslots--></f:comment>
+<f:section name="Timeslots">
+
+	<div class="form-group{f:render(partial: 'FormErrorsClass', arguments: {object: 'newInquiryStep2.timeslot'})}">
+		<label><f:translate key="form.label.timeslots" /> <f:translate key="form.required" /></label>
+		<f:if condition="{timeslots}">
+			<f:then>
+				<div class="form-group{f:render(partial: 'FormErrorsClass', arguments: {object: 'newInquiryStep2.timeslot'})}">
+					<f:form.hidden property="timeslot" value="0" />
+					<div class="list-group" id="list-timeslots">
+						<f:for each="{timeslots}" as="timeslot" iteration="i">
+							<div class="list-group-item">
+								<label for="timeslot-{i.index}">
+									<f:form.radio property="timeslot" id="timeslot-{i.index}" value="{i.index}" />
+									<f:translate key="form.label.timeFormat" arguments="{
+														0: '{f:format.date(date: timeslot.timeFrom, format: \'H:i\')}',
+														1: '{f:format.date(date: timeslot.timeTo, format: \'H:i\')}'}" />
+								</label>
+							</div>
+						</f:for>
+					</div>
+					<f:render partial="FormErrors" arguments="{object: 'newInquiryStep2.timeslot'}" />
+				</div>
+			</f:then>
+			<f:else>
+				<div class="alert alert-info"><f:translate key="form.label.timeslots.unavailable" /></div>
+			</f:else>
+		</f:if>
+	</div>
+</f:section>

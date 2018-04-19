@@ -1,0 +1,23 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers">
+
+  <f:layout name="Default" />
+
+  <f:section name="Main">
+    <f:flashMessages />
+    <f:render partial="Pagination/Pagination" arguments="{step: 4}" />
+    <f:form action="create" name="newInquiryStep4" enctype="multipart/form-data" class="inquiry-form" object="{newInquiryStep4}">
+      <f:if condition="{settings.displaySummary}">
+        <f:render partial="InquiryStep4/Summary" arguments="{_all}" />
+      </f:if>
+      <f:render partial="InquiryStep4/FormFields" arguments="{_all}" />
+      <f:render partial="FormErrors" arguments="{object: InquiryStep4}" />
+      <div class="clearfix">
+        <f:link.action action="new" controller="InquiryStep3" class="btn btn-default btn-prev">{f:translate(key: 'form.prev')}</f:link.action>
+        <f:form.button type="submit" class="btn btn-primary btn-next pull-right">{f:translate(key: 'form.submit')}</f:form.button>
+      </div>
+      <p class="required-info"><small>{f:translate(key: 'form.required.info')}</small></p>
+    </f:form>
+  </f:section>
+</div>

@@ -1,0 +1,11 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+{f:translate(key: 'LLL:EXT:teichmann_craneconfigurator/Resources/Private/Language/locallang.xlf:emailAdminPrefix')}\r\n\
+
+<f:if condition="{variables}">
+	<f:for each="{variables}" as="value" key="key">
+	{key}: {value}\r\n\
+	</f:for>
+</f:if>
+
+{f:translate(key: 'LLL:EXT:teichmann_craneconfigurator/Resources/Private/Language/locallang.xlf:emailAdminSuffix')}\r\n\

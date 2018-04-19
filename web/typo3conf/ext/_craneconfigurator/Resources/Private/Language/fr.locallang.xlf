@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" target-language="fr" datatype="plaintext" original="messages" date="2017-01-24T10:10:27Z" product-name="teichmann_craneconfigurator">
+        <header/>
+        <body>
+            <trans-unit id="inquiry" xml:space="preserve">
+                <target>Demande</target>
+            </trans-unit>
+
+			<trans-unit id="cranetype" xml:space="preserve">
+				<target>Type de grue</target>
+			</trans-unit>
+			<trans-unit id="cranetype.id" xml:space="preserve">
+                <target>Template ID/Nummer</target>
+            </trans-unit>
+			<trans-unit id="cranetype.title" xml:space="preserve">
+				<target>Titel</target>
+			</trans-unit>
+            <trans-unit id="cranetype.salesforcetitle" xml:space="preserve">
+				<target>Salesforce titel</target>
+			</trans-unit>
+			<trans-unit id="cranetype.image" xml:space="preserve">
+                <target>Bild</target>
+            </trans-unit>
+			<trans-unit id="cranetype.icon" xml:space="preserve">
+                <target>Icon</target>
+            </trans-unit>
+            <trans-unit id="cranetype.constructiontype" xml:space="preserve">
+                <target>Construction</target>
+            </trans-unit>
+            <trans-unit id="constructiontype" xml:space="preserve">
+                <target>Construction</target>
+            </trans-unit>
+            <trans-unit id="constructiontype.id" xml:space="preserve">
+                <target>Template ID/Nummer</target>
+            </trans-unit>
+            <trans-unit id="constructiontype.title" xml:space="preserve">
+                <target>Titel</target>
+            </trans-unit>
+            <trans-unit id="constructiontype.icon" xml:space="preserve">
+                <target>Icon</target>
+            </trans-unit>
+            <trans-unit id="industry" xml:space="preserve">
+                <target>Secteur d‘activités</target>
+            </trans-unit>
+            <trans-unit id="industry.title" xml:space="preserve">
+                <target>Titel</target>
+            </trans-unit>
+            <trans-unit id="industry.image" xml:space="preserve">
+                <target>Bild</target>
+            </trans-unit>
+            <trans-unit id="industry.other" xml:space="preserve">
+                <target>Autres</target>
+            </trans-unit>
+            <trans-unit id="customindustry" xml:space="preserve">
+                <target>Autres domaines</target>
+            </trans-unit>
+            <trans-unit id="purpose" xml:space="preserve">
+                <target>Utilisation</target>
+            </trans-unit>
+            <trans-unit id="classification" xml:space="preserve">
+                <target>Classement</target>
+            </trans-unit>
+            <trans-unit id="classification.title" xml:space="preserve">
+                <target>Titel</target>
+            </trans-unit>
+            <trans-unit id="containeramount" xml:space="preserve">
+                <target>Quantité (prévue) de marchandise à manipuler </target>
+            </trans-unit>
+            <trans-unit id="containeramount.info" xml:space="preserve">
+                <target>Nombre de containers...</target>
+            </trans-unit>
+            <trans-unit id="containerunit" xml:space="preserve">
+                <target>Unité de container</target>
+            </trans-unit>
+            <trans-unit id="containerunit.1" xml:space="preserve">
+                <target>par heure</target>
+            </trans-unit>
+            <trans-unit id="containerunit.2" xml:space="preserve">
+                <target>par jour</target>
+            </trans-unit>
+            <trans-unit id="steering" xml:space="preserve">
+                <target>Commande par</target>
+            </trans-unit>
+            <trans-unit id="steering.1" xml:space="preserve">
+                <target>Radiocommande</target>
+            </trans-unit>
+            <trans-unit id="steering.2" xml:space="preserve">
+                <target>Commande à partir du sol</target>
+            </trans-unit>
+            <trans-unit id="steering.3" xml:space="preserve">
+                <target>Cabine de commande</target>
+            </trans-unit>
+            <trans-unit id="rotatingtrolley" xml:space="preserve">
+                <target>Chariot rotatif</target>
+            </trans-unit>
+            <trans-unit id="rotatingtrolley.1" xml:space="preserve">
+                <target>Aucun</target>
+            </trans-unit>
+            <trans-unit id="rotatingtrolley.2" xml:space="preserve">
+                <target>Possible</target>
+            </trans-unit>
+            <trans-unit id="rotatingtrolley.3" xml:space="preserve">
+                <target>Nécessaire</target>
+            </trans-unit>
+            <trans-unit id="rotatingspreader" xml:space="preserve">
+                <target>Palonnier (spreader) rotatif </target>
+            </trans-unit>
+            <trans-unit id="rotatingspreader.1" xml:space="preserve">
+                <target>Aucun</target>
+            </trans-unit>
+            <trans-unit id="rotatingspreader.2" xml:space="preserve">
+                <target>Possible</target>
+            </trans-unit>
+            <trans-unit id="rotatingspreader.3" xml:space="preserve">
+                <target>Nécessaire</target>
+            </trans-unit>
+            <trans-unit id="operationarea" xml:space="preserve">
+                <target>Lieu d‘utilisation</target>
+            </trans-unit>
+            <trans-unit id="operationarea.1" xml:space="preserve">
+                <target>Hall/hangar</target>
+            </trans-unit>
+            <trans-unit id="operationarea.2" xml:space="preserve">
+                <target>Espace extérieur</target>
+            </trans-unit>
+            <trans-unit id="payload" xml:space="preserve">
+                <target>Capacité en tonnes</target>
+            </trans-unit>
+            <trans-unit id="gauge" xml:space="preserve">
+                <target>Portée en mètres</target>
+            </trans-unit>
+            <trans-unit id="gaugeinfo" xml:space="preserve">
+                <target>milieu de rail jusqu’à milieu de rail</target>
+            </trans-unit>
+            <trans-unit id="reach" xml:space="preserve">
+                <target>Avant-becs</target>
+            </trans-unit>
+            <trans-unit id="reachmin" xml:space="preserve">
+                <target>Avant-bec (mini)</target>
+            </trans-unit>
+            <trans-unit id="reachmax" xml:space="preserve">
+                <target>Avant-bec (maxi)</target>
+            </trans-unit>
+            <trans-unit id="payloadandreach" xml:space="preserve">
+                <target>Capacité et portée</target>
+            </trans-unit>
+            <trans-unit id="payloadandreach1" xml:space="preserve">
+                <target>Capacité maxi nécessaire</target>
+            </trans-unit>
+            <trans-unit id="payloadandreach2" xml:space="preserve">
+                <target>Pour porté minimale</target>
+            </trans-unit>
+            <trans-unit id="payloadandreach3" xml:space="preserve">
+                <target>Portée maxi possible</target>
+            </trans-unit>
+            <trans-unit id="payloadandreach4" xml:space="preserve">
+                <target>Capacité maxi nécessaire</target>
+            </trans-unit>
+            <trans-unit id="reachsolid" xml:space="preserve">
+                <target>Avant-bec côté pied fixe utile</target>
+            </trans-unit>
+            <trans-unit id="reachsolidsupport" xml:space="preserve">
+                <target>Avant-bec côté pied fixe utile</target>
+            </trans-unit>
+            <trans-unit id="reachsolidsupportmin" xml:space="preserve">
+                <target>Nécessaire (mini)</target>
+            </trans-unit>
+            <trans-unit id="reachsolidsupportmax" xml:space="preserve">
+                <target>Nécessaire (maxi)</target>
+            </trans-unit>
+            <trans-unit id="reachstabilizer" xml:space="preserve">
+                <target>Avant-bec côté pied pendulaire utile</target>
+            </trans-unit>
+            <trans-unit id="reachstabilizermin" xml:space="preserve">
+                <target>Nécessaire (mini)</target>
+            </trans-unit>
+            <trans-unit id="reachstabilizermax" xml:space="preserve">
+                <target>Nécessaire (maxi)</target>
+            </trans-unit>
+            <trans-unit id="reachassembly" xml:space="preserve">
+                <target>Disposition des pieds </target>
+            </trans-unit>
+            <trans-unit id="reachassembly.1" xml:space="preserve">
+                <target>Tube incliné extérieur</target>
+            </trans-unit>
+            <trans-unit id="reachassembly.2" xml:space="preserve">
+                <target>Tube incliné intérieur</target>
+            </trans-unit>
+            <trans-unit id="reachassembly.3" xml:space="preserve">
+                <target>Symétrique</target>
+            </trans-unit>
+            <trans-unit id="hookpath" xml:space="preserve">
+                <target>Chemin de crochet</target>
+            </trans-unit>
+            <trans-unit id="hookpath.info" xml:space="preserve">
+                <target>Si différent de hauteur de levage</target>
+            </trans-unit>
+            <trans-unit id="workingspeed" xml:space="preserve">
+                <target>Vitesses de travail</target>
+            </trans-unit>
+            <trans-unit id="workingspeed.default" xml:space="preserve">
+                <target>Standard</target>
+            </trans-unit>
+            <trans-unit id="workingspeed.custom" xml:space="preserve">
+                <target>Particulier</target>
+            </trans-unit>
+            <trans-unit id="workingspeedliftinggear" xml:space="preserve">
+                <target>Levage</target>
+            </trans-unit>
+            <trans-unit id="workingspeedcatgear" xml:space="preserve">
+                <target>Direction chariot</target>
+            </trans-unit>
+            <trans-unit id="workingspeedcranegear" xml:space="preserve">
+                <target>Translation portique</target>
+            </trans-unit>
+            <trans-unit id="conductorrail" xml:space="preserve">
+                <target>Rails conducteurs</target>
+            </trans-unit>
+            <trans-unit id="conductorrail.available" xml:space="preserve">
+                <target>Existants</target>
+            </trans-unit>
+            <trans-unit id="conductorrail.necessary" xml:space="preserve">
+                <target>Requis </target>
+            </trans-unit>
+            <trans-unit id="liftheight" xml:space="preserve">
+                <target>Hauteur de levage</target>
+            </trans-unit>
+            <trans-unit id="liftheightabove" xml:space="preserve">
+                <target>Sur niveau 0</target>
+            </trans-unit>
+            <trans-unit id="liftheightabove.1" xml:space="preserve">
+                <target>1 sur 1</target>
+            </trans-unit>
+            <trans-unit id="liftheightabove.2" xml:space="preserve">
+                <target>1 sur 2</target>
+            </trans-unit>
+            <trans-unit id="liftheightabove.3" xml:space="preserve">
+                <target>1 sur 3</target>
+            </trans-unit>
+            <trans-unit id="liftheightabove.4" xml:space="preserve">
+                <target>1 sur 4</target>
+            </trans-unit>
+            <trans-unit id="liftheightabove.5" xml:space="preserve">
+                <target>1 sur 5</target>
+            </trans-unit>
+            <trans-unit id="liftheightbelow" xml:space="preserve">
+                <target>Sous niveau 0</target>
+            </trans-unit>
+            <trans-unit id="buildingheight" xml:space="preserve">
+                <target>Hauteur de la construction</target>
+            </trans-unit>
+            <trans-unit id="wallcomposition" xml:space="preserve">
+                <target>Caractéristiques du mur</target>
+            </trans-unit>
+            <trans-unit id="wallcomposition.placeholder" xml:space="preserve">
+                <target>par ex. mur en béton, poutres en acier...</target>
+            </trans-unit>
+            <trans-unit id="installationheight" xml:space="preserve">
+                <target>Hauteur de levage disponible</target>
+            </trans-unit>
+            <trans-unit id="installationheight.info" xml:space="preserve">
+                <target>Hauteur de construction du bord supérieur du rail au bord inférieur de la charpente du toit</target>
+            </trans-unit>
+            <trans-unit id="hall" xml:space="preserve">
+                <target>Hall/Voie de roulement</target>
+            </trans-unit>
+            <trans-unit id="hall.1" xml:space="preserve">
+                <target>Existante</target>
+            </trans-unit>
+            <trans-unit id="hall.2" xml:space="preserve">
+                <target>En planification </target>
+            </trans-unit>
+            <trans-unit id="track" xml:space="preserve">
+                <target>Voie de roulement</target>
+            </trans-unit>
+            <trans-unit id="track.1" xml:space="preserve">
+                <target>Existante avec rails</target>
+            </trans-unit>
+            <trans-unit id="track.2" xml:space="preserve">
+                <target>En planification</target>
+            </trans-unit>
+            <trans-unit id="track.3" xml:space="preserve">
+                <target>Existante</target>
+            </trans-unit>
+            <trans-unit id="track.4" xml:space="preserve">
+                <target>En planification</target>
+            </trans-unit>
+            <trans-unit id="tracktype" xml:space="preserve">
+                <target>Type de rails</target>
+            </trans-unit>
+            <trans-unit id="tracksupportdistance" xml:space="preserve">
+                <target>Distance entre vérins/poteaux/colonnes </target>
+            </trans-unit>
+            <trans-unit id="tracklengthexisting" xml:space="preserve">
+                <target>Longueur de voie</target>
+            </trans-unit>
+            <trans-unit id="tracklengthplanned" xml:space="preserve">
+                <target>Longueur de voie</target>
+            </trans-unit>
+            <trans-unit id="projectphase" xml:space="preserve">
+                <target>Stade du projet</target>
+            </trans-unit>
+            <trans-unit id="projectphase.1" xml:space="preserve">
+                <target>Demande budgétaire</target>
+            </trans-unit>
+            <trans-unit id="projectphase.2" xml:space="preserve">
+                <target>Anschaffung konkret</target>
+            </trans-unit>
+            <trans-unit id="commissioningdate" xml:space="preserve">
+                <target>Mise en service planifiée pour le</target>
+            </trans-unit>
+            <trans-unit id="loadhandlingdevice" xml:space="preserve">
+                <target>Moyen de préhension</target>
+            </trans-unit>
+            <trans-unit id="loadhandlingdevice.1" xml:space="preserve">
+                <target>Crochet</target>
+            </trans-unit>
+            <trans-unit id="loadhandlingdevice.2" xml:space="preserve">
+                <target>Grappin</target>
+            </trans-unit>
+            <trans-unit id="loadhandlingdevice.2.1" xml:space="preserve">
+                <target>Motorisé</target>
+            </trans-unit>
+            <trans-unit id="loadhandlingdevice.2.2" xml:space="preserve">
+                <target>À quatre câbles</target>
+            </trans-unit>
+            <trans-unit id="loadhandlingdevice.2.3" xml:space="preserve">
+                <target>Autres</target>
+            </trans-unit>
+            <trans-unit id="loadhandlingdeviceinfo" xml:space="preserve">
+                <target>Type de benne preneuse</target>
+            </trans-unit>
+            <trans-unit id="loadhandlingdeviceinfo.info" xml:space="preserve">
+                <target>p. ex. « grappin »</target>
+            </trans-unit>
+            <trans-unit id="company" xml:space="preserve">
+                <target>Société</target>
+            </trans-unit>
+            <trans-unit id="position" xml:space="preserve">
+                <target>Poste</target>
+            </trans-unit>
+            <trans-unit id="firstname" xml:space="preserve">
+                <target>Prénom</target>
+            </trans-unit>
+            <trans-unit id="lastname" xml:space="preserve">
+                <target>Nom</target>
+            </trans-unit>
+            <trans-unit id="address" xml:space="preserve">
+                <target>Adresse</target>
+            </trans-unit>
+            <trans-unit id="zip" xml:space="preserve">
+                <target>CP</target>
+            </trans-unit>
+            <trans-unit id="city" xml:space="preserve">
+                <target>Ville</target>
+            </trans-unit>
+            <trans-unit id="country" xml:space="preserve">
+                <target>Pays</target>
+            </trans-unit>
+            <trans-unit id="phone" xml:space="preserve">
+                <target>N° de téléphone/mobile</target>
+            </trans-unit>
+            <trans-unit id="email" xml:space="preserve">
+                <target>Adresse email</target>
+            </trans-unit>
+            <trans-unit id="privacy">
+                <target>J’accepte les %1$s</target>
+            </trans-unit>
+
+            <trans-unit id="projectphase" xml:space="preserve">
+                <target>Phase du projet</target>
+            </trans-unit>
+            <trans-unit id="commissioningdate" xml:space="preserve">
+                <target>Mise en service prévue pour</target>
+            </trans-unit>
+            <trans-unit id="projectinformation" xml:space="preserve">
+                <target>Informations supplémentaires</target>
+            </trans-unit>
+            <trans-unit id="projectinformation.placeholder" xml:space="preserve">
+                <target>Particularités, remarques…</target>
+            </trans-unit>
+
+            <trans-unit id="inquiryform" xml:space="preserve">
+                <target>Kran-Anfrageformular</target>
+            </trans-unit>
+
+            <trans-unit id="form.required">
+                <target>*</target>
+            </trans-unit>
+            <trans-unit id="form.required.info">
+                <target>Tous les champs marqués par un astérisque (*) sont obligatoires</target>
+            </trans-unit>
+            <trans-unit id="form.min">
+                <target>mini</target>
+            </trans-unit>
+            <trans-unit id="form.max">
+                <target>maxi</target>
+            </trans-unit>
+            <trans-unit id="form.prev">
+                <target>Précédent</target>
+            </trans-unit>
+            <trans-unit id="form.date.placeholder">
+                <target>dd.mm.yyyy</target>
+            </trans-unit>
+            <trans-unit id="form.next">
+                <target>Suivant</target>
+            </trans-unit>
+            <trans-unit id="form.submit">
+                <target>Envoyer votre demande de prix</target>
+            </trans-unit>
+
+            <trans-unit id="form.validation.required">
+                <target>Ce champ est obligatoire.</target>
+            </trans-unit>
+
+            <trans-unit id="form.step.1">
+                <target>1ère étape</target>
+            </trans-unit>
+            <trans-unit id="form.step.1.title">
+                <target>choisissez le type de grue</target>
+            </trans-unit>
+            <trans-unit id="form.step.2">
+                <target>2ème étape</target>
+            </trans-unit>
+            <trans-unit id="form.step.2.title">
+                <target>informations sur le projet</target>
+            </trans-unit>
+            <trans-unit id="form.step.3">
+                <target>3ème étape</target>
+            </trans-unit>
+            <trans-unit id="form.step.3.title">
+                <target>détails techniques</target>
+            </trans-unit>
+            <trans-unit id="form.step.4">
+                <target>4ème étape</target>
+            </trans-unit>
+            <trans-unit id="form.step.4.title">
+                <target>configuration de votre installation</target>
+            </trans-unit>
+
+            <trans-unit id="form.legend.technicalinformation" xml:space="preserve">
+               <target>Technische Informationen</target>
+           </trans-unit>
+            <trans-unit id="form.legend.projectinformation" xml:space="preserve">
+                <target>Informations sur le projet</target>
+            </trans-unit>
+            <trans-unit id="form.legend.personal" xml:space="preserve">
+                <target>Données personnelles</target>
+            </trans-unit>
+            <trans-unit id="form.legend.craneconfiguration" xml:space="preserve">
+                <target>Configuration de votre installation</target>
+            </trans-unit>
+            <trans-unit id="form.legend.craneconfiguration.all" xml:space="preserve">
+                <target>Afficher toutes les informations</target>
+            </trans-unit>
+
+            <trans-unit id="flexforms.tabs.settings">
+                <target>Einstellungen</target>
+            </trans-unit>
+            <trans-unit id="flexforms.settings.subject">
+                <target>Betreff</target>
+            </trans-unit>
+            <trans-unit id="flexforms.settings.from">
+                <target>Absender</target>
+            </trans-unit>
+            <trans-unit id="flexforms.settings.fromEmail">
+                <target>Absender E-Mail</target>
+            </trans-unit>
+            <trans-unit id="flexforms.settings.toEmail">
+                <target>Empfänger E-Mail</target>
+            </trans-unit>
+
+            <trans-unit id="label.select">
+                <target>Veuillez sélectionner...</target>
+            </trans-unit>
+            <trans-unit id="label.m">
+                <target>m</target>
+            </trans-unit>
+            <trans-unit id="label.mperminute">
+                <target>m/min</target>
+            </trans-unit>
+            <trans-unit id="label.t">
+                <target>t</target>
+            </trans-unit>
+            <trans-unit id="label.cranetype">
+                <target>Type de grue choisi</target>
+            </trans-unit>
+            <trans-unit id="label.projectinformation">
+                <target>Informations sur le projet</target>
+            </trans-unit>
+            <trans-unit id="label.technicaldetails">
+                <target>Détails techniques</target>
+            </trans-unit>
+            <trans-unit id="label.additionalinformation">
+                <target>Informations supplémentaires</target>
+            </trans-unit>
+
+            <trans-unit id="payloadmin" xml:space="preserve">
+                <target>Capacité en tonnes (mini)</target>
+            </trans-unit>
+            <trans-unit id="payloadmax" xml:space="preserve">
+                <target>Capacité en tonnes (maxi)</target>
+            </trans-unit>
+            <trans-unit id="gaugemin" xml:space="preserve">
+                <target>Portée en mètres (mini)</target>
+            </trans-unit>
+            <trans-unit id="gaugemax" xml:space="preserve">
+                <target>Portée en mètres (maxi)</target>
+            </trans-unit>
+            <trans-unit id="trackinfo" xml:space="preserve">
+                <target>Kranbahn Informationen</target>
+            </trans-unit>
+
+            <trans-unit id="emailUserPrefix">
+                <target>Merci beaucoup pour votre demande d‘offre!
+                </target>
+            </trans-unit>
+            <trans-unit id="emailUserSuffix">
+                <target>Nous vous contactons très bientôt!</target>
+            </trans-unit>
+            <trans-unit id="emailUserAdditional">
+                <target></target>
+            </trans-unit>
+            <trans-unit id="emailAdminPrefix" xml:space="preserve">
+				<target>Es wurde eine neue Kran-Anfrage eingereicht.</target>
+			</trans-unit>
+			<trans-unit id="emailAdminSuffix" xml:space="preserve">
+				<target>Bitte melden Sie sich in das System ein und eruieren diese.</target>
+			</trans-unit>
+
+        </body>
+    </file>
+</xliff>

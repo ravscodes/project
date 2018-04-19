@@ -1,0 +1,22 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<div class="col-sm-4">
+  <label class="industry-type industry-type-{industry.uid}{f:if(condition: '{newInquiryStep2} && ({newInquiryStep2.industry.uid} == {industry.uid})', then: ' active')}">
+    <f:if condition="{industry.image}">
+      <div class="industry-image">
+        <f:image image="{industry.image}" treatIdAsReference="1" />
+      </div>
+    </f:if>
+    <div class="industry-label">
+      <f:if condition="{newInquiryStep2.industry.uid} == {industry.uid}">
+        <f:then>
+          <f:form.radio property="industry" class="hidden" checked="checked" value="{industry.uid}" additionalAttributes="{data-toggle-industry: industry.uid}" />
+        </f:then>
+        <f:else>
+          <f:form.radio property="industry" class="hidden" value="{industry.uid}" additionalAttributes="{data-toggle-industry: industry.uid}" />
+        </f:else>
+      </f:if>
+      <span class="industry-type-title">{industry.title}</span>
+    </div>
+  </label>
+</div>

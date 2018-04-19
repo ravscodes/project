@@ -1,5 +1,3 @@
-{namespace teichmannCraneconfigurator=Crossconcept\TeichmannCraneconfigurator\ViewHelpers}
-
 <div xmlns="http://www.w3.org/1999/xhtml" lang="en"
      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
      xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers">
@@ -7,66 +5,28 @@
     <f:layout name="Default"/>
 
     <f:section name="Main">
+        
         <f:flashMessages/>
-        <f:render partial="Pagination/Pagination" arguments="{step: 3}"/>
+        
         <f:form action="create" name="newInquiryStep3" enctype="multipart/form-data" class="inquiry-form" object="{newInquiryStep3}">
+            <f:if condition="{settings.displaySummary}">
+                <f:render partial="InquiryStep3/Summary" arguments="{_all}"/>
+            </f:if>
+            <f:render partial="InquiryStep3/FormFields" arguments="{_all}"/>
             <f:render partial="FormErrors" arguments="{object: InquiryStep3}"/>
-            <fieldset>
-                <legend>{f:translate(key: 'form.legend.technicalinformation')}</legend>
-                <div id="crane-container">
-                    <div class="content" id="crane-content">
-                        <f:render partial="InquiryStep3/FormFields" arguments="{_all}"/>
-                    </div>
-                    <div class="sidebar" id="crane-sidebar">
-                        <div class="sidebar__inner">
-                            <div id="crane-image-container" data-crane-type="{newInquiryStep1.cranetype.uid}" data-construction-type="{f:if(condition: newInquiryStep1.constructiontype.id, then: newInquiryStep1.constructiontype.id, else: '1')}">
-                                <f:if condition="{newInquiryStep1.cranetype.id} == '5'">
-                                    <f:then>
-                                        <f:if condition="{teichmannCraneconfigurator:PartialExists(partial: 'Cranes/{newInquiryStep1.cranetype.id}')}">
-                                            <f:then>
-                                                <f:render partial="Cranes/{newInquiryStep1.cranetype.id}"/>
-                                            </f:then>
-                                        </f:if>
-                                    </f:then>
-                                    <f:else>
-
-                                        <f:if condition="{teichmannCraneconfigurator:PartialExists(partial: 'Cranes/{newInquiryStep1.cranetype.id}-{f:if(condition: newInquiryStep1.constructiontype.id, then: '{newInquiryStep1.constructiontype.id}')}">
-                                            <f:then>
-                                                <f:render partial="Cranes/{newInquiryStep1.cranetype.id}-{f:if(condition: newInquiryStep1.constructiontype.id, then: newInquiryStep1.constructiontype.id, else: '1')}"/>
-                                            </f:then>
-                                            <f:else>
-                                                <f:if condition="{newInquiryStep1.cranetype.constructiontype.icon}">
-                                                    <f:image image="{newInquiryStep1.cranetype.constructiontype.icon}" treatIdAsReference="1" class="img-responsive"/>
-                                                </f:if>
-                                            </f:else>
-                                        </f:if>
-
-                                    </f:else>
-                                </f:if>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </fieldset>
-            <fieldset class="projectinformation">
-                <legend>{f:translate(key: 'form.legend.projectinformation')}</legend>
-                <div class="row">
-                    <div class="col-sm-6">
-                        <f:render partial="Fields/Projectphase" arguments="{_all}"/>
-                        <f:render partial="Fields/Commissioningdate" arguments="{_all}"/>
-                    </div>
-                    <div class="col-sm-6">
-                        <f:render partial="Fields/Projectinformation" arguments="{_all}"/>
-                    </div>
-                </div>
-            </fieldset>
             <div class="clearfix">
                 <f:link.action action="new" controller="InquiryStep2" class="btn btn-default btn-prev">{f:translate(key: 'form.prev')}</f:link.action>
-                <f:form.button type="submit" class="btn btn-primary btn-next pull-right">{f:translate(key: 'form.next')}</f:form.button>
+                <f:form.button type="submit" class="btn btn-primary btn-next pull-right">{f:translate(key: 'form.submit')}</f:form.button>
             </div>
             <p class="required-info">
                 <small>{f:translate(key: 'form.required.info')}</small>
             </p>
         </f:form>
+
     </f:section>
+
+    <f:section name="Pagination">
+        <f:render partial="Pagination/Pagination" arguments="{step: 1}"/>
+    </f:section>
+    
 </div>

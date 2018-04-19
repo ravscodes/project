@@ -114,8 +114,47 @@
 
 			<!-- Further labels Start -->
 
-			<trans-unit id="label.minutes" xml:space="preserve">
-				<target>minutes</target>
+			<trans-unit id="form.required" xml:space="preserve">
+				<target>*</target>
+			</trans-unit>
+			<trans-unit id="form.step.1" xml:space="preserve">
+				<target>Schritt 1</target>
+			</trans-unit>
+			<trans-unit id="form.step.1.title" xml:space="preserve">
+				<target>Beratungswunsch wählen</target>
+			</trans-unit>
+			<trans-unit id="form.step.2" xml:space="preserve">
+				<target>Schritt 2</target>
+			</trans-unit>
+			<trans-unit id="form.step.2.title" xml:space="preserve">
+				<target>Termin finden</target>
+			</trans-unit>
+			<trans-unit id="form.step.3" xml:space="preserve">
+				<target>Schritt 3</target>
+			</trans-unit>
+			<trans-unit id="form.step.3.title" xml:space="preserve">
+				<target>Termin anfragen</target>
+			</trans-unit>
+			<trans-unit id="form.prev" xml:space="preserve">
+				<target>Voheriger Schritt</target>
+			</trans-unit>
+			<trans-unit id="form.next" xml:space="preserve">
+				<target>Nächster Schritt</target>
+			</trans-unit>
+			<trans-unit id="form.label.appointment" xml:space="preserve">
+				<target>Wofür brauchen Sie einen Termin?</target>
+			</trans-unit>
+			<trans-unit id="form.label.date" xml:space="preserve">
+				<target>Wählen Sie einen Tag</target>
+			</trans-unit>
+			<trans-unit id="form.label.timeslots" xml:space="preserve">
+				<target>Wählen Sie die Zeit</target>
+			</trans-unit>
+			<trans-unit id="form.label.timeslots.unavailable" xml:space="preserve">
+				<target>Für den gewählten Tag sind leider keine Termine mehr verfügbar.</target>
+			</trans-unit>
+			<trans-unit id="form.label.timeFormat" xml:space="preserve">
+				<target>%1$s - %2$s Uhr</target>
 			</trans-unit>
 
 			<!-- Further labels End -->

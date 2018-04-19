@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2017-01-24T10:10:27Z" product-name="teichmann_craneconfigurator">
+		<header/>
+		<body>
+		    <trans-unit id="inquiry" xml:space="preserve">
+                <source>Inquiry</source>
+            </trans-unit>
+
+			<trans-unit id="cranetype" xml:space="preserve">
+				<source>Crane type</source>
+			</trans-unit>
+			<trans-unit id="cranetype.id" xml:space="preserve">
+                <source>Template ID/Number</source>
+            </trans-unit>
+			<trans-unit id="cranetype.title" xml:space="preserve">
+				<source>Title</source>
+			</trans-unit>
+            <trans-unit id="cranetype.salesforcetitle" xml:space="preserve">
+				<source>Salesforce title</source>
+			</trans-unit>
+			<trans-unit id="cranetype.image" xml:space="preserve">
+                <source>Image</source>
+            </trans-unit>
+			<trans-unit id="cranetype.icon" xml:space="preserve">
+                <source>Icon</source>
+            </trans-unit>
+            <trans-unit id="cranetype.constructiontype" xml:space="preserve">
+                <source>Construction type</source>
+            </trans-unit>
+            <trans-unit id="constructiontype" xml:space="preserve">
+                <source>Design</source>
+            </trans-unit>
+            <trans-unit id="constructiontype.id" xml:space="preserve">
+                <source>Template ID/Number</source>
+            </trans-unit>
+            <trans-unit id="constructiontype.title" xml:space="preserve">
+                <source>Title</source>
+            </trans-unit>
+            <trans-unit id="constructiontype.icon" xml:space="preserve">
+                <source>Icon</source>
+            </trans-unit>
+            <trans-unit id="industry" xml:space="preserve">
+                <source>Industrial sector</source>
+            </trans-unit>
+            <trans-unit id="industry.title" xml:space="preserve">
+                <source>Title</source>
+            </trans-unit>
+            <trans-unit id="industry.image" xml:space="preserve">
+                <source>Image</source>
+            </trans-unit>
+            <trans-unit id="industry.other" xml:space="preserve">
+                <source>Other</source>
+            </trans-unit>
+            <trans-unit id="customindustry" xml:space="preserve">
+                <source>Other industrial sector</source>
+            </trans-unit>
+            <trans-unit id="purpose" xml:space="preserve">
+                <source>Purpose</source>
+            </trans-unit>
+            <trans-unit id="classification" xml:space="preserve">
+                <source>Classification of use</source>
+            </trans-unit>
+            <trans-unit id="classification.title" xml:space="preserve">
+                <source>Title</source>
+            </trans-unit>
+            <trans-unit id="containeramount" xml:space="preserve">
+                <source>Handling volume (planned)</source>
+            </trans-unit>
+            <trans-unit id="containeramount.info" xml:space="preserve">
+                <source>Number of containers...</source>
+            </trans-unit>
+            <trans-unit id="containerunit" xml:space="preserve">
+                <source>Container unit</source>
+            </trans-unit>
+            <trans-unit id="containerunit.1" xml:space="preserve">
+                <source>Per hour</source>
+            </trans-unit>
+            <trans-unit id="containerunit.2" xml:space="preserve">
+                <source>Per day</source>
+            </trans-unit>
+            <trans-unit id="steering" xml:space="preserve">
+                <source>Control system</source>
+            </trans-unit>
+            <trans-unit id="steering.1" xml:space="preserve">
+                <source>Radio control</source>
+            </trans-unit>
+            <trans-unit id="steering.2" xml:space="preserve">
+                <source>Pendant floor control</source>
+            </trans-unit>
+            <trans-unit id="steering.3" xml:space="preserve">
+                <source>Cabin control</source>
+            </trans-unit>
+            <trans-unit id="rotatingtrolley" xml:space="preserve">
+                <source>Rotating trolley</source>
+            </trans-unit>
+            <trans-unit id="rotatingtrolley.1" xml:space="preserve">
+                <source>None</source>
+            </trans-unit>
+            <trans-unit id="rotatingtrolley.2" xml:space="preserve">
+                <source>Possible</source>
+            </trans-unit>
+            <trans-unit id="rotatingtrolley.3" xml:space="preserve">
+                <source>Required</source>
+            </trans-unit>
+            <trans-unit id="rotatingspreader" xml:space="preserve">
+                <source>Rotating spreader</source>
+            </trans-unit>
+            <trans-unit id="rotatingspreader.1" xml:space="preserve">
+                <source>None</source>
+            </trans-unit>
+            <trans-unit id="rotatingspreader.2" xml:space="preserve">
+                <source>Possible</source>
+            </trans-unit>
+            <trans-unit id="rotatingspreader.3" xml:space="preserve">
+                <source>Required</source>
+            </trans-unit>
+            <trans-unit id="operationarea" xml:space="preserve">
+                <source>Operation site</source>
+            </trans-unit>
+            <trans-unit id="operationarea.1" xml:space="preserve">
+                <source>Indoor operation (hall)</source>
+            </trans-unit>
+            <trans-unit id="operationarea.2" xml:space="preserve">
+                <source>Outdoor operation</source>
+            </trans-unit>
+            <trans-unit id="payload" xml:space="preserve">
+                <source>Load capacity</source>
+            </trans-unit>
+            <trans-unit id="gauge" xml:space="preserve">
+                <source>Span</source>
+            </trans-unit>
+            <trans-unit id="gaugeinfo" xml:space="preserve">
+                <source>Middle rail to middle rail</source>
+            </trans-unit>
+            <trans-unit id="reach" xml:space="preserve">
+                <source>Jib length</source>
+            </trans-unit>
+             <trans-unit id="reachmin" xml:space="preserve">
+                <source>Reach min.</source>
+            </trans-unit>
+            <trans-unit id="reachmax" xml:space="preserve">
+                <source>Reach max.</source>
+            </trans-unit>
+            <trans-unit id="payloadandreach" xml:space="preserve">
+                <source>Load capacity and span</source>
+            </trans-unit>
+            <trans-unit id="payloadandreach1" xml:space="preserve">
+                <source>Load capacity needed max.</source>
+            </trans-unit>
+            <trans-unit id="payloadandreach2" xml:space="preserve">
+                <source>With min. reach</source>
+            </trans-unit>
+            <trans-unit id="payloadandreach3" xml:space="preserve">
+                <source>Reach possible max.</source>
+            </trans-unit>
+            <trans-unit id="payloadandreach4" xml:space="preserve">
+                <source>Load capacity needed max.</source>
+            </trans-unit>
+            <trans-unit id="reachsolid" xml:space="preserve">
+                <source>Fixed leg side usable</source>
+            </trans-unit>
+            <trans-unit id="reachsolidsupport" xml:space="preserve">
+                <source>Fixed leg side usable</source>
+            </trans-unit>
+            <trans-unit id="reachsolidsupportmin" xml:space="preserve">
+                <source>Solid support min.</source>
+            </trans-unit>
+            <trans-unit id="reachsolidsupportmax" xml:space="preserve">
+                <source>Solid support max.</source>
+            </trans-unit>
+            <trans-unit id="reachstabilizer" xml:space="preserve">
+                <source>Swing leg side usable</source>
+            </trans-unit>
+            <trans-unit id="reachstabilizermin" xml:space="preserve">
+                <source>Stabilizer min.</source>
+            </trans-unit>
+            <trans-unit id="reachstabilizermax" xml:space="preserve">
+                <source>Stabilizer max.</source>
+            </trans-unit>
+            <trans-unit id="reachassembly" xml:space="preserve">
+                <source>Fixed leg positioning</source>
+            </trans-unit>
+            <trans-unit id="reachassembly.1" xml:space="preserve">
+                <source>Inclined tube outside</source>
+            </trans-unit>
+            <trans-unit id="reachassembly.2" xml:space="preserve">
+                <source>Inclined tube inside</source>
+            </trans-unit>
+            <trans-unit id="reachassembly.3" xml:space="preserve">
+                <source>Symmetrical</source>
+            </trans-unit>
+            <trans-unit id="hookpath" xml:space="preserve">
+                <source>Hook path</source>
+            </trans-unit>
+            <trans-unit id="hookpath.info" xml:space="preserve">
+                <source>if different from lifting height</source>
+            </trans-unit>
+            <trans-unit id="workingspeed" xml:space="preserve">
+                <source>Working speeds</source>
+            </trans-unit>
+            <trans-unit id="workingspeed.default" xml:space="preserve">
+                <source>Standard</source>
+            </trans-unit>
+            <trans-unit id="workingspeed.custom" xml:space="preserve">
+                <source>Extra</source>
+            </trans-unit>
+            <trans-unit id="workingspeedliftinggear" xml:space="preserve">
+                <source>Lifting gear</source>
+            </trans-unit>
+            <trans-unit id="workingspeedcatgear" xml:space="preserve">
+                <source>Cat gear</source>
+            </trans-unit>
+            <trans-unit id="workingspeedcranegear" xml:space="preserve">
+                <source>Crane gear</source>
+            </trans-unit>
+            <trans-unit id="conductorrail" xml:space="preserve">
+                <source>Conductor rails</source>
+            </trans-unit>
+            <trans-unit id="conductorrail.available" xml:space="preserve">
+                <source>Available</source>
+            </trans-unit>
+            <trans-unit id="conductorrail.necessary" xml:space="preserve">
+                <source>Needed</source>
+            </trans-unit>
+            <trans-unit id="liftheight" xml:space="preserve">
+                <source>Lifting height</source>
+            </trans-unit>
+            <trans-unit id="liftheightabove" xml:space="preserve">
+                <source>Above ground</source>
+            </trans-unit>
+            <trans-unit id="liftheightabove.1" xml:space="preserve">
+                <source>1 over 1</source>
+            </trans-unit>
+            <trans-unit id="liftheightabove.2" xml:space="preserve">
+                <source>1 over 2</source>
+            </trans-unit>
+            <trans-unit id="liftheightabove.3" xml:space="preserve">
+                <source>1 over 3</source>
+            </trans-unit>
+            <trans-unit id="liftheightabove.4" xml:space="preserve">
+                <source>1 over 4</source>
+            </trans-unit>
+            <trans-unit id="liftheightabove.5" xml:space="preserve">
+                <source>1 over 5</source>
+            </trans-unit>
+            <trans-unit id="liftheightbelow" xml:space="preserve">
+                <source>Beneath ground</source>
+            </trans-unit>
+            <trans-unit id="buildingheight" xml:space="preserve">
+                <source>Building height</source>
+            </trans-unit>
+            <trans-unit id="wallcomposition" xml:space="preserve">
+                <source>Wall composition</source>
+            </trans-unit>
+            <trans-unit id="wallcomposition.placeholder" xml:space="preserve">
+                <source>Concrete, steel beam,...</source>
+            </trans-unit>
+            <trans-unit id="installationheight" xml:space="preserve">
+                <source>Available installation height</source>
+            </trans-unit>
+            <trans-unit id="installationheight.info" xml:space="preserve">
+                <source>Installation height from height above rails to lower edge of roof construction</source>
+            </trans-unit>
+            <trans-unit id="hall" xml:space="preserve">
+                <source>Crane track/hall</source>
+            </trans-unit>
+            <trans-unit id="hall.1" xml:space="preserve">
+                <source>Available</source>
+            </trans-unit>
+            <trans-unit id="hall.2" xml:space="preserve">
+                <source>Planned</source>
+            </trans-unit>
+            <trans-unit id="track" xml:space="preserve">
+                <source>Crane track</source>
+            </trans-unit>
+            <trans-unit id="track.1" xml:space="preserve">
+                <source>Available </source>
+            </trans-unit>
+            <trans-unit id="track.2" xml:space="preserve">
+                <source>Planned</source>
+            </trans-unit>
+            <trans-unit id="track.3" xml:space="preserve">
+                <source>Available</source>
+            </trans-unit>
+            <trans-unit id="track.4" xml:space="preserve">
+                <source>Planned</source>
+            </trans-unit>
+            <trans-unit id="tracktype" xml:space="preserve">
+                <source>Crane rail type</source>
+            </trans-unit>
+            <trans-unit id="tracksupportdistance" xml:space="preserve">
+                <source>Support distance</source>
+            </trans-unit>
+            <trans-unit id="tracklengthexisting" xml:space="preserve">
+                <source>Crane track length</source>
+            </trans-unit>
+            <trans-unit id="tracklengthplanned" xml:space="preserve">
+                <source>Crane track length</source>
+            </trans-unit>
+            <trans-unit id="projectphase" xml:space="preserve">
+                <source>Project phase</source>
+            </trans-unit>
+            <trans-unit id="projectphase.1" xml:space="preserve">
+                <source>Budget request</source>
+            </trans-unit>
+            <trans-unit id="projectphase.2" xml:space="preserve">
+                <source>Specific request</source>
+            </trans-unit>
+            <trans-unit id="commissioningdate" xml:space="preserve">
+                <source>Commissioning date</source>
+            </trans-unit>
+            <trans-unit id="loadhandlingdevice" xml:space="preserve">
+                <source>Load handling device</source>
+            </trans-unit>
+            <trans-unit id="loadhandlingdevice.1" xml:space="preserve">
+                <source>Hook</source>
+            </trans-unit>
+            <trans-unit id="loadhandlingdevice.2" xml:space="preserve">
+                <source>Grab</source>
+            </trans-unit>
+            <trans-unit id="loadhandlingdevice.2.1" xml:space="preserve">
+                <source>Engined</source>
+            </trans-unit>
+            <trans-unit id="loadhandlingdevice.2.2" xml:space="preserve">
+                <source>Four roped grab</source>
+            </trans-unit>
+            <trans-unit id="loadhandlingdevice.2.3" xml:space="preserve">
+                <source>Other</source>
+            </trans-unit>
+            <trans-unit id="loadhandlingdeviceinfo" xml:space="preserve">
+                <source>Type</source>
+            </trans-unit>
+            <trans-unit id="loadhandlingdeviceinfo.info" xml:space="preserve">
+                <source>Clamshell o.o.</source>
+            </trans-unit>
+            <trans-unit id="projectphase.1" xml:space="preserve">
+                <source>Budget inquiry</source>
+            </trans-unit>
+            <trans-unit id="projectphase.2" xml:space="preserve">
+                <source>Investment approved</source>
+            </trans-unit>
+
+            <trans-unit id="company" xml:space="preserve">
+                <source>Company</source>
+            </trans-unit>
+            <trans-unit id="position" xml:space="preserve">
+                <source>Position</source>
+            </trans-unit>
+            <trans-unit id="firstname" xml:space="preserve">
+                <source>First name</source>
+            </trans-unit>
+            <trans-unit id="lastname" xml:space="preserve">
+                <source>Last name</source>
+            </trans-unit>
+            <trans-unit id="address" xml:space="preserve">
+                <source>Street</source>
+            </trans-unit>
+            <trans-unit id="zip" xml:space="preserve">
+                <source>Post code</source>
+            </trans-unit>
+            <trans-unit id="city" xml:space="preserve">
+                <source>City</source>
+            </trans-unit>
+            <trans-unit id="country" xml:space="preserve">
+                <source>Country</source>
+            </trans-unit>
+            <trans-unit id="phone" xml:space="preserve">
+                <source>Telephone number/ Mobile phone number</source>
+            </trans-unit>
+            <trans-unit id="email" xml:space="preserve">
+                <source>E-Mail address</source>
+            </trans-unit>
+           <trans-unit id="privacy">
+                <source>I hereby accept the %1$s</source>
+            </trans-unit>
+
+            <trans-unit id="projectphase" xml:space="preserve">
+                <source>Project phase</source>
+            </trans-unit>
+            <trans-unit id="commissioningdate" xml:space="preserve">
+                <source>Commissioning date</source>
+            </trans-unit>
+            <trans-unit id="projectinformation" xml:space="preserve">
+                <source>Additional information</source>
+            </trans-unit>
+            <trans-unit id="projectinformation.placeholder" xml:space="preserve">
+                <source>Special features, comments...</source>
+            </trans-unit>
+
+            <trans-unit id="inquiryform" xml:space="preserve">
+                <source>Crane inquiry form</source>
+            </trans-unit>
+
+            <trans-unit id="form.required">
+                <source>*</source>
+            </trans-unit>
+            <trans-unit id="form.required.info">
+                <source>Fields marked with * are mandatory.</source>
+            </trans-unit>
+            <trans-unit id="form.min">
+                <source>min.</source>
+            </trans-unit>
+            <trans-unit id="form.max">
+                <source>max.</source>
+            </trans-unit>
+            <trans-unit id="form.prev">
+                <source>Back</source>
+            </trans-unit>
+            <trans-unit id="form.date.placeholder">
+                <source>DD.MM.YYYY</source>
+            </trans-unit>
+            <trans-unit id="form.next">
+                <source>Next</source>
+            </trans-unit>
+            <trans-unit id="form.submit">
+                <source>Send request</source>
+            </trans-unit>
+
+            <trans-unit id="form.validation.required">
+                <source>This field is required.</source>
+            </trans-unit>
+
+            <trans-unit id="form.step.1">
+                <source>Step 1</source>
+            </trans-unit>
+            <trans-unit id="form.step.1.title">
+                <source>Choose your crane type</source>
+            </trans-unit>
+            <trans-unit id="form.step.2">
+                <source>Step 2</source>
+            </trans-unit>
+            <trans-unit id="form.step.2.title">
+                <source>Project information</source>
+            </trans-unit>
+            <trans-unit id="form.step.3">
+                <source>Step 3</source>
+            </trans-unit>
+            <trans-unit id="form.step.3.title">
+                <source>Technical details</source>
+            </trans-unit>
+            <trans-unit id="form.step.4">
+                <source>Step 4</source>
+            </trans-unit>
+            <trans-unit id="form.step.4.title">
+                <source>Your crane configuration</source>
+            </trans-unit>
+
+           <trans-unit id="form.legend.technicalinformation" xml:space="preserve">
+               <source>Technical information</source>
+           </trans-unit>
+            <trans-unit id="form.legend.projectinformation" xml:space="preserve">
+                <source>Project information</source>
+            </trans-unit>
+            <trans-unit id="form.legend.personal" xml:space="preserve">
+                <source>Personal information</source>
+            </trans-unit>
+            <trans-unit id="form.legend.craneconfiguration" xml:space="preserve">
+                <source>Your crane configuration</source>
+            </trans-unit>
+            <trans-unit id="form.legend.craneconfiguration.all" xml:space="preserve">
+                <source>Show all information</source>
+            </trans-unit>
+
+            <trans-unit id="flexforms.tabs.settings">
+                <source>Settings</source>
+            </trans-unit>
+            <trans-unit id="flexforms.settings.subject">
+                <source>Email subject</source>
+            </trans-unit>
+            <trans-unit id="flexforms.settings.from">
+                <source>Sender name</source>
+            </trans-unit>
+            <trans-unit id="flexforms.settings.fromEmail">
+                <source>Sender email address</source>
+            </trans-unit>
+            <trans-unit id="flexforms.settings.toEmail">
+                <source>Recipient email address</source>
+            </trans-unit>
+
+            <trans-unit id="label.select">
+                <source>Please choose...</source>
+            </trans-unit>
+            <trans-unit id="label.m">
+                <source>m</source>
+            </trans-unit>
+            <trans-unit id="label.mperminute">
+                <source>m/min</source>
+            </trans-unit>
+            <trans-unit id="label.t">
+                <source>t</source>
+            </trans-unit>
+            <trans-unit id="label.cranetype">
+                <source>Your crane type</source>
+            </trans-unit>
+            <trans-unit id="label.projectinformation">
+                <source>Project information</source>
+            </trans-unit>
+            <trans-unit id="label.technicaldetails">
+                <source>Technical details</source>
+            </trans-unit>
+            <trans-unit id="label.additionalinformation">
+                <source>Additional information</source>
+            </trans-unit>
+
+            <trans-unit id="payloadmin" xml:space="preserve">
+                <source>Payload min.</source>
+            </trans-unit>
+            <trans-unit id="payloadmax" xml:space="preserve">
+                <source>Payload max.</source>
+            </trans-unit>
+            <trans-unit id="gaugemin" xml:space="preserve">
+                <source>Gauge min.</source>
+            </trans-unit>
+            <trans-unit id="gaugemax" xml:space="preserve">
+                <source>Gauge max.</source>
+            </trans-unit>
+            <trans-unit id="trackinfo" xml:space="preserve">
+                <source>Track information</source>
+            </trans-unit>
+
+
+            <trans-unit id="emailUserPrefix">
+                <source>Thank you for your inquiry!</source>
+            </trans-unit>
+            <trans-unit id="emailUserSuffix">
+                <source>We will process your inquiry as soon as possible!</source>
+            </trans-unit>
+            <trans-unit id="emailUserAdditional">
+                <source></source>
+            </trans-unit>
+            <trans-unit id="emailAdminPrefix" xml:space="preserve">
+				<source>A new crane inquiry has been submitted.</source>
+			</trans-unit>
+			<trans-unit id="emailAdminSuffix" xml:space="preserve">
+				<source>Please log into the system and evaluate it.</source>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

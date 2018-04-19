@@ -6,7 +6,7 @@ defined('TYPO3_MODE') or die();
     'Contactform',
     array(
         'InquiryStep1' => 'new,create',
-        'InquiryStep2' => 'new,create',
+        'InquiryStep2' => 'new,create,ajaxCall',
         'InquiryStep3' => 'new,create',
     ),
     // non-cacheable actions
