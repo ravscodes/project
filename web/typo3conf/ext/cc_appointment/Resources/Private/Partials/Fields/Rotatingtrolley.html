@@ -1,0 +1,17 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<div class="form-group{f:render(partial: 'FormErrorsClass', arguments: {object: 'newInquiryStep3.rotatingtrolley'})}">
+    <label for="rotatingtrolley" class="control-label">
+        <f:translate key="rotatingtrolley" />
+        <f:if condition="{badge}">
+            <span class="badge badge-default">{badge}</span>
+        </f:if>
+    </label>
+    <f:form.select property="rotatingtrolley" id="rotatingtrolley" class="form-control" additionalAttributes="{data-validation-error-msg-required: '{f:translate(key: \'form.validation.required\')}', data-validation-optional-if-answered: 'tx_teichmanncraneconfigurator_inquiry[newInquiryStep3][rotatingspreader]', data-highlight: 'rotatingtrolley'}">
+        <option value="">{f:translate(key: 'label.select')}</option>
+        <option value="1">{f:translate(key: 'rotatingtrolley.1')}</option>
+        <option value="2">{f:translate(key: 'rotatingtrolley.2')}</option>
+        <option value="3">{f:translate(key: 'rotatingtrolley.3')}</option>
+    </f:form.select>
+    <f:render partial="FormErrors" arguments="{object: 'newInquiryStep3.rotatingtrolley'}" />
+</div>

@@ -1,7 +1,7 @@
 <?php
 return [
     'BE' => [
-        'debug' => false,
+        'debug' => true,
         'explicitADmode' => 'explicitAllow',
         'installToolPassword' => '$pbkdf2-sha256$25000$OKNdyz8XNcZkDgmeayUmcA$xM33RQg2ThRidnXwnzOzQgvGwTaEhvDINzNen2LY7FM',
         'loginSecurityLevel' => 'rsa',
@@ -24,6 +24,7 @@ return [
             'cc_appointment' => 'a:0:{}',
             'rsaauth' => 'a:1:{s:18:"temporaryDirectory";s:0:"";}',
             'saltedpasswords' => 'a:2:{s:3:"BE.";a:4:{s:21:"saltedPWHashingMethod";s:41:"TYPO3\\CMS\\Saltedpasswords\\Salt\\Pbkdf2Salt";s:11:"forceSalted";i:0;s:15:"onlyAuthService";i:0;s:12:"updatePasswd";i:1;}s:3:"FE.";a:5:{s:7:"enabled";i:1;s:21:"saltedPWHashingMethod";s:41:"TYPO3\\CMS\\Saltedpasswords\\Salt\\Pbkdf2Salt";s:11:"forceSalted";i:0;s:15:"onlyAuthService";i:0;s:12:"updatePasswd";i:1;}}',
+            'vhs' => 'a:1:{s:20:"disableAssetHandling";s:1:"0";}',
         ],
     ],
     'EXTCONF' => [
@@ -34,11 +35,18 @@ return [
         ],
     ],
     'FE' => [
-        'debug' => false,
+        'debug' => true,
         'loginSecurityLevel' => 'rsa',
     ],
     'GFX' => [
         'jpg_quality' => '80',
+        'processor' => 'ImageMagick',
+        'processor_allowTemporaryMasksAsPng' => '',
+        'processor_colorspace' => 'RGB',
+        'processor_effects' => '0',
+        'processor_enabled' => '1',
+        'processor_path' => '/usr/bin/',
+        'processor_path_lzw' => '/usr/bin/',
     ],
     'MAIL' => [
         'transport' => 'sendmail',
@@ -63,20 +71,20 @@ return [
                 ],
             ],
         ],
-        'devIPmask' => '',
-        'displayErrors' => 0,
-        'enableDeprecationLog' => false,
+        'devIPmask' => '*',
+        'displayErrors' => 1,
+        'enableDeprecationLog' => 'file',
         'encryptionKey' => '48f46bcdce67b43b00d54b9cb7905ac917dafced9e1d19fe32636534798a5b5254be8a64deee6e2180ee920ee3a7e9f0',
-        'exceptionalErrors' => 20480,
+        'exceptionalErrors' => 28674,
         'isInitialDatabaseImportDone' => true,
         'isInitialInstallationInProgress' => false,
-        'sitename' => 'Mein Projekt',
-        'sqlDebug' => 0,
-        'systemLogLevel' => 2,
         'lang' => [
             'cache' => [
-                'clear_menu' => TRUE
-            ]
-        ]
+                'clear_menu' => true,
+            ],
+        ],
+        'sitename' => 'Mein Projekt',
+        'sqlDebug' => 1,
+        'systemLogLevel' => 0,
     ],
 ];

@@ -1,0 +1,68 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<div class="row">
+    <div class="col-sm-6">
+        <div class="form-group">
+            <label class="control-label">
+                <f:translate key="payload" />  ({f:translate(key: 'label.t')})<f:translate key="form.required" />
+            </label>
+            <div class="row">
+                <div class="col-sm-6">
+                    <f:render partial="Fields/Payloadmin" arguments="{_all}" />
+                </div>
+                <div class="col-sm-6">
+                    <f:render partial="Fields/Payloadmax" arguments="{_all}" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="form-group">
+            <label class="control-label">
+                <f:translate key="gauge" /> ({f:translate(key: 'label.m')})<f:translate key="form.required" />
+            </label>
+            <div class="row">
+                <div class="col-sm-6">
+                    <f:render partial="Fields/Gaugemin" arguments="{_all}" />
+                </div>
+                <div class="col-sm-6">
+                    <f:render partial="Fields/Gaugemax" arguments="{_all}" />
+                </div>
+            </div>
+            <div class="help-block">{f:translate(key: 'gaugeinfo')}</div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-6">
+        <f:render partial="Fields/Liftheight" arguments="{_all}" />
+    </div>
+    <div class="col-sm-6">
+        <f:render partial="Fields/Hookpath" arguments="{_all}" />
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-6">
+        <f:render partial="Fields/Steering" arguments="{_all}" />
+    </div>
+    <div class="col-sm-6">
+        <f:render partial="Fields/Hall" arguments="{_all}" />
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <f:render partial="Fields/Installationheight" />
+    </div>
+</div>
+
+<div class="form-group">
+    <label>
+        <f:translate key="track" /><f:translate key="form.required" />
+    </label>
+    <f:render partial="Fields/Track" />
+</div>
+
+<f:render partial="Fields/Conductorrail" />

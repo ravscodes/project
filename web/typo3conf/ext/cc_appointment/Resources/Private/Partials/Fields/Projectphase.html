@@ -1,0 +1,15 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<div class="form-group{f:render(partial: 'FormErrorsClass', arguments: {object: 'newInquiryStep3.projectphase'})}">
+    <label for="projectphase" class="control-label">
+        <f:translate key="projectphase" /><f:translate key="form.required" />
+        <f:if condition="{badge}">
+            <span class="badge badge-default">{badge}</span>
+        </f:if>
+    </label>
+    <f:form.select property="projectphase" id="projectphase" class="form-control" prependOptionLabel="{f:translate(key: 'label.select')}" additionalAttributes="{required: 'required', data-validation: 'required', data-validation-error-msg: '{f:translate(key: \'form.validation.required\')}'}">
+        <option value="1"{f:if(condition: '{newInquiryStep3.projectphase} == 1', then: ' selected="selected"')}>{f:translate(key: 'projectphase.1')}</option>
+        <option value="2"{f:if(condition: '{newInquiryStep3.projectphase} == 2', then: ' selected="selected"')}>{f:translate(key: 'projectphase.2')}</option>
+    </f:form.select>
+    <f:render partial="FormErrors" arguments="{object: 'newInquiryStep3.projectphase'}" />
+</div>

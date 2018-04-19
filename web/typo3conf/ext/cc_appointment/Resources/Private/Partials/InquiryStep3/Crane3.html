@@ -1,0 +1,56 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<div class="row">
+    <div class="col-sm-6">
+        <div class="form-group">
+            <label class="control-label">
+                <f:translate key="payload" /> ({f:translate(key: 'label.t')})<f:translate key="form.required" />
+            </label>
+            <div class="row">
+                <div class="col-sm-6">
+                    <f:render partial="Fields/Payloadmin" arguments="{_all}" />
+                </div>
+                <div class="col-sm-6">
+                    <f:render partial="Fields/Payloadmax" arguments="{_all}" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="form-group">
+            <label class="control-label">
+                <f:translate key="reach" /> ({f:translate(key: 'label.m')})<f:translate key="form.required" />
+            </label>
+            <div class="row">
+                <div class="col-sm-6">
+                    <f:render partial="Fields/Reachmin" arguments="{_all}" />
+                </div>
+                <div class="col-sm-6">
+                    <f:render partial="Fields/Reachmax" arguments="{_all}" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-6">
+        <f:render partial="Fields/Liftheight" arguments="{_all}" />
+    </div>
+    <div class="col-sm-6">
+        <f:render partial="Fields/Buildingheight" arguments="{_all}" />
+    </div>
+</div>
+
+<f:if condition="{newInquiryStep1.constructiontype.id} == '2'">
+    <f:render partial="Fields/Wallcomposition" arguments="{_all}" />
+</f:if>
+
+<div class="row">
+    <div class="col-sm-6">
+        <f:render partial="Fields/Steering" arguments="{_all}" />
+    </div>
+    <div class="col-sm-6">
+        <f:render partial="Fields/Operationarea" arguments="{_all}" />
+    </div>
+</div>

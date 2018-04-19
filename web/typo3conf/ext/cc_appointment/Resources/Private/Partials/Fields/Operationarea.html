@@ -1,0 +1,16 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<div class="form-group{f:render(partial: 'FormErrorsClass', arguments: {object: 'newInquiryStep3.operationarea'})}">
+    <label for="operationarea" class="control-label">
+        <f:translate key="operationarea" /><f:translate key="form.required" />
+        <f:if condition="{badge}">
+            <span class="badge badge-default">{badge}</span>
+        </f:if>
+    </label>
+    <f:form.select property="operationarea" id="operationarea" class="form-control" additionalAttributes="{required: 'required', data-validation: 'required', data-validation-error-msg: '{f:translate(key: \'form.validation.required\')}'}">
+        <option value="">{f:translate(key: 'label.select')}</option>
+        <option value="1">{f:translate(key: 'operationarea.1')}</option>
+        <option value="2">{f:translate(key: 'operationarea.2')}</option>
+    </f:form.select>
+    <f:render partial="FormErrors" arguments="{object: 'newInquiryStep3.operationarea'}" />
+</div>

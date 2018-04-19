@@ -1,0 +1,25 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<div class="form-group">
+    <label class="radio-inline">
+        <f:form.radio property="loadhandlingdevice" checked="checked" value="1" additionalAttributes="{data-toggle-loadhandling-device: '1', required: 'required', data-validation: 'required', data-validation-error-msg: '{f:translate(key: \'form.validation.required\')}', data-highlight: 'loadhandlingdevice'}" /> {f:translate(key: 'loadhandlingdevice.1')}
+    </label>
+    <label class="radio-inline">
+        <f:form.radio property="loadhandlingdevice" value="2" additionalAttributes="{data-toggle-loadhandling-device: '2', required: 'required', data-validation: 'required', data-validation-error-msg: '{f:translate(key: \'form.validation.required\')}', data-highlight: 'loadhandlingdevicegrab'}" /> {f:translate(key: 'loadhandlingdevice.2')}
+    </label>
+</div>
+<div class="hidden" data-loadhandling-device="2">
+    <div class="form-group">
+        <label class="radio-inline">
+            <f:form.radio property="loadhandlingdevicegrab" checked="checked" value="1" additionalAttributes="{data-toggle-loadhandling-device-grab: '1', required: 'required', data-validation: 'required', data-validation-error-msg: '{f:translate(key: \'form.validation.required\')}', data-highlight: 'loadhandlingdevicegrab'}" /> {f:translate(key: 'loadhandlingdevice.2.1')}
+        </label>
+        <label class="radio-inline">
+            <f:form.radio property="loadhandlingdevicegrab" value="2" additionalAttributes="{data-toggle-loadhandling-device-grab: '1', required: 'required', data-validation: 'required', data-validation-error-msg: '{f:translate(key: \'form.validation.required\')}', data-highlight: 'loadhandlingdevicegrab'}" /> {f:translate(key: 'loadhandlingdevice.2.2')}
+        </label>
+    </div>
+    <div class="form-group" data-loadhandling-device-grab="1">
+        <label for="loadhandlingdeviceinfo">{f:translate(key: 'loadhandlingdeviceinfo')}</label>
+        <f:form.textfield placeholder="{f:translate(key: 'loadhandlingdeviceinfo.info')}" property="loadhandlingdeviceinfo" id="loadhandlingdeviceinfo" class="form-control" additionalAttributes="{data-highlight: 'loadhandlingdevicegrab'}" />
+    </div>
+</div>
+<f:render partial="FormErrors" arguments="{object: 'newInquiryStep3.loadhandlingdevice'}" />

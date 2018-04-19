@@ -1,0 +1,137 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<fieldset>
+	<legend>{f:translate(key: 'form.legend.personal')}</legend>
+
+	<div class="row">
+		<div class="col-sm-6">
+			<div class="form-group{f:render(partial: 'FormErrorsClass', arguments: {object: 'newInquiryStep4.company'})}">
+				<label for="company">
+					<f:translate key="company" /><f:translate key="form.required"/>
+				</label>
+				<f:form.textfield class="form-control" id="company" property="company" additionalAttributes="{required: 'required', data-validation: 'required', data-validation-error-msg: '{f:translate(key: \'form.validation.required\')}'}" />
+				<f:render partial="FormErrors" arguments="{object: 'newInquiryStep4.company'}" />
+			</div>
+		</div>
+		<div class="col-sm-6">
+			<div class="form-group{f:render(partial: 'FormErrorsClass', arguments: {object: 'newInquiryStep4.position'})}">
+				<label for="position">
+					<f:translate key="position" />
+				</label>
+				<f:form.textfield class="form-control" id="position" property="position" />
+				<f:render partial="FormErrors" arguments="{object: 'newInquiryStep4.position'}" />
+			</div>
+		</div>
+	</div>
+
+	<hr />
+
+	<div class="row">
+		<div class="col-sm-6">
+			<div class="form-group{f:render(partial: 'FormErrorsClass', arguments: {object: 'newInquiryStep4.surname'})}">
+				<label for="lastname">
+					<f:translate key="lastname" /><f:translate key="form.required"/>
+				</label>
+				<f:form.textfield class="form-control" id="lastname" property="lastname" additionalAttributes="{required: 'required', data-validation: 'required', data-validation-error-msg: '{f:translate(key: \'form.validation.required\')}'}" />
+				<f:render partial="FormErrors" arguments="{object: 'newInquiryStep4.lastname'}" />
+			</div>
+		</div>
+		<div class="col-sm-6">
+			<div class="form-group{f:render(partial: 'FormErrorsClass', arguments: {object: 'newInquiryStep4.firstname'})}">
+				<label for="firstname">
+					<f:translate key="firstname" /><f:translate key="form.required"/>
+				</label>
+				<f:form.textfield class="form-control" id="firstname" property="firstname" additionalAttributes="{required: 'required', data-validation: 'required', data-validation-error-msg: '{f:translate(key: \'form.validation.required\')}'}" />
+				<f:render partial="FormErrors" arguments="{object: 'newInquiryStep4.name'}" />
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-sm-6">
+			<div class="form-group{f:render(partial: 'FormErrorsClass', arguments: {object: 'newInquiryStep4.address'})}">
+				<label for="address">
+					<f:translate key="address" /><f:translate key="form.required"/>
+				</label>
+				<f:form.textfield class="form-control" id="address" property="address" additionalAttributes="{required: 'required', data-validation: 'required', data-validation-error-msg: '{f:translate(key: \'form.validation.required\')}'}" />
+				<f:render partial="FormErrors" arguments="{object: 'newInquiry.address'}" />
+			</div>
+		</div>
+		<div class="col-sm-6">
+			<div class="row">
+				<div class="col-sm-4">
+					<div class="form-group{f:render(partial: 'FormErrorsClass', arguments: {object: 'newInquiryStep4.zip'})}">
+						<label for="zip">
+							<f:translate key="zip" /><f:translate key="form.required"/>
+						</label>
+						<f:form.textfield class="form-control" id="zip" property="zip" additionalAttributes="{required: 'required', data-validation: 'required', data-validation-error-msg: '{f:translate(key: \'form.validation.required\')}'}" />
+						<f:render partial="FormErrors" arguments="{object: 'newInquiry.zip'}" />
+					</div>
+				</div>
+				<div class="col-sm-8">
+					<div class="form-group{f:render(partial: 'FormErrorsClass', arguments: {object: 'newInquiryStep4.city'})}">
+						<label for="city">
+							<f:translate key="city" /><f:translate key="form.required"/>
+						</label>
+						<f:form.textfield class="form-control" id="city" property="city" additionalAttributes="{required: 'required', data-validation: 'required', data-validation-error-msg: '{f:translate(key: \'form.validation.required\')}'}" />
+						<f:render partial="FormErrors" arguments="{object: 'newInquiry.city'}" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-6">
+			<div class="form-group{f:render(partial: 'FormErrorsClass', arguments: {object: 'newInquiryStep4.country'})}">
+				<label for="country">
+					<f:translate key="country" /><f:translate key="form.required"/>
+				</label>
+				<f:form.select property="country" id="country" options="{countries}" optionValueField="uid" optionLabelField="shortNameLocal" class="form-control" prependOptionLabel="{f:translate(key: 'label.select')}" additionalAttributes="{required: 'required', data-validation: 'required', data-validation-error-msg: '{f:translate(key: \'form.validation.required\')}'}" />
+				<f:render partial="FormErrors" arguments="{object: 'newInquiry.country'}" />
+			</div>
+		</div>
+	</div>
+
+	<hr />
+
+	<div class="row">
+		<div class="col-sm-6">
+			<div class="form-group{f:render(partial: 'FormErrorsClass', arguments: {object: 'newInquiryStep4.phone'})}">
+				<label for="phone">
+					<f:translate key="phone" /><f:translate key="form.required" />
+				</label>
+				<f:form.textfield class="form-control" id="phone" property="phone" additionalAttributes="{required: 'required', data-validation: 'required', data-validation-error-msg: '{f:translate(key: \'form.validation.required\')}'}" />
+				<f:render partial="FormErrors" arguments="{object: 'newInquiryStep4.phone'}" />
+			</div>
+		</div>
+		<div class="col-sm-6">
+			<div class="form-group{f:render(partial: 'FormErrorsClass', arguments: {object: 'newInquiryStep4.email'})}">
+				<label for="email">
+					<f:translate key="email" /><f:translate key="form.required"/>
+				</label>
+				<f:form.textfield class="form-control" id="email" property="email" additionalAttributes="{required: 'required', data-validation: 'required email', data-validation-error-msg-email: '{f:translate(key: \'formLabel.msgEmail\')}', data-validation-error-msg: '{f:translate(key: \'formLabel.msgRequired\')}'}" />
+				<f:render partial="FormErrors" arguments="{object: 'newInquiryStep4.email'}" />
+			</div>
+		</div>
+	</div>
+
+</fieldset>
+
+<f:render partial="InquiryStep4/Summary" arguments="{_all}" />
+
+<fieldset>
+	<f:if condition="{v:variable.typoscript(path: 'plugin.tx_teichmanncraneconfigurator.settings.privacyPolicyTextUid')}">
+		<div class="form-group"
+			<v:content.render contentUids="{v:variable.typoscript(path: 'plugin.tx_teichmanncraneconfigurator.settings.privacyPolicyTextUid')}"/>
+		</div>
+	</f:if>
+	<div class="form-group">
+	  <v:variable.set name="privacyPolicyPid" value="{v:variable.typoscript(path: 'plugin.tx_teichmanncraneconfigurator.settings.privacyPolicyPid')}" />
+	  <v:variable.set name="privacyPolicyLink" value="{v:link.typolink(configuration: {parameter: privacyPolicyPid, target: '_blank'})}" />
+	  <div class="checkbox">
+	    <label>
+	      <f:form.checkbox value="1" property="privacy" additionalAttributes="{required: 'required', data-validation: 'required', data-validation-error-msg-required: '{f:translate(key: \'form.validation.required\')}'}" /> <f:format.raw><f:translate key="privacy" arguments="{0: privacyPolicyLink}" /></f:format.raw> {f:translate(key: 'form.required')}
+	    </label>
+	  </div>
+	</div>
+</fieldset>

@@ -1,0 +1,31 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<div class="form-group">
+  <div class="row">
+    <div class="col-sm-6">
+      <label for="payloadandreach1" class="control-label-grouped">{f:translate(key: 'payloadandreach1')} ({f:translate(key: 'label.t')})</label>
+      <f:form.textfield property="payloadandreach1" id="payloadandreach1" class="form-control" additionalAttributes="{required: 'required', data-validation: 'required', data-validation-error-msg-required: '{f:translate(key: \'form.validation.required\')}', data-highlight: 'payload'}" />
+      <f:render partial="FormErrors" arguments="{object: 'newInquiryStep3.payloadandreach1'}" />
+    </div>
+    <div class="col-sm-6">
+      <label for="payloadandreach2" class="control-label-grouped">{f:translate(key: 'payloadandreach2')} ({f:translate(key: 'label.m')})</label>
+      <f:form.textfield property="payloadandreach2" id="payloadandreach2" class="form-control" additionalAttributes="{required: 'required', data-validation: 'required', data-validation-error-msg-required: '{f:translate(key: \'form.validation.required\')}', data-highlight: 'payload'}" />
+      <f:render partial="FormErrors" arguments="{object: 'newInquiryStep3.payloadandreach2'}" />
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="row">
+    <div class="col-sm-6">
+      <label for="payloadandreach3" class="control-label-grouped">{f:translate(key: 'payloadandreach3')} ({f:translate(key: 'label.m')})</label>
+      <f:form.textfield property="payloadandreach3" id="payloadandreach3" class="form-control" additionalAttributes="{required: 'required', data-validation: 'required', data-validation-error-msg-required: '{f:translate(key: \'form.validation.required\')}', data-highlight: 'payload'}" />
+      <f:render partial="FormErrors" arguments="{object: 'newInquiryStep3.payloadandreach3'}" />
+    </div>
+    <div class="col-sm-6">
+      <label for="payloadandreach4" class="control-label-grouped">{f:translate(key: 'payloadandreach4')} ({f:translate(key: 'label.t')})</label>
+      <f:form.textfield property="payloadandreach4" id="payloadandreach4" class="form-control" additionalAttributes="{required: 'required', data-validation: 'required', data-validation-error-msg-required: '{f:translate(key: \'form.validation.required\')}', data-highlight: 'payload'}" />
+      <f:render partial="FormErrors" arguments="{object: 'newInquiryStep3.payloadandreach4'}" />
+    </div>
+  </div>
+</div>

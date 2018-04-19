@@ -119,6 +119,9 @@ return [
         'cc_appointment' => [
             'packagePath' => 'typo3conf/ext/cc_appointment/',
         ],
+        'vhs' => [
+            'packagePath' => 'typo3conf/ext/vhs/',
+        ],
     ],
     'version' => 5,
 ];

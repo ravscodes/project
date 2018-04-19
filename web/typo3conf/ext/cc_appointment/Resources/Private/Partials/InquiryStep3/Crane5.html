@@ -1,0 +1,45 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<div class="form-group">
+    <label class="control-label">
+        <f:translate key="payloadandreach" /><f:translate key="form.required" />
+    </label>
+    <f:render partial="Fields/Payloadandreach" arguments="{_all}" />
+</div>
+
+<div class="form-group">
+    <label class="control-label">
+        <f:translate key="gauge" /> ({f:translate(key: 'label.m')})<f:translate key="form.required" />
+    </label>
+    <div class="row">
+        <div class="col-sm-6">
+            <f:render partial="Fields/Gaugemin" arguments="{_all}" />
+        </div>
+        <div class="col-sm-6">
+            <f:render partial="Fields/Gaugemax" arguments="{_all}" />
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <label>
+        <f:translate key="liftheight" /> ({f:translate(key: 'label.m')})<f:translate key="form.required" />
+    </label>
+    <div class="row">
+        <div class="col-sm-6">
+            <f:render partial="Fields/Liftheightabove" arguments="{_all}" />
+        </div>
+        <div class="col-sm-6">
+            <f:render partial="Fields/Liftheightbelow" arguments="{_all}" />
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <label>
+        <f:translate key="loadhandlingdevice" /> <f:translate key="form.required" />
+    </label>
+    <f:render partial="Fields/Loadhandlingdevice" arguments="{_all}" />
+</div>
+
+<f:render partial="Fields/TrackLength" arguments="{_all}"  />

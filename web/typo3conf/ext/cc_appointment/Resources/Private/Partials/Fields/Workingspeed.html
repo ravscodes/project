@@ -1,0 +1,27 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<div class="form-group">
+    <label class="radio-inline">
+        <f:form.radio property="workingspeed" checked="checked" value="1" additionalAttributes="{data-toggle-working-speed: '1', required: 'required', data-validation: 'required', data-validation-error-msg: '{f:translate(key: \'form.validation.required\')}'}" /> {f:translate(key: 'workingspeed.default')}
+    </label>
+    <label class="radio-inline">
+        <f:form.radio property="workingspeed" value="2" additionalAttributes="{data-toggle-working-speed: '2', required: 'required', data-validation: 'required', data-validation-error-msg: '{f:translate(key: \'form.validation.required\')}'}" /> {f:translate(key: 'workingspeed.custom')}
+    </label>
+</div>
+<div class="form-group hidden" data-working-speed="2">
+    <div class="row">
+        <div class="col-sm-4">
+            <label for="workingspeedliftinggear" class="control-label-grouped">{f:translate(key: 'workingspeedliftinggear')} ({f:translate(key: 'label.mperminute')})</label>
+            <f:form.textfield property="workingspeedliftinggear" id="workingspeedliftinggear" class="form-control" />
+        </div>
+        <div class="col-sm-4">
+            <label for="workingspeedcatgear" class="control-label-grouped">{f:translate(key: 'workingspeedcatgear')} ({f:translate(key: 'label.mperminute')})</label>
+            <f:form.textfield property="workingspeedcatgear" id="workingspeedcatgear" class="form-control" />
+        </div>
+        <div class="col-sm-4">
+            <label for="workingspeedcranegear" class="control-label-grouped">{f:translate(key: 'workingspeedcranegear')} ({f:translate(key: 'label.mperminute')})</label>
+            <f:form.textfield property="workingspeedcranegear" id="workingspeedcranegear" class="form-control" />
+        </div>
+    </div>
+</div>
+<f:render partial="FormErrors" arguments="{object: 'newInquiryStep3.workingspeed'}" />

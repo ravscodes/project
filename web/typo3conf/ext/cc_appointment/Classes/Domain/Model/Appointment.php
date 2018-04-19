@@ -59,49 +59,49 @@ class Appointment extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      *
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Crossconcept\CcAppointment\Domain\Model\Openingtime>
      */
-    protected $openingtimeMonday;
+    protected $openingtimesMonday;
 
     /**
      * Openingtimes on Tuesday
      *
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Crossconcept\CcAppointment\Domain\Model\Openingtime>
      */
-    protected $openingtimeTuesday;
+    protected $openingtimesTuesday;
 
     /**
      * Openingtimes on Wednesday
      *
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Crossconcept\CcAppointment\Domain\Model\Openingtime>
      */
-    protected $openingtimeWednesday;
+    protected $openingtimesWednesday;
 
     /**
      * Openingtimes on Thursday
      *
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Crossconcept\CcAppointment\Domain\Model\Openingtime>
      */
-    protected $openingtimeThursday;
+    protected $openingtimesThursday;
 
     /**
      * Openingtimes on Friday
      *
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Crossconcept\CcAppointment\Domain\Model\Openingtime>
      */
-    protected $openingtimeFriday;
+    protected $openingtimesFriday;
 
     /**
      * Openingtimes on Saturday
      *
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Crossconcept\CcAppointment\Domain\Model\Openingtime>
      */
-    protected $openingtimeSaturday;
+    protected $openingtimesSaturday;
 
     /**
      * Openingtimes on Sunday
      *
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Crossconcept\CcAppointment\Domain\Model\Openingtime>
      */
-    protected $openingtimeSunday;
+    protected $openingtimesSunday;
 
     /**
      * __construct
@@ -119,13 +119,13 @@ class Appointment extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      */
     protected function initStorageObjects()
     {
-        $this->openingtimeMonday    = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-        $this->openingtimeTuesday   = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-        $this->openingtimeWednesday = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-        $this->openingtimeThursday  = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-        $this->openingtimeFriday    = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-        $this->openingtimeSaturday  = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-        $this->openingtimeSunday    = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->openingtimesMonday    = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->openingtimesTuesday   = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->openingtimesWednesday = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->openingtimesThursday  = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->openingtimesFriday    = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->openingtimesSaturday  = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->openingtimesSunday    = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
     }
 
     /**
@@ -182,37 +182,37 @@ class Appointment extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param \Crossconcept\CcAppointment\Domain\Model\Openingtime $openingtime
      * @return void
      */
-    public function addOpeningtimeMonday(\Crossconcept\CcAppointment\Domain\Model\Openingtime $openingtime) {
-        $this->openingtimeMonday->attach($openingtime);
+    public function addOpeningtimesMonday(\Crossconcept\CcAppointment\Domain\Model\Openingtime $openingtime) {
+        $this->openingtimesMonday->attach($openingtime);
     }
 
     /**
      * Removes a openingtime on Monday
      *
-     * @param \Crossconcept\CcAppointment\Domain\Model\Openingtime $openingtimeToRemove The \Crossconcept\CcAppointment\Domain\Model\Openingtime to be removed
+     * @param \Crossconcept\CcAppointment\Domain\Model\Openingtime $openingtime The \Crossconcept\CcAppointment\Domain\Model\Openingtime to be removed
      * @return void
      */
-    public function removeOpeningtimeMonday(\Crossconcept\CcAppointment\Domain\Model\Openingtime $openingtimeToRemove) {
-        $this->openingtimeMonday->detach($openingtimeToRemove);
+    public function removeOpeningtimesMonday(\Crossconcept\CcAppointment\Domain\Model\Openingtime $openingtime) {
+        $this->openingtimesMonday->detach($openingtime);
     }
 
     /**
      * Returns the openingtimes on Monday
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Crossconcept\CcAppointment\Domain\Model\Openingtime> $openingtimeMonday
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Crossconcept\CcAppointment\Domain\Model\Openingtime> $openingtimesMonday
      */
-    public function getOpeningtimeMonday() {
-        return $this->openingtimeMonday;
+    public function getOpeningtimesMonday() {
+        return $this->openingtimesMonday;
     }
 
     /**
      * Sets the openingtimes on Monday
      *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Crossconcept\CcAppointment\Domain\Model\Openingtime> $openingtimeMonday
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Crossconcept\CcAppointment\Domain\Model\Openingtime> $openingtimesMonday
      * @return void
      */
-    public function setOpeningtimeMonday(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $openingtimeMonday) {
-        $this->openingtimeMonday = $openingtimeMonday;
+    public function setOpeningtimesMonday(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $openingtimesMonday) {
+        $this->openingtimesMonday = $openingtimesMonday;
     }
 
     /**
@@ -221,37 +221,37 @@ class Appointment extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param \Crossconcept\CcAppointment\Domain\Model\Openingtime $openingtime
      * @return void
      */
-    public function addOpeningtimeTuesday(\Crossconcept\CcAppointment\Domain\Model\Openingtime $openingtime) {
-        $this->openingtimeTuesday->attach($openingtime);
+    public function addOpeningtimesTuesday(\Crossconcept\CcAppointment\Domain\Model\Openingtime $openingtime) {
+        $this->openingtimesTuesday->attach($openingtime);
     }
 
     /**
      * Removes a openingtime on Tuesday
      *
-     * @param \Crossconcept\CcAppointment\Domain\Model\Openingtime $openingtimeToRemove The \Crossconcept\CcAppointment\Domain\Model\Openingtime to be removed
+     * @param \Crossconcept\CcAppointment\Domain\Model\Openingtime $openingtime The \Crossconcept\CcAppointment\Domain\Model\Openingtime to be removed
      * @return void
      */
-    public function removeOpeningtimeTuesday(\Crossconcept\CcAppointment\Domain\Model\Openingtime $openingtimeToRemove) {
-        $this->openingtimeTuesday->detach($openingtimeToRemove);
+    public function removeOpeningtimesTuesday(\Crossconcept\CcAppointment\Domain\Model\Openingtime $openingtime) {
+        $this->openingtimesTuesday->detach($openingtime);
     }
 
     /**
      * Returns the openingtimes on Tuesday
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Crossconcept\CcAppointment\Domain\Model\Openingtime> $openingtimeTuesday
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Crossconcept\CcAppointment\Domain\Model\Openingtime> $openingtimesTuesday
      */
-    public function getOpeningtimeTuesday() {
-        return $this->openingtimeTuesday;
+    public function getOpeningtimesTuesday() {
+        return $this->openingtimesTuesday;
     }
 
     /**
      * Sets the openingtimes on Tuesday
      *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Crossconcept\CcAppointment\Domain\Model\Openingtime> $openingtimeTuesday
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Crossconcept\CcAppointment\Domain\Model\Openingtime> $openingtimesTuesday
      * @return void
      */
-    public function setOpeningtimeTuesday(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $openingtimeTuesday) {
-        $this->openingtimeTuesday = $openingtimeTuesday;
+    public function setOpeningtimesTuesday(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $openingtimesTuesday) {
+        $this->openingtimesTuesday = $openingtimesTuesday;
     }
 
     /**
@@ -260,37 +260,37 @@ class Appointment extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param \Crossconcept\CcAppointment\Domain\Model\Openingtime $openingtime
      * @return void
      */
-    public function addOpeningtimeWednesday(\Crossconcept\CcAppointment\Domain\Model\Openingtime $openingtime) {
-        $this->openingtimeWednesday->attach($openingtime);
+    public function addOpeningtimesWednesday(\Crossconcept\CcAppointment\Domain\Model\Openingtime $openingtime) {
+        $this->openingtimesWednesday->attach($openingtime);
     }
 
     /**
      * Removes a openingtime on Wednesday
      *
-     * @param \Crossconcept\CcAppointment\Domain\Model\Openingtime $openingtimeToRemove The \Crossconcept\CcAppointment\Domain\Model\Openingtime to be removed
+     * @param \Crossconcept\CcAppointment\Domain\Model\Openingtime $openingtime The \Crossconcept\CcAppointment\Domain\Model\Openingtime to be removed
      * @return void
      */
-    public function removeOpeningtimeWednesday(\Crossconcept\CcAppointment\Domain\Model\Openingtime $openingtimeToRemove) {
-        $this->openingtimeWednesday->detach($openingtimeToRemove);
+    public function removeOpeningtimesWednesday(\Crossconcept\CcAppointment\Domain\Model\Openingtime $openingtime) {
+        $this->openingtimesWednesday->detach($openingtime);
     }
 
     /**
      * Returns the openingtimes on Wednesday
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Crossconcept\CcAppointment\Domain\Model\Openingtime> $openingtimeWednesday
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Crossconcept\CcAppointment\Domain\Model\Openingtime> $openingtimesWednesday
      */
-    public function getOpeningtimeWednesday() {
-        return $this->openingtimeWednesday;
+    public function getOpeningtimesWednesday() {
+        return $this->openingtimesWednesday;
     }
 
     /**
      * Sets the openingtimes on Wednesday
      *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Crossconcept\CcAppointment\Domain\Model\Openingtime> $openingtimeWednesday
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Crossconcept\CcAppointment\Domain\Model\Openingtime> $openingtimesWednesday
      * @return void
      */
-    public function setOpeningtimeWednesday(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $openingtimeWednesday) {
-        $this->openingtimeWednesday = $openingtimeWednesday;
+    public function setOpeningtimesWednesday(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $openingtimesWednesday) {
+        $this->openingtimesWednesday = $openingtimesWednesday;
     }
 
     /**
@@ -299,37 +299,37 @@ class Appointment extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param \Crossconcept\CcAppointment\Domain\Model\Openingtime $openingtime
      * @return void
      */
-    public function addOpeningtimeThursday(\Crossconcept\CcAppointment\Domain\Model\Openingtime $openingtime) {
-        $this->openingtimeThursday->attach($openingtime);
+    public function addOpeningtimesThursday(\Crossconcept\CcAppointment\Domain\Model\Openingtime $openingtime) {
+        $this->openingtimesThursday->attach($openingtime);
     }
 
     /**
      * Removes a openingtime on Thursday
      *
-     * @param \Crossconcept\CcAppointment\Domain\Model\Openingtime $openingtimeToRemove The \Crossconcept\CcAppointment\Domain\Model\Openingtime to be removed
+     * @param \Crossconcept\CcAppointment\Domain\Model\Openingtime $openingtime The \Crossconcept\CcAppointment\Domain\Model\Openingtime to be removed
      * @return void
      */
-    public function removeOpeningtimeThursday(\Crossconcept\CcAppointment\Domain\Model\Openingtime $openingtimeToRemove) {
-        $this->openingtimeThursday->detach($openingtimeToRemove);
+    public function removeOpeningtimesThursday(\Crossconcept\CcAppointment\Domain\Model\Openingtime $openingtime) {
+        $this->openingtimesThursday->detach($openingtime);
     }
 
     /**
      * Returns the openingtimes on Thursday
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Crossconcept\CcAppointment\Domain\Model\Openingtime> $openingtimeThursday
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Crossconcept\CcAppointment\Domain\Model\Openingtime> $openingtimesThursday
      */
-    public function getOpeningtimeThursday() {
-        return $this->openingtimeThursday;
+    public function getOpeningtimesThursday() {
+        return $this->openingtimesThursday;
     }
 
     /**
      * Sets the openingtimes on Thursday
      *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Crossconcept\CcAppointment\Domain\Model\Openingtime> $openingtimeThursday
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Crossconcept\CcAppointment\Domain\Model\Openingtime> $openingtimesThursday
      * @return void
      */
-    public function setOpeningtimeThursday(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $openingtimeThursday) {
-        $this->openingtimeThursday = $openingtimeThursday;
+    public function setOpeningtimesThursday(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $openingtimesThursday) {
+        $this->openingtimesThursday = $openingtimesThursday;
     }
 
     /**
@@ -338,37 +338,37 @@ class Appointment extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param \Crossconcept\CcAppointment\Domain\Model\Openingtime $openingtime
      * @return void
      */
-    public function addOpeningtimeFriday(\Crossconcept\CcAppointment\Domain\Model\Openingtime $openingtime) {
-        $this->openingtimeFriday->attach($openingtime);
+    public function addOpeningtimesFriday(\Crossconcept\CcAppointment\Domain\Model\Openingtime $openingtime) {
+        $this->openingtimesFriday->attach($openingtime);
     }
 
     /**
      * Removes a openingtime on Friday
      *
-     * @param \Crossconcept\CcAppointment\Domain\Model\Openingtime $openingtimeToRemove The \Crossconcept\CcAppointment\Domain\Model\Openingtime to be removed
+     * @param \Crossconcept\CcAppointment\Domain\Model\Openingtime $openingtime The \Crossconcept\CcAppointment\Domain\Model\Openingtime to be removed
      * @return void
      */
-    public function removeOpeningtimeFriday(\Crossconcept\CcAppointment\Domain\Model\Openingtime $openingtimeToRemove) {
-        $this->openingtimeFriday->detach($openingtimeToRemove);
+    public function removeOpeningtimesFriday(\Crossconcept\CcAppointment\Domain\Model\Openingtime $openingtime) {
+        $this->openingtimesFriday->detach($openingtime);
     }
 
     /**
      * Returns the openingtimes on Friday
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Crossconcept\CcAppointment\Domain\Model\Openingtime> $openingtimeFriday
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Crossconcept\CcAppointment\Domain\Model\Openingtime> $openingtimesFriday
      */
-    public function getOpeningtimeFriday() {
-        return $this->openingtimeFriday;
+    public function getOpeningtimesFriday() {
+        return $this->openingtimesFriday;
     }
 
     /**
      * Sets the openingtimes on Friday
      *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Crossconcept\CcAppointment\Domain\Model\Openingtime> $openingtimeFriday
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Crossconcept\CcAppointment\Domain\Model\Openingtime> $openingtimesFriday
      * @return void
      */
-    public function setOpeningtimeFriday(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $openingtimeFriday) {
-        $this->openingtimeFriday = $openingtimeFriday;
+    public function setOpeningtimesFriday(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $openingtimesFriday) {
+        $this->openingtimesFriday = $openingtimesFriday;
     }
 
     /**
@@ -377,37 +377,37 @@ class Appointment extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param \Crossconcept\CcAppointment\Domain\Model\Openingtime $openingtime
      * @return void
      */
-    public function addOpeningtimeSaturday(\Crossconcept\CcAppointment\Domain\Model\Openingtime $openingtime) {
-        $this->openingtimeSaturday->attach($openingtime);
+    public function addOpeningtimesSaturday(\Crossconcept\CcAppointment\Domain\Model\Openingtime $openingtime) {
+        $this->openingtimesSaturday->attach($openingtime);
     }
 
     /**
      * Removes a openingtime on Saturday
      *
-     * @param \Crossconcept\CcAppointment\Domain\Model\Openingtime $openingtimeToRemove The \Crossconcept\CcAppointment\Domain\Model\Openingtime to be removed
+     * @param \Crossconcept\CcAppointment\Domain\Model\Openingtime $openingtime The \Crossconcept\CcAppointment\Domain\Model\Openingtime to be removed
      * @return void
      */
-    public function removeOpeningtimeSaturday(\Crossconcept\CcAppointment\Domain\Model\Openingtime $openingtimeToRemove) {
-        $this->openingtimeSaturday->detach($openingtimeToRemove);
+    public function removeOpeningtimesSaturday(\Crossconcept\CcAppointment\Domain\Model\Openingtime $openingtime) {
+        $this->openingtimesSaturday->detach($openingtime);
     }
 
     /**
      * Returns the openingtimes on Saturday
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Crossconcept\CcAppointment\Domain\Model\Openingtime> $openingtimeSaturday
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Crossconcept\CcAppointment\Domain\Model\Openingtime> $openingtimesSaturday
      */
-    public function getOpeningtimeSaturday() {
-        return $this->openingtimeSaturday;
+    public function getOpeningtimesSaturday() {
+        return $this->openingtimesSaturday;
     }
 
     /**
      * Sets the openingtimes on Saturday
      *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Crossconcept\CcAppointment\Domain\Model\Openingtime> $openingtimeSaturday
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Crossconcept\CcAppointment\Domain\Model\Openingtime> $openingtimesSaturday
      * @return void
      */
-    public function setOpeningtimeSaturday(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $openingtimeSaturday) {
-        $this->openingtimeSaturday = $openingtimeSaturday;
+    public function setOpeningtimesSaturday(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $openingtimesSaturday) {
+        $this->openingtimesSaturday = $openingtimesSaturday;
     }
 
     /**
@@ -416,36 +416,36 @@ class Appointment extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param \Crossconcept\CcAppointment\Domain\Model\Openingtime $openingtime
      * @return void
      */
-    public function addOpeningtimeSunday(\Crossconcept\CcAppointment\Domain\Model\Openingtime $openingtime) {
-        $this->openingtimeSunday->attach($openingtime);
+    public function addOpeningtimesSunday(\Crossconcept\CcAppointment\Domain\Model\Openingtime $openingtime) {
+        $this->openingtimesSunday->attach($openingtime);
     }
 
     /**
      * Removes a openingtime on Sunday
      *
-     * @param \Crossconcept\CcAppointment\Domain\Model\Openingtime $openingtimeToRemove The \Crossconcept\CcAppointment\Domain\Model\Openingtime to be removed
+     * @param \Crossconcept\CcAppointment\Domain\Model\Openingtime $openingtime The \Crossconcept\CcAppointment\Domain\Model\Openingtime to be removed
      * @return void
      */
-    public function removeOpeningtimeSunday(\Crossconcept\CcAppointment\Domain\Model\Openingtime $openingtimeToRemove) {
-        $this->openingtimeSunday->detach($openingtimeToRemove);
+    public function removeOpeningtimesSunday(\Crossconcept\CcAppointment\Domain\Model\Openingtime $openingtime) {
+        $this->openingtimesSunday->detach($openingtime);
     }
 
     /**
      * Returns the openingtimes on Sunday
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Crossconcept\CcAppointment\Domain\Model\Openingtime> $openingtimeSunday
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Crossconcept\CcAppointment\Domain\Model\Openingtime> $openingtimesSunday
      */
-    public function getOpeningtimeSunday() {
-        return $this->openingtimeSunday;
+    public function getOpeningtimesSunday() {
+        return $this->openingtimesSunday;
     }
 
     /**
      * Sets the openingtimes on Sunday
      *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Crossconcept\CcAppointment\Domain\Model\Openingtime> $openingtimeSunday
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Crossconcept\CcAppointment\Domain\Model\Openingtime> $openingtimesSunday
      * @return void
      */
-    public function setOpeningtimeSunday(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $openingtimeSunday) {
-        $this->openingtimeSunday = $openingtimeSunday;
+    public function setOpeningtimesSunday(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $openingtimesSunday) {
+        $this->openingtimesSunday = $openingtimesSunday;
     }
 }

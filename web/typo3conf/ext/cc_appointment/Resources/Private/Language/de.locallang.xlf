@@ -36,25 +36,25 @@
 			<trans-unit id="appointment.lead_time" xml:space="preserve">
 				<target>Vorlaufzeit für Buchungen (in Tagen)</target>
 			</trans-unit>
-			<trans-unit id="appointment.openingtime_monday" xml:space="preserve">
+			<trans-unit id="appointment.openingtimes_monday" xml:space="preserve">
 				<target>Öffnungszeiten am Montag</target>
 			</trans-unit>
-			<trans-unit id="appointment.openingtime_tuesday" xml:space="preserve">
+			<trans-unit id="appointment.openingtimes_tuesday" xml:space="preserve">
 				<target>Öffnungszeiten am Dienstag</target>
 			</trans-unit>
-			<trans-unit id="appointment.openingtime_wednesday" xml:space="preserve">
+			<trans-unit id="appointment.openingtimes_wednesday" xml:space="preserve">
 				<target>Öffnungszeiten am Mittwoch</target>
 			</trans-unit>
-			<trans-unit id="appointment.openingtime_thursday" xml:space="preserve">
+			<trans-unit id="appointment.openingtimes_thursday" xml:space="preserve">
 				<target>Öffnungszeiten am Donnerstag</target>
 			</trans-unit>
-			<trans-unit id="appointment.openingtime_friday" xml:space="preserve">
+			<trans-unit id="appointment.openingtimes_friday" xml:space="preserve">
 				<target>Öffnungszeiten am Freitag</target>
 			</trans-unit>
-			<trans-unit id="appointment.openingtime_saturday" xml:space="preserve">
+			<trans-unit id="appointment.openingtimes_saturday" xml:space="preserve">
 				<target>Öffnungszeiten am Samstag</target>
 			</trans-unit>
-			<trans-unit id="appointment.openingtime_sunday" xml:space="preserve">
+			<trans-unit id="appointment.openingtimes_sunday" xml:space="preserve">
 				<target>Öffnungszeiten am Sonntag</target>
 			</trans-unit>
 
@@ -80,29 +80,37 @@
 
 			<!-- Palettes Start -->
 
-			<trans-unit id="palette.openingtime_monday" xml:space="preserve">
+			<trans-unit id="palette.openingtimes_monday" xml:space="preserve">
 				<target>Montag</target>
 			</trans-unit>
-			<trans-unit id="palette.openingtime_tuesday" xml:space="preserve">
+			<trans-unit id="palette.openingtimes_tuesday" xml:space="preserve">
 				<target>Dienstag</target>
 			</trans-unit>
-			<trans-unit id="palette.openingtime_wednesday" xml:space="preserve">
+			<trans-unit id="palette.openingtimes_wednesday" xml:space="preserve">
 				<target>Mittwoch</target>
 			</trans-unit>
-			<trans-unit id="palette.openingtime_thursday" xml:space="preserve">
+			<trans-unit id="palette.openingtimes_thursday" xml:space="preserve">
 				<target>Donnerstag</target>
 			</trans-unit>
-			<trans-unit id="palette.openingtime_friday" xml:space="preserve">
+			<trans-unit id="palette.openingtimes_friday" xml:space="preserve">
 				<target>Freitag</target>
 			</trans-unit>
-			<trans-unit id="palette.openingtime_saturday" xml:space="preserve">
+			<trans-unit id="palette.openingtimes_saturday" xml:space="preserve">
 				<target>Samstag</target>
 			</trans-unit>
-			<trans-unit id="palette.openingtime_sunday" xml:space="preserve">
+			<trans-unit id="palette.openingtimes_sunday" xml:space="preserve">
 				<target>Sonntag</target>
 			</trans-unit>
 
 			<!-- Palettes End -->
+
+			<!-- Plugins Start -->
+
+			<trans-unit id="tx_ccappointment" xml:space="preserve">
+				<target>Termin-Anfrage Formular</target>
+			</trans-unit>
+
+			<!-- Plugins End -->
 
 			<!-- Further labels Start -->
 

@@ -1,0 +1,21 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<div class="form-group">
+    <label class="radio-inline">
+        <f:form.radio property="track" checked="checked" value="1" additionalAttributes="{data-toggle-track: '1', required: 'required', data-validation: 'required', data-validation-error-msg: '{f:translate(key: \'form.validation.required\')}'}" /> {f:translate(key: 'track.1')}
+    </label>
+    <label class="radio-inline">
+        <f:form.radio property="track" value="2" additionalAttributes="{data-toggle-track: '2', required: 'required', data-validation: 'required', data-validation-error-msg: '{f:translate(key: \'form.validation.required\')}'}"  /> {f:translate(key: 'track.2')}
+    </label>
+</div>
+
+<div class="form-group" data-track="1">
+    <label for="tracktype" class="control-label-grouped">{f:translate(key: 'tracktype')}</label>
+    <f:form.textfield property="tracktype" id="tracktype" class="form-control" />
+</div>
+<div class="form-group hidden" data-track="2">
+    <label for="tracksupportdistance" class="control-label-grouped">{f:translate(key: 'tracksupportdistance')}</label>
+    <f:form.textfield property="tracksupportdistance" id="tracksupportdistance" class="form-control" />
+</div>
+
+<f:render partial="FormErrors" arguments="{object: 'newInquiryStep3.track'}" />

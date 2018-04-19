@@ -1,0 +1,17 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<div class="form-group">
+    <label class="control-label-grouped">
+        <f:translate key="reachstabilizer" />
+    </label>
+    <div class="row">
+        <div class="col-sm-6">
+            <f:form.textfield placeholder="{f:translate(key: 'form.min')}" property="reachstabilizermin" class="form-control" required="1" additionalAttributes="{required: 'required', data-validation: 'required', data-validation-error-msg-required: '{f:translate(key: \'form.validation.required\')}', data-highlight: 'reach_stabilizer'}" />
+            <f:render partial="FormErrors" arguments="{object: 'newInquiryStep3.reachstabilizermin'}" />
+        </div>
+        <div class="col-sm-6">
+            <f:form.textfield placeholder="{f:translate(key: 'form.max')}" property="reachstabilizermax" class="form-control" required="1" additionalAttributes="{required: 'required', data-validation: 'required', data-validation-error-msg-required: '{f:translate(key: \'form.validation.required\')}', data-highlight: 'reach_stabilizer'}" />
+            <f:render partial="FormErrors" arguments="{object: 'newInquiryStep3.reachstabilizermax'}" />
+        </div>
+    </div>
+</div>

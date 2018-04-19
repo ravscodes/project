@@ -1,0 +1,13 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<div class="form-group{f:render(partial: 'FormErrorsClass', arguments: {object: 'newInquiryStep3.installationheight'})}">
+    <label for="installationheight" class="control-label">
+        <f:translate key="installationheight" /> ({f:translate(key: 'label.m')})
+        <f:if condition="{badge}">
+            <span class="badge badge-default">{badge}</span>
+        </f:if>
+    </label>
+    <f:form.textfield property="installationheight" id="installationheight" class="form-control" additionalAttributes="{data-highlight: 'installationheight'}" />
+    <p class="help-block">{f:translate(key: 'installationheight.info')}</p>
+    <f:render partial="FormErrors" arguments="{object: 'newInquiryStep3.installationheight'}" />
+</div>

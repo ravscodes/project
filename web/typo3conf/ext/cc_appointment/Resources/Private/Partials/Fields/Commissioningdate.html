@@ -1,0 +1,15 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<div id="form-group-commissioningdate" class="form-group{f:render(partial: 'FormErrorsClass', arguments: {object: 'newInquiryStep3.commissioningdate'})}{f:if(condition: '{newInquiryStep3.projectphase} == 2', else: ' hidden')}">
+    <label for="commissioningdate" class="control-label">
+        <f:translate key="commissioningdate" /> <f:translate key="form.required" />
+        <f:if condition="{badge}">
+            <span class="badge badge-default">{badge}</span>
+        </f:if>
+    </label>
+    <div class="input-group date" id="commissioningdateGroup">
+        <f:form.textfield class="form-control" property="commissioningdate" value="{newInquiryStep3.commissioningdate -> f:format.date(format: 'd.m.Y')}" placeholder="{f:translate(key: 'form.date.placeholder')}" id="commissioningdate" additionalAttributes="{data-validation: 'required', data-validation-depends-on: 'tx_teichmanncraneconfigurator_inquiry[newInquiryStep3][projectphase]', data-validation-depends-on-value: '2', data-validation-error-msg-required: '{f:translate(key: \'form.validation.required\')}'}" />
+        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+    </div>
+    <f:render partial="FormErrors" arguments="{object: 'newInquiryStep3.commissioningdate'}" />
+</div>

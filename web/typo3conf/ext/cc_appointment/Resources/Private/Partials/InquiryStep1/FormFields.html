@@ -1,0 +1,13 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<f:if condition="{appointments}">
+    <fieldset class="appointment">
+        <div class="form-group{f:render(partial: 'FormErrorsClass', arguments: {object: 'newInquiryStep1.appointment'})}">
+            <label>
+                <f:translate key="form.label.appointment"/>
+                <f:translate key="form.required"/>
+            </label>
+            <f:form.select property="appointment" id="appointment" class="form-control" options="{appointments}" optionLabelField="title" additionalAttributes="{required: 'required', data-validation: 'required', data-validation-error-msg-required: '{f:translate(key: \'form.validation.required\')}'}" />
+        </div>
+    </fieldset>
+</f:if>

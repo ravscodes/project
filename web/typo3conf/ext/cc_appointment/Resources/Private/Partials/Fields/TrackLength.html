@@ -1,0 +1,30 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<div class="form-group">
+    <label class="control-label">
+        <f:translate key="track" /><f:translate key="form.required" />
+    </label>
+    <div class="row">
+        <div class="col-sm-12">
+            <label class="radio-inline">
+                <f:form.radio property="track" checked="checked" value="1" additionalAttributes="{data-toggle-track: '1'}" /> {f:translate(key: 'track.3')}
+            </label>
+            <label class="radio-inline">
+                <f:form.radio property="track" value="2" additionalAttributes="{data-toggle-track: '2'}" /> {f:translate(key: 'track.4')}
+            </label>
+        </div>
+    </div>
+    <f:render partial="FormErrors" arguments="{object: 'newInquiryStep3.track'}" />
+</div>
+
+<div class="form-group" data-track="1">
+    <label class="control-label control-label-grouped">{f:translate(key: 'tracklengthexisting')} ({f:translate(key: 'label.m')})</label>
+    <f:form.textfield property="tracklengthexisting" class="form-control" additionalAttributes="{data-validation: 'required', data-validation-error-msg-required: '{f:translate(key: \'form.validation.required\')}', data-validation-depends-on: 'tx_teichmanncraneconfigurator_inquiry[newInquiryStep3][track]', data-validation-depends-on-value: '1'}" />
+    <f:render partial="FormErrors" arguments="{object: 'newInquiryStep3.tracklengthexisting'}" />
+</div>
+
+<div class="form-group hidden" data-track="2">
+    <label class="control-label control-label-grouped">{f:translate(key: 'tracklengthplanned')} ({f:translate(key: 'label.m')})</label>
+    <f:form.textfield property="tracklengthplanned" class="form-control" additionalAttributes="{data-validation: 'required', data-validation-error-msg-required: '{f:translate(key: \'form.validation.required\')}', data-validation-depends-on: 'tx_teichmanncraneconfigurator_inquiry[newInquiryStep3][track]', data-validation-depends-on-value: '2'}" />
+    <f:render partial="FormErrors" arguments="{object: 'newInquiryStep3.tracklengthplanned'}" />
+</div>

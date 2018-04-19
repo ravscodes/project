@@ -1,0 +1,206 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+{namespace teichmannCraneconfigurator=Crossconcept\TeichmannCraneconfigurator\ViewHelpers}
+
+<fieldset class="fieldset-summary">
+	<legend>{f:translate(key: 'form.legend.craneconfiguration')}</legend>
+	<div class="row">
+		<div class="col-sm-8">
+			<div class="row">
+				<div class="col-sm-6">
+					<h4>{f:translate(key: 'label.cranetype')}</h4>
+					<dl class="dl-horizontal">
+						<dt>{f:translate(key: 'cranetype')}:</dt>
+						<dd>{newInquiryStep1.cranetype.title}</dd>
+						<f:if condition="{newInquiryStep1.constructiontype.title}">
+							<dt>{f:translate(key: 'constructiontype')}:</dt>
+							<dd>{newInquiryStep1.constructiontype.title}</dd>
+						</f:if>
+					</dl>
+				</div>
+				<div class="col-sm-6">
+					<h4>{f:translate(key: 'label.projectinformation')}</h4>
+					<dl class="dl-horizontal">
+						<dt>{f:translate(key: 'industry')}:</dt>
+						<f:if condition="{newInquiryStep2.industry}">
+							<f:then>
+								<dd>{newInquiryStep2.industry.title}</dd>
+							</f:then>
+							<f:else>
+								<dd>{newInquiryStep2.customindustry}</dd>
+							</f:else>
+						</f:if>
+						<dt>{f:translate(key: 'purpose')}:</dt>
+						<dd>{newInquiryStep2.purpose}</dd>
+						<f:if condition="{newInquiryStep2.classification}">
+							<dt>{f:translate(key: 'classification')}:</dt>
+							<dd>{newInquiryStep2.classification.title}</dd>
+						</f:if>
+						<f:if condition="{newInquiryStep2.containeramount}">
+							<dt>{f:translate(key: 'containeramount')}:</dt>
+							<dd>{newInquiryStep2.containeramount}/<f:translate key="containerunit.{newInquiryStep2.containerunit}" /></dd>
+						</f:if>
+					</dl>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<f:if condition="{newInquiryStep1.cranetype.id} == '5'">
+				<f:then>
+					<f:if condition="{teichmannCraneconfigurator:PartialExists(partial: 'Cranes/{newInquiryStep1.cranetype.id}')}">
+						<f:then>
+							<f:render partial="Cranes/{newInquiryStep1.cranetype.id}" />
+						</f:then>
+					</f:if>
+				</f:then>
+				<f:else>
+					<f:if condition="{teichmannCraneconfigurator:PartialExists(partial: 'Cranes/{newInquiryStep1.cranetype.id}-{f:if(condition: newInquiryStep1.constructiontype.id, then: '{newInquiryStep1.constructiontype.id}')}">
+						<f:then>
+							<f:render partial="Cranes/{newInquiryStep1.cranetype.id}-{f:if(condition: newInquiryStep1.constructiontype.id, then: newInquiryStep1.constructiontype.id, else: '1')}" />
+						</f:then>
+						<f:else>
+							<f:if condition="{newInquiryStep1.cranetype.constructiontype.icon}">
+								<f:image image="{newInquiryStep1.cranetype.constructiontype.icon}" treatIdAsReference="1" class="img-responsive" />
+							</f:if>
+						</f:else>
+					</f:if>
+				</f:else>
+			</f:if>
+		</div>
+	</div>
+</fieldset>
+
+<fieldset class="fieldset-summary">
+	<a class="collapse-summary collapsed" data-toggle="collapse" href="#collapseSummary" aria-expanded="false" aria-controls="collapseSummary">
+		<legend>{f:translate(key: 'form.legend.craneconfiguration.all')} <span class="glyphicon glyphicon-chevron-up"></span></legend>
+	</a>
+	<div class="collapse" id="collapseSummary">
+		<div class="row">
+			<div class="col-sm-12">
+				<h4>{f:translate(key: 'label.technicaldetails')}</h4>
+				<div class="row">
+					<div class="col-sm-6">
+						<dl class="dl-horizontal dl-horizontal-lg">
+							<f:if condition="{newInquiryStep3.payloadmin} && {newInquiryStep3.payloadmax}">
+								<dt>{f:translate(key: 'payload')}:</dt>
+								<dd>{newInquiryStep3.payloadmin} - {newInquiryStep3.payloadmax}{f:translate(key: 'label.t')}</dd>
+							</f:if>
+							<f:if condition="{newInquiryStep3.gaugemax} && {newInquiryStep3.gaugemax}">
+								<dt>{f:translate(key: 'gauge')}:</dt>
+								<dd>{newInquiryStep3.gaugemin} - {newInquiryStep3.gaugemax}{f:translate(key: 'label.m')}</dd>
+							</f:if>
+							<f:if condition="{newInquiryStep3.reachmin} && {newInquiryStep3.reachmax}">
+								<dt>{f:translate(key: 'reach')}:</dt>
+								<dd>{newInquiryStep3.reachmin} - {newInquiryStep3.reachmax}{f:translate(key: 'label.m')}</dd>
+							</f:if>
+							<f:if condition="{newInquiryStep3.reachsolidsupportmin} && {newInquiryStep3.reachsolidsupportmax}">
+								<dt>{f:translate(key: 'reachsolid')}:</dt>
+								<dd>{newInquiryStep3.reachsolidsupportmin} - {newInquiryStep3.reachsolidsupportmax}{f:translate(key: 'label.m')}</dd>
+							</f:if>
+							<f:if condition="{newInquiryStep3.reachstabilizer} && {newInquiryStep3.reachstabilizermax}">
+								<dt>{f:translate(key: 'reachstabilizer')}:</dt>
+								<dd>{newInquiryStep3.reachstabilizermin} - {newInquiryStep3.reachstabilizermax}{f:translate(key: 'label.m')}</dd>
+							</f:if>
+							<f:if condition="{newInquiryStep3.liftheight}">
+								<dt>{f:translate(key: 'liftheight')}:</dt>
+								<dd>{newInquiryStep3.liftheight}{f:translate(key: 'label.m')}</dd>
+							</f:if>
+							<f:if condition="{newInquiryStep3.liftheightabove}">
+								<dt>{f:translate(key: 'liftheightabove')}:</dt>
+								<dd>{newInquiryStep3.liftheightabove}{f:translate(key: 'label.m')}</dd>
+							</f:if>
+							<f:if condition="{newInquiryStep3.liftheightbelow}">
+								<dt>{f:translate(key: 'liftheightbelow')}:</dt>
+								<dd>{newInquiryStep3.liftheightbelow}{f:translate(key: 'label.m')}</dd>
+							</f:if>
+							<f:if condition="{newInquiryStep3.buildingheight}">
+								<dt>{f:translate(key: 'buildingheight')}:</dt>
+								<dd>{newInquiryStep3.buildingheight}{f:translate(key: 'label.m')}</dd>
+							</f:if>
+							<f:if condition="{newInquiryStep3.steering}">
+								<dt>{f:translate(key: 'steering')}:</dt>
+								<dd><f:translate key="steering.{newInquiryStep3.steering}" /></dd>
+							</f:if>
+							<f:if condition="{newInquiryStep3.reachassembly}">
+								<dt>{f:translate(key: 'reachassembly')}:</dt>
+								<dd><f:translate key="reachassembly.{newInquiryStep3.reachassembly}" /></dd>
+							</f:if>
+						</dl>
+					</div>
+					<div class="col-sm-6">
+						<dl class="dl-horizontal dl-horizontal-lg">
+							<f:if condition="{newInquiryStep3.hookpath}">
+								<dt>{f:translate(key: 'hookpath')}:</dt>
+								<dd>{newInquiryStep3.hookpath}{f:translate(key: 'label.m')}</dd>
+							</f:if>
+							<f:if condition="{newInquiryStep3.installationheight}">
+								<dt>{f:translate(key: 'installationheight')}:</dt>
+								<dd>{newInquiryStep3.installationheight}{f:translate(key: 'label.m')}</dd>
+							</f:if>
+							<f:if condition="{newInquiryStep3.rails}">
+								<dt>{f:translate(key: 'rails')}:</dt>
+								<dd>{newInquiryStep3.rails}</dd>
+							</f:if>
+							<f:if condition="{newInquiryStep3.hall}">
+								<dt>{f:translate(key: 'hall')}:</dt>
+								<dd>{newInquiryStep3.hall}</dd>
+							</f:if>
+							<f:if condition="{newInquiryStep3.track}">
+								<dt>{f:translate(key: 'track')}:</dt>
+								<dd>{f:translate(key: 'track.1')}</dd>
+							</f:if>
+							<f:if condition="{newInquiryStep3.tracklengthexisting}">
+								<dt>{f:translate(key: 'tracklengthexisting')}:</dt>
+								<dd>{newInquiryStep3.tracklengthexisting}{f:translate(key: 'label.m')}</dd>
+							</f:if>
+							<f:if condition="{newInquiryStep3.tracklengthplanned}">
+								<dt>{f:translate(key: 'tracklengthplanned')}:</dt>
+								<dd>{newInquiryStep3.tracklengthplanned}{f:translate(key: 'label.m')}</dd>
+							</f:if>
+							<f:if condition="{newInquiryStep3.trackinfo}">
+								<dt>{f:translate(key: 'trackinfo')}:</dt>
+								<dd>{newInquiryStep3.trackinfo}</dd>
+							</f:if>
+							<f:if condition="{newInquiryStep3.conductorrail}">
+								<dt>{f:translate(key: 'conductorrail')}:</dt>
+								<dd>{newInquiryStep3.conductorrail}</dd>
+							</f:if>
+							<f:if condition="{newInquiryStep3.wallcomposition}">
+								<dt>{f:translate(key: 'wallcomposition')}:</dt>
+								<dd>{newInquiryStep3.wallcomposition}</dd>
+							</f:if>
+							<f:if condition="{newInquiryStep3.rotatingtrolley}">
+								<dt>{f:translate(key: 'rotatingtrolley')}:</dt>
+								<dd><f:translate key="rotatingtrolley.{newInquiryStep3.rotatingtrolley}" /></dd>
+							</f:if>
+							<f:if condition="{newInquiryStep3.rotatingspreader}">
+								<dt>{f:translate(key: 'rotatingspreader')}:</dt>
+								<dd><f:translate key="rotatingspreader.{newInquiryStep3.rotatingspreader}" /></dd>
+							</f:if>
+							<f:if condition="{newInquiryStep3.operationarea}">
+								<dt>{f:translate(key: 'operationarea')}:</dt>
+								<dd><f:translate key="operationarea.{newInquiryStep3.operationarea}" /></dd>
+							</f:if>
+						</dl>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-4">
+				<h4>{f:translate(key: 'label.projectinformation')}</h4>
+				<dl class="dl-horizontal">
+					<dt>{f:translate(key: 'projectphase')}:</dt>
+					<dd><f:translate key="projectphase.{newInquiryStep3.projectphase}" /></dd>
+					<f:if condition="{newInquiryStep3.commissioningdate}">
+						<dt>{f:translate(key: 'commissioningdate')}:</dt>
+						<dd>{newInquiryStep3.commissioningdate -> f:format.date(format: 'd.m.Y')}</dd>
+					</f:if>
+				</dl>
+			</div>
+			<div class="col-sm-8">
+				<h4>{f:translate(key: 'label.additionalinformation')}</h4>
+				<p>{newInquiryStep3.projectinformation}</p>
+			</div>
+		</div>
+	</div>
+</fieldset>

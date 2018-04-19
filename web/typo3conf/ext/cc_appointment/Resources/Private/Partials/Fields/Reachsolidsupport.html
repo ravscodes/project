@@ -1,0 +1,17 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<div class="form-group">
+    <label class="control-label-grouped">
+        <f:translate key="reachsolidsupport" />
+    </label>
+    <div class="row">
+        <div class="col-sm-6">
+            <f:form.textfield placeholder="{f:translate(key: 'form.min')}" property="reachsolidsupportmin" class="form-control" required="1" additionalAttributes="{required: 'required', data-validation: 'required', data-validation-error-msg-required: '{f:translate(key: \'form.validation.required\')}', data-highlight: 'reach_solid'}" />
+            <f:render partial="FormErrors" arguments="{object: 'newInquiryStep3.reachsolidsupportmin'}" />
+        </div>
+        <div class="col-sm-6">
+            <f:form.textfield placeholder="{f:translate(key: 'form.max')}" property="reachsolidsupportmax" class="form-control" required="1" additionalAttributes="{required: 'required', data-validation: 'required', data-validation-error-msg-required: '{f:translate(key: \'form.validation.required\')}', data-highlight: 'reach_solid'}" />
+            <f:render partial="FormErrors" arguments="{object: 'newInquiryStep3.reachsolidsupportmax'}" />
+        </div>
+    </div>
+</div>

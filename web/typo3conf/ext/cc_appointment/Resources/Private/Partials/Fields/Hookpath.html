@@ -1,0 +1,13 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<div class="form-group{f:render(partial: 'FormErrorsClass', arguments: {object: 'newInquiryStep3.hookpath'})}">
+    <label for="hookpath" class="control-label">
+        <f:translate key="hookpath" /> ({f:translate(key: 'label.m')})
+        <f:if condition="{badge}">
+            <span class="badge badge-default">{badge}</span>
+        </f:if>
+    </label>
+    <f:form.textfield property="hookpath" id="hookpath" class="form-control" />
+    <p class="help-block">{f:translate(key: 'hookpath.info')}</p>
+    <f:render partial="FormErrors" arguments="{object: 'newInquiryStep3.hookpath'}" />
+</div>

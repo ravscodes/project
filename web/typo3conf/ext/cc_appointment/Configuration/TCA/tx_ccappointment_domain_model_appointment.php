@@ -23,7 +23,7 @@ return [
         'iconfile'                 => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('cc_appointment') . 'Resources/Public/Icons/appointment.svg'
     ],
     'interface' => [
-        'showRecordFieldList' => 'title, interval, lead_time, openingtime_monday, openingtime_tuesday, openingtime_wednesday, openingtime_thursday, openingtime_friday, openingtime_saturday, openingtime_sunday',
+        'showRecordFieldList' => 'title, interval, lead_time, openingtimes_monday, openingtimes_tuesday, openingtimes_wednesday, openingtimes_thursday, openingtimes_friday, openingtimes_saturday, openingtimes_sunday',
     ],
     'types'     => [
         '1' => [
@@ -31,13 +31,13 @@ return [
                         ---palette--;;paletteConfig,
                         ---palette--;;paletteCore,
                     --div--;LLL:EXT:cc_appointment/Resources/Private/Language/locallang.xlf:tabs.openingtimes,
-                        ---palette--;;paletteOpeningtimeMonday,
-                        ---palette--;;paletteOpeningtimeTuesday,
-                        ---palette--;;paletteOpeningtimeWednesday,
-                        ---palette--;;paletteOpeningtimeThursday,
-                        ---palette--;;paletteOpeningtimeFriday,
-                        ---palette--;;paletteOpeningtimeSaturday,
-                        ---palette--;;paletteOpeningtimeSunday,
+                        ---palette--;;paletteOpeningtimesMonday,
+                        ---palette--;;paletteOpeningtimesTuesday,
+                        ---palette--;;paletteOpeningtimesWednesday,
+                        ---palette--;;paletteOpeningtimesThursday,
+                        ---palette--;;paletteOpeningtimesFriday,
+                        ---palette--;;paletteOpeningtimesSaturday,
+                        ---palette--;;paletteOpeningtimesSunday,
                     --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access,
                         ---palette--;;paletteAccess'
         ],
@@ -52,33 +52,33 @@ return [
                     --linebreak--,
                     lead_time'
         ],
-        'paletteOpeningtimeMonday'    => [
-            'label'    => 'LLL:EXT:cc_appointment/Resources/Private/Language/locallang.xlf:palette.openingtime_monday',
-            'showitem' => 'openingtime_monday'
+        'paletteOpeningtimesMonday'    => [
+            'label'    => 'LLL:EXT:cc_appointment/Resources/Private/Language/locallang.xlf:palette.openingtimes_monday',
+            'showitem' => 'openingtimes_monday'
         ],
-        'paletteOpeningtimeTuesday'   => [
-            'label'    => 'LLL:EXT:cc_appointment/Resources/Private/Language/locallang.xlf:palette.openingtime_tuesday',
-            'showitem' => 'openingtime_tuesday'
+        'paletteOpeningtimesTuesday'   => [
+            'label'    => 'LLL:EXT:cc_appointment/Resources/Private/Language/locallang.xlf:palette.openingtimes_tuesday',
+            'showitem' => 'openingtimes_tuesday'
         ],
-        'paletteOpeningtimeWednesday' => [
-            'label'    => 'LLL:EXT:cc_appointment/Resources/Private/Language/locallang.xlf:palette.openingtime_wednesday',
-            'showitem' => 'openingtime_wednesday'
+        'paletteOpeningtimesWednesday' => [
+            'label'    => 'LLL:EXT:cc_appointment/Resources/Private/Language/locallang.xlf:palette.openingtimes_wednesday',
+            'showitem' => 'openingtimes_wednesday'
         ],
-        'paletteOpeningtimeThursday'  => [
-            'label'    => 'LLL:EXT:cc_appointment/Resources/Private/Language/locallang.xlf:palette.openingtime_thursday',
-            'showitem' => 'openingtime_thursday'
+        'paletteOpeningtimesThursday'  => [
+            'label'    => 'LLL:EXT:cc_appointment/Resources/Private/Language/locallang.xlf:palette.openingtimes_thursday',
+            'showitem' => 'openingtimes_thursday'
         ],
-        'paletteOpeningtimeFriday'    => [
-            'label'    => 'LLL:EXT:cc_appointment/Resources/Private/Language/locallang.xlf:palette.openingtime_friday',
-            'showitem' => 'openingtime_friday'
+        'paletteOpeningtimesFriday'    => [
+            'label'    => 'LLL:EXT:cc_appointment/Resources/Private/Language/locallang.xlf:palette.openingtimes_friday',
+            'showitem' => 'openingtimes_friday'
         ],
-        'paletteOpeningtimeSaturday'  => [
-            'label'    => 'LLL:EXT:cc_appointment/Resources/Private/Language/locallang.xlf:palette.openingtime_saturday',
-            'showitem' => 'openingtime_saturday'
+        'paletteOpeningtimesSaturday'  => [
+            'label'    => 'LLL:EXT:cc_appointment/Resources/Private/Language/locallang.xlf:palette.openingtimes_saturday',
+            'showitem' => 'openingtimes_saturday'
         ],
-        'paletteOpeningtimeSunday'    => [
-            'label'    => 'LLL:EXT:cc_appointment/Resources/Private/Language/locallang.xlf:palette.openingtime_monday',
-            'showitem' => 'openingtime_sunday'
+        'paletteOpeningtimesSunday'    => [
+            'label'    => 'LLL:EXT:cc_appointment/Resources/Private/Language/locallang.xlf:palette.openingtimes_monday',
+            'showitem' => 'openingtimes_sunday'
         ],
         'paletteAccess'               => [
             'showitem' => 'hidden;;1, starttime, endtime'
@@ -207,9 +207,9 @@ return [
                 ]
             ],
         ],
-        'openingtime_monday'    => [
+        'openingtimes_monday'    => [
             'exclude' => 1,
-            'label'   => 'LLL:EXT:cc_appointment/Resources/Private/Language/locallang.xlf:appointment.openingtime_monday',
+            'label'   => 'LLL:EXT:cc_appointment/Resources/Private/Language/locallang.xlf:appointment.openingtimes_monday',
             'config'  => [
                 'type'          => 'inline',
                 'foreign_table' => 'tx_ccappointment_domain_model_openingtime',
@@ -226,9 +226,9 @@ return [
                 ]
             ]
         ],
-        'openingtime_tuesday'   => [
+        'openingtimes_tuesday'   => [
             'exclude' => 1,
-            'label'   => 'LLL:EXT:cc_appointment/Resources/Private/Language/locallang.xlf:appointment.openingtime_tuesday',
+            'label'   => 'LLL:EXT:cc_appointment/Resources/Private/Language/locallang.xlf:appointment.openingtimes_tuesday',
             'config'  => [
                 'type'          => 'inline',
                 'foreign_table' => 'tx_ccappointment_domain_model_openingtime',
@@ -245,9 +245,9 @@ return [
                 ]
             ]
         ],
-        'openingtime_wednesday' => [
+        'openingtimes_wednesday' => [
             'exclude' => 1,
-            'label'   => 'LLL:EXT:cc_appointment/Resources/Private/Language/locallang.xlf:appointment.openingtime_wednesday',
+            'label'   => 'LLL:EXT:cc_appointment/Resources/Private/Language/locallang.xlf:appointment.openingtimes_wednesday',
             'config'  => [
                 'type'          => 'inline',
                 'foreign_table' => 'tx_ccappointment_domain_model_openingtime',
@@ -264,9 +264,9 @@ return [
                 ]
             ]
         ],
-        'openingtime_thursday'  => [
+        'openingtimes_thursday'  => [
             'exclude' => 1,
-            'label'   => 'LLL:EXT:cc_appointment/Resources/Private/Language/locallang.xlf:appointment.openingtime_thursday',
+            'label'   => 'LLL:EXT:cc_appointment/Resources/Private/Language/locallang.xlf:appointment.openingtimes_thursday',
             'config'  => [
                 'type'          => 'inline',
                 'foreign_table' => 'tx_ccappointment_domain_model_openingtime',
@@ -283,9 +283,9 @@ return [
                 ]
             ]
         ],
-        'openingtime_friday'    => [
+        'openingtimes_friday'    => [
             'exclude' => 1,
-            'label'   => 'LLL:EXT:cc_appointment/Resources/Private/Language/locallang.xlf:appointment.openingtime_friday',
+            'label'   => 'LLL:EXT:cc_appointment/Resources/Private/Language/locallang.xlf:appointment.openingtimes_friday',
             'config'  => [
                 'type'          => 'inline',
                 'foreign_table' => 'tx_ccappointment_domain_model_openingtime',
@@ -302,9 +302,9 @@ return [
                 ]
             ]
         ],
-        'openingtime_saturday'  => [
+        'openingtimes_saturday'  => [
             'exclude' => 1,
-            'label'   => 'LLL:EXT:cc_appointment/Resources/Private/Language/locallang.xlf:appointment.openingtime_saturday',
+            'label'   => 'LLL:EXT:cc_appointment/Resources/Private/Language/locallang.xlf:appointment.openingtimes_saturday',
             'config'  => [
                 'type'          => 'inline',
                 'foreign_table' => 'tx_ccappointment_domain_model_openingtime',
@@ -321,9 +321,9 @@ return [
                 ]
             ]
         ],
-        'openingtime_sunday'    => [
+        'openingtimes_sunday'    => [
             'exclude' => 1,
-            'label'   => 'LLL:EXT:cc_appointment/Resources/Private/Language/locallang.xlf:appointment.openingtime_sunday',
+            'label'   => 'LLL:EXT:cc_appointment/Resources/Private/Language/locallang.xlf:appointment.openingtimes_sunday',
             'config'  => [
                 'type'          => 'inline',
                 'foreign_table' => 'tx_ccappointment_domain_model_openingtime',

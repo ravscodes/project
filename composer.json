@@ -7,12 +7,18 @@
 	"license": "GPL-2.0+",
 	"require": {
 		"typo3/cms": "^8.7",
-		"helhum/typo3-console": "^4.4"
+		"helhum/typo3-console": "^4.4",
+		"typo3-ter/vhs": "^4.4"
 	},
 	"extra": {
 		"typo3/cms": {
 			"cms-package-dir": "{$vendor-dir}/typo3/cms",
 			"web-dir": "web"
+		}
+	},
+	"autoload": {
+		"psr-4": {
+			"Crossconcept\\CcAppointment\\": "web/typo3conf/ext/cc_appointment/Classes/"
 		}
 	}
 }

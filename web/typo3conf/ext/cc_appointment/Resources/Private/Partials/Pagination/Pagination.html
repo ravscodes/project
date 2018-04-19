@@ -1,0 +1,16 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<ol class="steps nav nav-pills nav-justified">
+	<li class="step step-1{f:if(condition: '{step} == 1', then: ' active')}{f:if(condition: '{step} > 1', then: ' done')}">
+		<h4 class="step-title">{f:translate(key: 'form.step.1')}</h4>
+		<p class="step-description">{f:translate(key: 'form.step.1.title')}</p>
+	</li>
+	<li class="step step-2{f:if(condition: '{step} == 2', then: ' active')}{f:if(condition: '{step} > 2', then: ' done')}">
+		<h4 class="step-title">{f:translate(key: 'form.step.2')}</h4>
+		<p class="step-description">{f:translate(key: 'form.step.2.title')}</p>
+	</li>
+	<li class="step step-3{f:if(condition: '{step} == 3', then: ' active')}{f:if(condition: '{step} > 3', then: ' done')}">
+		<h4 class="step-title">{f:translate(key: 'form.step.3')}</h4>
+		<p class="step-description">{f:translate(key: 'form.step.3.title')}</p>
+	</li>
+</ol>

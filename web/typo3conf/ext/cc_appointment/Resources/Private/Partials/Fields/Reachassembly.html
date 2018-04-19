@@ -1,0 +1,14 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<div class="form-group{f:render(partial: 'FormErrorsClass', arguments: {object: 'newInquiryStep3.reachassembly'})}">
+    <label for="reachassembly" class="control-label">
+        <f:translate key="reachassembly" />
+    </label>
+    <f:form.select property="reachassembly" id="reachassembly" class="form-control" additionalAttributes="{data-highlight: 'reachassembly'}">
+        <option value="">{f:translate(key: 'label.select')}</option>
+        <option value="2"{f:if(condition: '{newInquiryStep3.reachassembly} == 2', then: ' selected="selected"')}>{f:translate(key: 'reachassembly.1')}</option>
+        <option value="3"{f:if(condition: '{newInquiryStep3.reachassembly} == 3', then: ' selected="selected"')}>{f:translate(key: 'reachassembly.2')}</option>
+        <option value="1"{f:if(condition: '{newInquiryStep3.reachassembly} == 1', then: ' selected="selected"')}>{f:translate(key: 'reachassembly.3')}</option>
+    </f:form.select>
+    <f:render partial="FormErrors" arguments="{object: 'newInquiryStep3.reachassembly'}" />
+</div>

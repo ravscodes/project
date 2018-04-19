@@ -1,0 +1,4 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<f:form.textfield property="gaugemin" placeholder="{f:translate(key: 'form.min')}" class="form-control" required="1" additionalAttributes="{required: 'required', data-validation: 'required', data-validation-error-msg-required: '{f:translate(key: \'form.validation.required\')}', data-highlight: 'gauge'}" />
+<f:render partial="FormErrors" arguments="{object: 'newInquiryStep3.gaugemin'}" />

@@ -1,0 +1,9 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<div class="form-group{f:render(partial: 'FormErrorsClass', arguments: {object: 'newInquiryStep3.projectinformation'})}">
+    <label for="projectinformation" class="control-label">
+        <f:translate key="projectinformation" />
+    </label>
+    <f:form.textarea property="projectinformation" id="projectinformation" rows="10" cols="40" class="form-control" placeholder="{f:translate(key: 'projectinformation.placeholder')}" />
+    <f:render partial="FormErrors" arguments="{object: 'newInquiryStep3.projectinformation'}" />
+</div>

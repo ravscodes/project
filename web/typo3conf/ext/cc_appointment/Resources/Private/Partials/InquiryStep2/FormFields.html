@@ -1,0 +1,29 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<div class="row">
+	<div class="col-md-7">
+		<div class="form-group{f:render(partial: 'FormErrorsClass', arguments: {object: 'newInquiryStep2.timeslot'})}">
+			<label><f:translate key="form.label.date" /> <f:translate key="form.required" /></label>
+			<div id="appointment-calendar"></div>
+
+			<f:comment><!-- CSS Assets --></f:comment>
+			<v:asset.style path="EXT:cc_appointment/Resources/Public/Css/Vendor/bootstrap-datepicker.min.css" name="bootstrap-datepicker-css" />
+			<v:asset.style path="EXT:cc_appointment/Resources/Public/Css/calendar.css" name="bootstrap-datepicker-custom-css" />
+
+			<f:comment><!-- JS Assets --></f:comment>
+			<v:asset.script path="EXT:cc_appointment/Resources/Public/JavaScript/Vendor/bootstrap-datepicker.min.js" name="bootstrap-datepicker-js" dependencies="jquery" />
+			<v:asset.script path="EXT:cc_appointment/Resources/Public/JavaScript/calendar.js" name="bootstrap-datepicker-custom-js" dependencies="bootstrap-datepicker-js" />
+		</div>
+	</div>
+	<div class="col-md-4 col-md-offset-1">
+		<div class="form-group{f:render(partial: 'FormErrorsClass', arguments: {object: 'newInquiryStep2.timeslot'})}">
+			<label><f:translate key="form.label.timeslots" /> <f:translate key="form.required" /></label>
+			<f:if condition="{timeslots}">
+				<f:then></f:then>
+				<f:else>
+					<div class="alert alert-info"><f:translate key="form.label.timeslots.unavailable" /></div>
+				</f:else>
+			</f:if>
+		</div>
+	</div>
+</div>

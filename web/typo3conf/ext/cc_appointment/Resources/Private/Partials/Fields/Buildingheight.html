@@ -1,0 +1,12 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<div class="form-group{f:render(partial: 'FormErrorsClass', arguments: {object: 'newInquiryStep3.buildingheight'})}">
+    <label for="buildingheight" class="control-label">
+        <f:translate key="buildingheight" /> ({f:translate(key: 'label.m')})<f:translate key="form.required" />
+        <f:if condition="{badge}">
+            <span class="badge badge-default">{badge}</span>
+        </f:if>
+    </label>
+    <f:form.textfield property="buildingheight" id="buildingheight" class="form-control" required="1" additionalAttributes="{required: 'required', data-validation: 'required', data-validation-error-msg-required: '{f:translate(key: \'form.validation.required\')}', data-highlight: 'installationheight'}" />
+    <f:render partial="FormErrors" arguments="{object: 'newInquiryStep3.buildingheight'}" />
+</div>

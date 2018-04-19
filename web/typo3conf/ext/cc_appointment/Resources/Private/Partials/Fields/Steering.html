@@ -1,0 +1,22 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<div class="form-group{f:render(partial: 'FormErrorsClass', arguments: {object: 'newInquiryStep3.steering'})}">
+    <label for="steering" class="control-label">
+        <f:translate key="steering" /><f:translate key="form.required" />
+        <f:if condition="{badge}">
+            <span class="badge badge-default">{badge}</span>
+        </f:if>
+    </label>
+    <f:form.select property="steering" id="steering" class="form-control" additionalAttributes="{required: 'required', data-validation: 'required', data-validation-error-msg: '{f:translate(key: \'form.validation.required\')}', data-highlight: 'steering'}">
+        <option value="">{f:translate(key: 'label.select')}</option>
+        <option data-highlight="steering1" value="1"{f:if(condition: '{newInquiryStep3.steering} == 1', then: ' selected="selected"')}>{f:translate(key: 'steering.1')}</option>
+        <option data-highlight="steering2" value="2"{f:if(condition: '{newInquiryStep3.steering} == 2', then: ' selected="selected"')}>{f:translate(key: 'steering.2')}</option>
+        <f:if condition="(({newInquiryStep1.cranetype.id} == 2) && ({newInquiryStep1.constructiontype.id} == 3)) ||
+                            ({newInquiryStep1.cranetype.id} == 3)">
+            <f:else>
+                <option data-highlight="steering3" value="3"{f:if(condition: '{newInquiryStep3.steering} == 3', then: ' selected="selected"')}>{f:translate(key: 'steering.3')}</option>
+            </f:else>
+        </f:if>
+    </f:form.select>
+    <f:render partial="FormErrors" arguments="{object: 'newInquiryStep3.steering'}" />
+</div>

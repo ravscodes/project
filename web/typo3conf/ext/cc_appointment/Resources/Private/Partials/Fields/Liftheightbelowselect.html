@@ -1,0 +1,7 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<label for="liftheightbelow" class="control-label-grouped">
+    <f:translate key="liftheightbelow" /> ({f:translate(key: 'label.m')})
+</label>
+<f:form.textfield property="liftheightbelow" id="liftheightbelow" class="form-control" additionalAttributes="{required: 'required', data-validation: 'required', data-validation-error-msg-required: '{f:translate(key: \'form.validation.required\')}', data-highlight: 'liftheightbelow'}" />
+<f:render partial="FormErrors" arguments="{object: 'newInquiryStep3.liftheightbelow'}" />

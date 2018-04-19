@@ -1,0 +1,12 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<div class="form-group{f:render(partial: 'FormErrorsClass', arguments: {object: 'newInquiryStep3.liftheight'})}">
+    <label for="liftheight" class="control-label">
+        <f:translate key="liftheight" /> ({f:translate(key: 'label.m')})<f:translate key="form.required" />
+        <f:if condition="{badge}">
+            <span class="badge badge-default">{badge}</span>
+        </f:if>
+    </label>
+    <f:form.textfield property="liftheight" id="liftheight" class="form-control" required="1" additionalAttributes="{required: 'required', data-validation: 'required', data-validation-error-msg-required: '{f:translate(key: \'form.validation.required\')}', data-highlight: 'liftheight'}" />
+    <f:render partial="FormErrors" arguments="{object: 'newInquiryStep3.liftheight'}" />
+</div>

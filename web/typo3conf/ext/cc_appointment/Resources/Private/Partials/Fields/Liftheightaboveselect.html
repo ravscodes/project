@@ -1,0 +1,14 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<label for="liftheightabove" class="control-label-grouped">
+    <f:translate key="liftheightabove" />
+</label>
+<f:form.select property="liftheightabove" id="liftheightabove" class="form-control" additionalAttributes="{required: 'required', data-validation: 'required', data-validation-error-msg-required: '{f:translate(key: \'form.validation.required\')}', data-highlight: 'liftheightabove'}">
+    <option value="">{f:translate(key: 'label.select')}</option>
+    <option value="{f:translate(key: 'liftheightabove.1')}" {f:if(condition: '{newInquiryStep3.liftheightabove} == {f:translate(key: \'liftheightabove.1\')}', then: ' selected="selected"')}>{f:translate(key: 'liftheightabove.1')}</option>
+    <option value="{f:translate(key: 'liftheightabove.2')}">{f:translate(key: 'liftheightabove.2')}</option>
+    <option value="{f:translate(key: 'liftheightabove.3')}">{f:translate(key: 'liftheightabove.3')}</option>
+    <option value="{f:translate(key: 'liftheightabove.4')}">{f:translate(key: 'liftheightabove.4')}</option>
+    <option value="{f:translate(key: 'liftheightabove.5')}">{f:translate(key: 'liftheightabove.5')}</option>
+</f:form.select>
+<f:render partial="FormErrors" arguments="{object: 'newInquiryStep3.liftheightabove'}" />
