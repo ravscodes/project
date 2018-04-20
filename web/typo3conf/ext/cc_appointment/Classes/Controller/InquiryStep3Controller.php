@@ -52,6 +52,22 @@ class InquiryStep3Controller extends ActionController
     protected $inquiryRepository = null;
 
     /**
+     * inquiryStep1Controller
+     *
+     * @var \Crossconcept\CcAppointment\Controller\InquiryStep1Controller
+     * @inject
+     */
+    protected $inquiryStep1Controller = null;
+
+    /**
+     * inquiryStep2Controller
+     *
+     * @var \Crossconcept\CcAppointment\Controller\InquiryStep2Controller
+     * @inject
+     */
+    protected $inquiryStep2Controller = null;
+
+    /**
      * Configuration Manager
      *
      * @var \TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface
@@ -89,6 +105,30 @@ class InquiryStep3Controller extends ActionController
     }
 
     /**
+     * Return the data serialized in user session
+     *
+     * @return mixed $sessionData Data of current session
+     */
+    public function getSessionData()
+    {
+        $sessionData = null;
+
+        // Check if data of inquiryStep1 is available in session and assign it to view
+        if ($this->frontendController->fe_user->getKey('ses', self::sessionKey)) {
+
+            // Get data from session
+            $inquiryStep3data = unserialize($this->frontendController->fe_user->getKey('ses', self::sessionKey));
+
+            if ($inquiryStep3data instanceof InquiryStep1) {
+
+                $sessionData = $inquiryStep3data;
+            }
+        }
+
+        return $sessionData;
+    }
+
+    /**
      * action new
      *
      * @return void
@@ -96,28 +136,17 @@ class InquiryStep3Controller extends ActionController
     public function newAction()
     {
         // Check if data of inquiryStep1 is available in session and assign it to view
-        if ($this->frontendController->fe_user->getKey('ses', InquiryStep1Controller::sessionKey)) {
-            $inquiryStep1data = unserialize($this->frontendController->fe_user->getKey('ses', InquiryStep1Controller::sessionKey));
-            if ($inquiryStep1data instanceof InquiryStep1) {
-                $this->view->assign('newInquiryStep1', $inquiryStep1data);
-            }
-        }
+        $inquiryStep1data = $this->inquiryStep1Controller->getSessionData();
+        $this->view->assign('newInquiryStep1', $inquiryStep1data);
 
         // Check if data of inquiryStep2 is available in session and assign it to view
-        if ($this->frontendController->fe_user->getKey('ses', InquiryStep2Controller::sessionKey)) {
-            $inquiryStep2data = unserialize($this->frontendController->fe_user->getKey('ses', InquiryStep2Controller::sessionKey));
-            if ($inquiryStep2data instanceof InquiryStep2) {
-                $this->view->assign('newInquiryStep2', $inquiryStep2data);
-            }
-        }
+        $inquiryStep2data = $this->inquiryStep2Controller->getSessionData();
+        $this->view->assign('newInquiryStep2', $inquiryStep2data);
+        \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($inquiryStep2data);
 
         // Check if data of inquiryStep3 is available in session and assign it to view
-        if ($this->frontendController->fe_user->getKey('ses', InquiryStep3Controller::sessionKey)) {
-            $inquiryStep3data = unserialize($this->frontendController->fe_user->getKey('ses', InquiryStep3Controller::sessionKey));
-            if ($inquiryStep3data instanceof InquiryStep3) {
-                $this->view->assign('newInquiryStep3', $inquiryStep3data);
-            }
-        }
+        $inquiryStep3data = $this->getSessionData();
+        $this->view->assign('newInquiryStep3', $inquiryStep3data);
     }
 
     /**

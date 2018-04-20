@@ -33,23 +33,23 @@ namespace Crossconcept\CcAppointment\Domain\Model;
 class Openingtime extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
     /**
-     * Time from
+     * Start time
      *
-     * @var string
+     * @var int
      * @validate NotEmpty
      */
     protected $timeFrom;
 
     /**
-     * Time to
+     * End time
      *
-     * @var string
+     * @var int
      * @validate NotEmpty
      */
     protected $timeTo;
 
     /**
-     * @return mixed
+     * @return int
      */
     public function getTimeFrom()
     {
@@ -57,7 +57,7 @@ class Openingtime extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * @param mixed $timeFrom
+     * @param int $timeFrom
      */
     public function setTimeFrom($timeFrom)
     {
@@ -65,7 +65,7 @@ class Openingtime extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * @return mixed
+     * @return int
      */
     public function getTimeTo()
     {
@@ -73,7 +73,7 @@ class Openingtime extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * @param mixed $timeTo
+     * @param int $timeTo
      */
     public function setTimeTo($timeTo)
     {

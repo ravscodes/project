@@ -32,6 +32,9 @@ use Crossconcept\CcAppointment\Domain\Model\Appointment;
 use Crossconcept\CcAppointment\Domain\Model\InquiryStep1;
 use Crossconcept\CcAppointment\Domain\Model\InquiryStep2;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 
 /**
  * InquiryStep2Controller
@@ -60,6 +63,14 @@ class InquiryStep2Controller extends ActionController
     protected $timeslotRepository = null;
 
     /**
+     * inquiryStep1Controller
+     *
+     * @var \Crossconcept\CcAppointment\Controller\InquiryStep1Controller
+     * @inject
+     */
+    protected $inquiryStep1Controller = null;
+
+    /**
      * Frontend Controller
      */
     protected $frontendController;
@@ -73,11 +84,35 @@ class InquiryStep2Controller extends ActionController
     }
 
     /**
+     * Return the data serialized in user session
+     *
+     * @return mixed $sessionData Data of current session
+     */
+    public function getSessionData()
+    {
+        $sessionData = null;
+
+        // Check if data of inquiryStep1 is available in session and assign it to view
+        if ($this->frontendController->fe_user->getKey('ses', self::sessionKey)) {
+
+            // Get data from session
+            $inquiryStep2data = unserialize($this->frontendController->fe_user->getKey('ses', self::sessionKey));
+
+            if ($inquiryStep2data instanceof InquiryStep1) {
+
+                $sessionData = $inquiryStep2data;
+            }
+        }
+
+        return $sessionData;
+    }
+
+    /**
      * Get the openingtimes for the given appointment and date.
      *
      * @param Appointment $appointment Chosen appointment
      * @param DateTime $date Picked in calendar, otherwise current date
-     * @return $openingtimes
+     * @return array $openingtimes Opening times for this date
      */
     public function getOpeningtimesByDate(Appointment $appointment, DateTime $date)
     {
@@ -89,42 +124,41 @@ class InquiryStep2Controller extends ActionController
 
         switch ($dow) {
             // Monday
-            case 1: $openingtimes = $appointment->getOpeningtimesMonday(); break;
+            case 1: $openingtimes = $appointment->getOpeningtimesMonday()->toArray(); break;
             // Tuesday
-            case 2: $openingtimes = $appointment->getOpeningtimesTuesday(); break;
+            case 2: $openingtimes = $appointment->getOpeningtimesTuesday()->toArray(); break;
             // Wednesday
-            case 3: $openingtimes = $appointment->getOpeningtimesWednesday(); break;
+            case 3: $openingtimes = $appointment->getOpeningtimesWednesday()->toArray(); break;
             // Thursday
-            case 4: $openingtimes = $appointment->getOpeningtimesThursday(); break;
+            case 4: $openingtimes = $appointment->getOpeningtimesThursday()->toArray(); break;
             // Friday
-            case 5: $openingtimes = $appointment->getOpeningtimesFriday(); break;
+            case 5: $openingtimes = $appointment->getOpeningtimesFriday()->toArray(); break;
             // Saturday
-            case 6: $openingtimes = $appointment->getOpeningtimesSaturday(); break;
+            case 6: $openingtimes = $appointment->getOpeningtimesSaturday()->toArray(); break;
             // Sunday
-            case 7: $openingtimes = $appointment->getOpeningtimesSunday(); break;
+            case 7: $openingtimes = $appointment->getOpeningtimesSunday()->toArray(); break;
         }
 
         return $openingtimes;
     }
 
     /**
-     * Get all available timeslots. A timeslots is valid as long as it fits
-     * into the length of a given openingtime.
+     * Get all timeslots for a given date and appointment.
      *
      * @param Appointment $appointment Chosen appointment
      * @param DateTime $date Picked in calendar, otherwise current date
-     * @return $timeslotsAvailable
+     * @return array $timeslotsByDate All slots for this date
      */
-    public function getTimeslotsAvailable(Appointment $appointment, DateTime $date)
+    public function getTimeslotsByDate(Appointment $appointment, DateTime $date)
     {
-        $timeslotsAvailable = [];
-        $openingtimes       = $this->getOpeningtimesByDate($appointment, $date);
-        $slotLength         = (int) $appointment->getInterval() * 60; // Minutes to seconds
+        $timeslotsByDate = [];
+        $openingtimes    = $this->getOpeningtimesByDate($appointment, $date);
+        $slotLength      = (int) $appointment->getInterval() * 60; // Minutes to seconds
 
         foreach ($openingtimes as $openingtime) {
 
-            $start  = (int) $openingtime->getTimeFrom();
-            $end    = (int) $openingtime->getTimeTo();
+            $start  = $openingtime->getTimeFrom();
+            $end    = $openingtime->getTimeTo();
 
             while ($start + $slotLength < $end) {
 
@@ -135,30 +169,52 @@ class InquiryStep2Controller extends ActionController
                 $timeslot->setTimeFrom($start);
                 $timeslot->setTimeTo($start + $slotLength);
 
-                $timeslotsAvailable[] = $timeslot;
+                $timeslotsByDate[] = $timeslot;
                 $start = $start + $slotLength;
             }
         }
 
-        return $timeslotsAvailable;
+        return $timeslotsByDate;
     }
 
     /**
-     * Get all reserved timeslots because they are booked already.
+     * Get all timeslots that have already been requested for the given date.
      *
      * @param Appointment $appointment Chosen appointment
      * @param DateTime $date Picked in calendar, otherwise current date
-     * @return $timeslotsUnavailable
+     * @return array $timeslotsUnavailable
      */
     public function getTimeslotsUnavailable(Appointment $appointment, DateTime $date)
     {
-        $timeslotsUnavailable = [];
+        $timeslotsUnavailable = $this->timeslotRepository->findByAppointmentDate($appointment, $date);
+        return $timeslotsUnavailable->toArray();
+    }
 
-        $result = $this->timeslotRepository->findByAppointmentDate();
-        $result->toArray();
-        // @Todo Create repositoy action / use toArray()
+    /**
+     * Get all available timeslots. A timeslots is valid as long as it fits in
+     * the length of a given opening time.
+     *
+     * @param Appointment $appointment Chosen appointment
+     * @param DateTime $date Picked in calendar, otherwise current date
+     *
+     * @return array $timeslotsAvailable Timeslots available for request
+     */
+    public function getTimeslotsAvailable(Appointment $appointment, DateTime $date)
+    {
+        $timeslotsAvailable = [];
 
-        return $timeslotsUnavailable;
+        $timeslotsByDate        = $this->getTimeslotsByDate($appointment, $date);
+        $timeslotsUnavailable   = $this->getTimeslotsUnavailable($appointment, $date);
+
+        if (!empty($timeslotsUnavailable)) {
+
+            // @Todo Filter
+        } else {
+
+            $timeslotsAvailable = $timeslotsByDate;
+        }
+
+        return $timeslotsAvailable;
     }
 
     /**
@@ -168,64 +224,91 @@ class InquiryStep2Controller extends ActionController
      */
     public function newAction()
     {
-        $date = new DateTime();
-
         // Check if data of inquiryStep1 is available in session and assign it to view
-        if ($this->frontendController->fe_user->getKey('ses', InquiryStep1Controller::sessionKey)) {
-            $inquiryStep1data = unserialize($this->frontendController->fe_user->getKey('ses', InquiryStep1Controller::sessionKey));
-            if ($inquiryStep1data instanceof InquiryStep1) {
-                $this->view->assign('newInquiryStep1', $inquiryStep1data);
-            }
-        }
+        $inquiryStep1data = $this->inquiryStep1Controller->getSessionData();
+        $this->view->assign('newInquiryStep1', $inquiryStep1data);
 
         // Check if data of inquiryStep2 is available in session and assign it to view
-        if ($this->frontendController->fe_user->getKey('ses', self::sessionKey)) {
-            $inquiryStep2data = unserialize($this->frontendController->fe_user->getKey('ses', self::sessionKey));
-            if ($inquiryStep2data instanceof InquiryStep2) {
-                $this->view->assign('newInquiryStep2', $inquiryStep2data);
-            }
-        }
+        $inquiryStep2data = $this->getSessionData();
+        $this->view->assign('newInquiryStep2', $inquiryStep2data);
 
-        $timeslots = $this->getTimeslotsAvailable($inquiryStep1data->getAppointment(), $date); // @Todo check appointment
+        // Use date of session if available, otherwise use today
+        $date = (!empty($inquiryStep2data) ? $inquiryStep2data->getDate() : new DateTime());
 
-        $assignedValues = [
-            'timeslots' => $timeslots
-        ];
+        // Assign timeslots to choose from
+        $timeslots = $this->getTimeslotsAvailable($inquiryStep1data->getAppointment(), $date);
+        $this->view->assign('timeslots', $timeslots);
 
-        $this->view->assignMultiple($assignedValues);
+        //
     }
 
     /**
-     * action ajaxCall
+     * Method that is executed when the date changes in the calendar.
      *
-     * @param InquiryStep2 $newInquiryStep2
      * @return String $json Returns timeslots as a JSON
      */
-    public function ajaxCallAction(InquiryStep2 $newInquiryStep2)
+    public function ajaxCallAction()
     {
-        $json = json_encode(array('myResult' => 'World'));
-        return $json;
+        $timeslotsArray = [];
+
+        // Get required arguments
+        $ajaxArguments  = GeneralUtility::_GP('arguments');
+        $appointmentUid = intval($ajaxArguments['appointmentUid']);
+        $appointment    = $this->appointmentRepository->findByUid($appointmentUid);
+        $date           = DateTime::createFromFormat('d.m.Y', $ajaxArguments['date']);
+
+
+        if (!empty($appointment) && !empty($date)) {
+
+            $timeslots = $this->getTimeslotsAvailable($appointment, $date);
+
+            foreach ($timeslots as $timeslot) {
+
+                $timeFrom   = $timeslot->getTimeFrom();
+                $timeTo     = $timeslot->getTimeTo();
+
+                $timeslotsArray[] = [
+                    'from'  => $timeFrom,
+                    'to'    => $timeFrom,
+                    'label' => LocalizationUtility::translate(
+                        'form.label.timeFormat',
+                        'cc_appointment',
+                        [
+                            0 => date('H:i', $timeFrom),
+                            1 => date('H:i', $timeTo)
+                        ])
+                ];
+            }
+        }
+
+        return json_encode($timeslotsArray);
+    }
+
+    /**
+     * initializeCreateAction
+     */
+    protected function initializeCreateAction(){
+
+        if ($this->arguments->hasArgument('newInquiryStep2')) {
+
+            // Converting the date string to a \DateTime object
+            $newInquiryStep2 = $this->arguments->getArgument('newInquiryStep2');
+            $newInquiryStep2->getPropertyMappingConfiguration()->forProperty('date')->setTypeConverterOption(
+                        'TYPO3\\CMS\\Extbase\\Property\\TypeConverter\\DateTimeConverter',
+                        \TYPO3\CMS\Extbase\Property\TypeConverter\DateTimeConverter::CONFIGURATION_DATE_FORMAT,
+                        'd.m.Y');
+        }
     }
 
     /**
      * Saves data of step 2 to user session and redirect to step 3.
      *
      * @param InquiryStep2 $newInquiryStep2
-     * @ignorevalidation $newInquiryStep2
-     *
+     * @ignorevalidation $newInquiryStep1
      * @return void
      */
     public function createAction(InquiryStep2 $newInquiryStep2)
     {
-        $pageType = $GLOBALS['TSFE'];
-        $settings = $this->settings;
-
-        \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($pageType);
-        \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($settings);die;
-
-        if ($pageType == $settings['typeNum']) {
-            $this->ajaxCallAction($newInquiryStep2);
-        }
         // Write data to session
         $this->frontendController->fe_user->setKey('ses', self::sessionKey, serialize($newInquiryStep2));
         $this->frontendController->fe_user->storeSessionData();

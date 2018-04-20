@@ -1,6 +1,6 @@
 {namespace v=FluidTYPO3\Vhs\ViewHelpers}
 
-<fieldset>
+<fieldset class="fieldset-personalInformation">
 
     <legend>{f:translate(key: 'form.legend.personal')}</legend>
 
@@ -72,15 +72,12 @@
         </div>
     </f:if>
     <div class="form-group">
-        <v:variable.set name="privacyPolicyPid" value="{v:variable.typoscript(path: 'plugin.tx_teichmanncraneconfigurator.settings.privacyPolicyPid')}"/>
-        <v:variable.set name="privacyPolicyLink" value="{v:link.typolink(configuration: {parameter: privacyPolicyPid, target: '_blank'})}"/>
         <div class="checkbox">
             <label>
                 <f:form.checkbox value="1" property="privacy" additionalAttributes="{required: 'required', data-validation: 'required', data-validation-error-msg-required: '{f:translate(key: \'form.validation.required\')}'}"/>
                 <f:format.raw>
-                    <f:translate key="privacy" arguments="{0: privacyPolicyLink}"/>
+                    <f:translate key="form.label.privacy" />
                 </f:format.raw>
-                {f:translate(key: 'form.required')}
             </label>
         </div>
     </div>

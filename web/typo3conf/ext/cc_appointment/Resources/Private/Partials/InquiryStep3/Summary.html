@@ -2,4 +2,13 @@
 
 <fieldset class="fieldset-summary">
 
+    <legend>{f:translate(key: 'form.legend.summary')}</legend>
+
+    <dl class="dl-horizontal">
+        <dt>{f:if(condition: newInquiryStep1.appointment.title, then: newInquiryStep1.appointment.title)}:</dt>
+        <dd>
+            <f:if condition="newInquiryStep2.date">{newInquiryStep2.date -> f:format.date(format: 'l, d.m.Y')}</f:if>
+        </dd>
+    </dl>
+
 </fieldset>

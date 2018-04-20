@@ -61,12 +61,14 @@ class InquiryStep1Controller extends ActionController
     }
 
     /**
-     * action new
+     * Return the data serialized in user session
      *
-     * @return void
+     * @return mixed $sessionData Data of current session
      */
-    public function newAction()
+    public function getSessionData()
     {
+        $sessionData = null;
+
         // Check if data of inquiryStep1 is available in session and assign it to view
         if ($this->frontendController->fe_user->getKey('ses', self::sessionKey)) {
 
@@ -74,18 +76,27 @@ class InquiryStep1Controller extends ActionController
             $inquiryStep1data = unserialize($this->frontendController->fe_user->getKey('ses', self::sessionKey));
 
             if ($inquiryStep1data instanceof InquiryStep1) {
-                // Assign data to view
-                $this->view->assign('newInquiryStep1', $inquiryStep1data);
+
+                $sessionData = $inquiryStep1data;
             }
         }
 
+        return $sessionData;
+    }
+
+    /**
+     * action new
+     *
+     * @return void
+     */
+    public function newAction()
+    {
+        // Check if data of inquiryStep1 is available in session and assign it to view
+        $inquiryStep1data = $this->getSessionData();
+        $this->view->assign('newInquiryStep1', $inquiryStep1data);
+
         $appointments = $this->appointmentRepository->findAll();
-
-        $assignedValues = [
-            'appointments' => $appointments
-        ];
-
-        $this->view->assignMultiple($assignedValues);
+        $this->view->assign('appointments', $appointments);
     }
 
     /**

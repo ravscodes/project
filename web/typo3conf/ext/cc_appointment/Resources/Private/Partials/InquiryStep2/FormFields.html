@@ -2,10 +2,10 @@
 
 <div class="row">
 
-	<div class="col-md-7">
+	<div class="col-lg-5 col-sm-6">
 		<f:render section="Calendar" arguments="{_all}" />
 	</div>
-	<div class="col-lg-4 col-lg-offset-1 col-md-5 col-md-offset-0">
+	<div class="col-lg-6 col-lg-offset-1 col-md-6 col-md-offset-0 col-sm-6">
 		<f:render section="Timeslots" arguments="{_all}" />
 	</div>
 
@@ -22,39 +22,39 @@
 
 <f:comment><!-- Render calendar --></f:comment>
 <f:section name="Calendar">
-	<div class="form-group form-group-inline-datepicker">
-		<label for="calendar"><f:translate key="form.label.date" /> <f:translate key="form.required" /></label>
-		<f:form.hidden id="calendar" class="form-control date" value="{newInquiryStep2..timeslot.date -> f:format.date()}" />
-	</div>
+	<fieldset>
+		<legend>{f:translate(key: 'form.legend.calendar')}</legend>
+		<div class="form-group form-group-inline-datepicker">
+			<f:form.hidden id="calendar" property="date" value="{newInquiryStep2.date -> f:format.date(format: 'd.m.Y')}" />
+		</div>
+	</fieldset>
 </f:section>
 
 <f:comment><!-- Render timeslots--></f:comment>
 <f:section name="Timeslots">
 
-	<div class="form-group{f:render(partial: 'FormErrorsClass', arguments: {object: 'newInquiryStep2.timeslot'})}">
-		<label><f:translate key="form.label.timeslots" /> <f:translate key="form.required" /></label>
-		<f:if condition="{timeslots}">
-			<f:then>
-				<div class="form-group{f:render(partial: 'FormErrorsClass', arguments: {object: 'newInquiryStep2.timeslot'})}">
-					<f:form.hidden property="timeslot" value="0" />
-					<div class="list-group" id="list-timeslots">
-						<f:for each="{timeslots}" as="timeslot" iteration="i">
-							<div class="list-group-item">
-								<label for="timeslot-{i.index}">
-									<f:form.radio property="timeslot" id="timeslot-{i.index}" value="{i.index}" />
-									<f:translate key="form.label.timeFormat" arguments="{
-														0: '{f:format.date(date: timeslot.timeFrom, format: \'H:i\')}',
-														1: '{f:format.date(date: timeslot.timeTo, format: \'H:i\')}'}" />
-								</label>
-							</div>
-						</f:for>
+	<f:form.hidden id="appointment" name="appointment" value="{newInquiryStep1.appointment.uid}"/>
+	<f:form.hidden id="timeFrom" property="timeFrom" value="{newInquiryStep2.timeFrom}" />
+	<f:form.hidden id="timeTo" property="timeTo" value="{newInquiryStep2.timeTo}" />
+	<fieldset>
+		<legend>{f:translate(key: 'form.legend.timeslots')}</legend>
+		<div class="timeslotWrapper form-group{f:render(partial: 'FormErrorsClass', arguments: {object: 'newInquiryStep2.timeslot'})}">
+			<div id="timeslotError" class="alert alert-info text-center{f:if(condition: timeslots, then: ' hidden')}">
+				<f:translate key="form.label.timeslots.unavailable" />
+			</div>
+			<div class="row text-center" id="timeslots">
+				<f:for each="{timeslots}" as="timeslot">
+					<div class="col-lg-6">
+						<label for="{timeslot.timeFrom}" class="btn btn-default btn-block">
+							<input class="hidden" type="radio" name="timeslot" id="{timeslot.timeFrom}" data-from="{timeslot.timeFrom}" data-to="{timeslot.timeTo}" />
+							<f:translate key="form.label.timeFormat" arguments="{
+											0: '{f:format.date(date: timeslot.timeFrom, format: \'H:i\')}',
+											1: '{f:format.date(date: timeslot.timeTo, format: \'H:i\')}'}" />
+						</label>
 					</div>
-					<f:render partial="FormErrors" arguments="{object: 'newInquiryStep2.timeslot'}" />
-				</div>
-			</f:then>
-			<f:else>
-				<div class="alert alert-info"><f:translate key="form.label.timeslots.unavailable" /></div>
-			</f:else>
-		</f:if>
-	</div>
+				</f:for>
+			</div>
+			<f:render partial="FormErrors" arguments="{object: 'newInquiryStep2.timeslot'}" />
+		</div>
+	</fieldset>
 </f:section>

@@ -11126,7 +11126,7 @@ return array (
             'default' => 0,
             'range' => 
             array (
-              'lower' => 1524088800,
+              'lower' => 1524175200,
             ),
             'behaviour' => 
             array (
@@ -11148,7 +11148,7 @@ return array (
             'default' => 0,
             'range' => 
             array (
-              'lower' => 1524088800,
+              'lower' => 1524175200,
             ),
             'behaviour' => 
             array (
@@ -11536,7 +11536,7 @@ return array (
             'default' => 0,
             'range' => 
             array (
-              'lower' => 1524088800,
+              'lower' => 1524175200,
             ),
             'behaviour' => 
             array (
@@ -11558,7 +11558,7 @@ return array (
             'default' => 0,
             'range' => 
             array (
-              'lower' => 1524088800,
+              'lower' => 1524175200,
             ),
             'behaviour' => 
             array (

@@ -26,6 +26,6 @@ ajaxTimeslots {
         admPanel = 0
     }
 
-    10 < tt_content.list.20.tx_ccappointment
+    10 < tt_content.list.20.ccappointment_contactform
 }
 

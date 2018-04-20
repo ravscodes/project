@@ -141,20 +141,53 @@
 			<trans-unit id="form.next" xml:space="preserve">
 				<source>Next</source>
 			</trans-unit>
-			<trans-unit id="form.label.appointment" xml:space="preserve">
-				<source>What are you interested in?</source>
+			<trans-unit id="form.submit" xml:space="preserve">
+				<source>Submit</source>
 			</trans-unit>
-			<trans-unit id="form.label.date" xml:space="preserve">
+			<trans-unit id="form.legend.general" xml:space="preserve">
+				<source>General</source>
+			</trans-unit>
+			<trans-unit id="form.legend.calendar" xml:space="preserve">
 				<source>Choose a date</source>
 			</trans-unit>
-			<trans-unit id="form.label.timeslots" xml:space="preserve">
+			<trans-unit id="form.legend.timeslots" xml:space="preserve">
 				<source>Choose a time</source>
+			</trans-unit>
+			<trans-unit id="form.legend.personal" xml:space="preserve">
+				<source>Personal information</source>
+			</trans-unit>
+			<trans-unit id="form.legend.summary" xml:space="preserve">
+				<source>Summary</source>
+			</trans-unit>
+			<trans-unit id="form.label.appointment" xml:space="preserve">
+				<source>What are you interested in?</source>
 			</trans-unit>
 			<trans-unit id="form.label.timeslots.unavailable" xml:space="preserve">
 				<source>For the chosen date no appointments are available.</source>
 			</trans-unit>
 			<trans-unit id="form.label.timeFormat" xml:space="preserve">
 				<source>%1$s - %2$s</source>
+			</trans-unit>
+			<trans-unit id="form.label.name" xml:space="preserve">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="form.label.phone" xml:space="preserve">
+				<source>Phone number</source>
+			</trans-unit>
+			<trans-unit id="form.label.email" xml:space="preserve">
+				<source>Mail</source>
+			</trans-unit>
+			<trans-unit id="form.label.address" xml:space="preserve">
+				<source>Address</source>
+			</trans-unit>
+			<trans-unit id="form.label.zip" xml:space="preserve">
+				<source>Zip code</source>
+			</trans-unit>
+			<trans-unit id="form.label.city" xml:space="preserve">
+				<source>City</source>
+			</trans-unit>
+			<trans-unit id="form.label.privacy" xml:space="preserve">
+				<source>I accept the Privacy Policy *</source>
 			</trans-unit>
 
 			<!-- Further labels End -->

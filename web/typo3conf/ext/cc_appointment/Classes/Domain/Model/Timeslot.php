@@ -43,7 +43,7 @@ class Timeslot extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Date of requested appointment
      *
-     * @var string
+     * @var \DateTime
      * @validate DateTime
      * @validate NotEmpty
      */
@@ -52,7 +52,7 @@ class Timeslot extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Start time of requested appointment
      *
-     * @var string
+     * @var int
      * @validate NotEmpty
      */
     protected $timeFrom;
@@ -60,7 +60,7 @@ class Timeslot extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * End time of requested appointment
      *
-     * @var string
+     * @var int
      * @validate NotEmpty
      */
     protected $timeTo;
@@ -82,7 +82,7 @@ class Timeslot extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getDate()
     {
@@ -90,7 +90,7 @@ class Timeslot extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * @param string $date
+     * @param \DateTime $date
      */
     public function setDate($date)
     {
@@ -98,7 +98,7 @@ class Timeslot extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * @return mixed
+     * @return int
      */
     public function getTimeFrom()
     {
@@ -106,7 +106,7 @@ class Timeslot extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * @param mixed $timeFrom
+     * @param int $timeFrom
      */
     public function setTimeFrom($timeFrom)
     {
@@ -114,7 +114,7 @@ class Timeslot extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * @return mixed
+     * @return int
      */
     public function getTimeTo()
     {
@@ -122,7 +122,7 @@ class Timeslot extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * @param mixed $timeTo
+     * @param int $timeTo
      */
     public function setTimeTo($timeTo)
     {

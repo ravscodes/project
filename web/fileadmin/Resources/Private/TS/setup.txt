@@ -28,5 +28,7 @@ page.10 {
         content < styles.content.get
         content.select.where = colPos=0
     }
-
 }
+
+config.language = de
+config.locale_all = de_DE

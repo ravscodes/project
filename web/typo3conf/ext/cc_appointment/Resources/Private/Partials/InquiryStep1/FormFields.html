@@ -2,6 +2,7 @@
 
 <f:if condition="{appointments}">
     <fieldset class="appointment">
+        <legend>{f:translate(key: 'form.legend.general')}</legend>
         <div class="form-group{f:render(partial: 'FormErrorsClass', arguments: {object: 'newInquiryStep1.appointment'})}">
             <label>
                 <f:translate key="form.label.appointment"/>

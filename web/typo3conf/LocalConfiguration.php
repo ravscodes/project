@@ -35,8 +35,10 @@ return [
         ],
     ],
     'FE' => [
+        'cHashExcludedParameters' => 'L, pk_campaign, pk_kwd, utm_source, utm_medium, utm_campaign, utm_term, utm_content, gclid, tx_ccappointment_contactform[action]=ajaxCall',
         'debug' => true,
         'loginSecurityLevel' => 'rsa',
+        'pageNotFoundOnCHashError' => false,
     ],
     'GFX' => [
         'jpg_quality' => '80',

@@ -141,20 +141,53 @@
 			<trans-unit id="form.next" xml:space="preserve">
 				<target>Nächster Schritt</target>
 			</trans-unit>
+			<trans-unit id="form.submit" xml:space="preserve">
+				<target>Termin Anfragen</target>
+			</trans-unit>
+			<trans-unit id="form.legend.general" xml:space="preserve">
+				<target>Generelle Informationen</target>
+			</trans-unit>
+			<trans-unit id="form.legend.calendar" xml:space="preserve">
+				<target>Wähle ein Datum</target>
+			</trans-unit>
+			<trans-unit id="form.legend.timeslots" xml:space="preserve">
+				<target>Wähle eine Uhrzeit</target>
+			</trans-unit>
+			<trans-unit id="form.legend.personal" xml:space="preserve">
+				<target>Persönliche Informationen</target>
+			</trans-unit>
+			<trans-unit id="form.legend.summary" xml:space="preserve">
+				<target>Zusammenfassung</target>
+			</trans-unit>
 			<trans-unit id="form.label.appointment" xml:space="preserve">
 				<target>Wofür brauchen Sie einen Termin?</target>
-			</trans-unit>
-			<trans-unit id="form.label.date" xml:space="preserve">
-				<target>Wählen Sie einen Tag</target>
-			</trans-unit>
-			<trans-unit id="form.label.timeslots" xml:space="preserve">
-				<target>Wählen Sie die Zeit</target>
 			</trans-unit>
 			<trans-unit id="form.label.timeslots.unavailable" xml:space="preserve">
 				<target>Für den gewählten Tag sind leider keine Termine mehr verfügbar.</target>
 			</trans-unit>
 			<trans-unit id="form.label.timeFormat" xml:space="preserve">
 				<target>%1$s - %2$s Uhr</target>
+			</trans-unit>
+			<trans-unit id="form.label.name" xml:space="preserve">
+				<target>Name</target>
+			</trans-unit>
+			<trans-unit id="form.label.phone" xml:space="preserve">
+				<target>Telefon</target>
+			</trans-unit>
+			<trans-unit id="form.label.email" xml:space="preserve">
+				<target>E-Mail</target>
+			</trans-unit>
+			<trans-unit id="form.label.address" xml:space="preserve">
+				<target>Adresse</target>
+			</trans-unit>
+			<trans-unit id="form.label.zip" xml:space="preserve">
+				<target>PLZ</target>
+			</trans-unit>
+			<trans-unit id="form.label.city" xml:space="preserve">
+				<target>Ort</target>
+			</trans-unit>
+			<trans-unit id="form.label.privacy" xml:space="preserve">
+				<target>Ich akzeptiere die Datenschutzbestimmungen *</target>
 			</trans-unit>
 
 			<!-- Further labels End -->

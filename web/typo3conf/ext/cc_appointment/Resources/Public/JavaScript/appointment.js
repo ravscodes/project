@@ -11,27 +11,78 @@ $( document ).ready(function() {
         format: 'DD.MM.YYYY',
         viewMode: 'days',
         locale: currentLanguage,
-        defaultDate: today,
+        defaultDate: ((!calendar.val()) ? today : calendar.val()),
         minDate: today
     });
 
     // Configure Ajax call
-    var form            = $('#inquiry-form-step2'),
-        timeslotsList   = $('#list-timeslots'),
-        timeslotLabel   = $('#list-timeslots label');
+    var appointment     = $('#appointment').val(),
+        timeslotWrapper = $('#timeslotWrapper'),
+        timeslotError   = $('#timeslotError'),
+        timeslots       = $('#timeslots'),
+        timeFrom        = $('#timeFrom'),
+        timeTo          = $('#timeTo');
+
+
+    // Clear timeslots
+    function clearTimeslots() {
+        timeslots.empty();
+    }
+
+    // Fill in timeslots
+    function fillTimeslots(result) {
+
+        if (jQuery.isEmptyObject(result)) {
+            timeslotError.removeClass('hidden');
+        } else {
+            timeslotError.addClass('hidden');
+        }
+
+        $.each(result, function (i, obj) {
+            var column = $('<div/>')
+                .addClass('col-lg-6')
+                .appendTo(timeslots);
+            var label = $('<label/>')
+                .attr('for', obj['from'])
+                .addClass('btn btn-default btn-block')
+                .text(obj['label'])
+                .appendTo(column);
+            var radio = $('<input />', {
+                        type: 'radio',
+                        id: obj['from'],
+                        name: 'timeslot'
+                    }
+                )
+                .attr('data-from', obj['from'])
+                .attr('data-to', obj['to'])
+                .prependTo(label);
+        });
+
+        timeslotWrapper.fadeIn('fast');
+    }
+
+    var pagetype = 'type=42795',
+        controller = 'tx_ccappointment_contactform[controller]=InquiryStep2',
+        action = 'tx_ccappointment_contactform[action]=ajaxCall';
 
     var service = {
-        ajaxCall: function (data) {
-
-            console.log(data);
+        ajaxCall: function (date) {
             $.ajax({
-                url: '/index.php?type=42795',
+                url: '/index.php/?' + controller + '&' + action + '&' + pagetype,
                 type: 'POST',
                 cache: false,
-                data: data.serialize(),
+                data: {
+                    arguments: {
+                        'appointmentUid': appointment,
+                        'date': date
+                    }
+                },
                 dataType: "json",
                 success: function (result) {
-                    console.log(result);
+                    timeslotWrapper.fadeOut('fast', function () {
+                        clearTimeslots();
+                        fillTimeslots(result);
+                    });
                 },
                 error: function (error) {
                     console.log(error);
@@ -42,12 +93,16 @@ $( document ).ready(function() {
 
     // Trigger calendar date change for ajax call
     calendar.on('dp.change', function (ev) {
-        service.ajaxCall(form);
+        service.ajaxCall($(this).val());
     });
 
-    // Highlight selected timeslot
-    timeslotsList.on('click', 'label', function () {
-        var elem = $(this);
-        elem.parent('.list-group-item').addClass('active').siblings().removeClass('active');
+    timeslots.on('change', "input[name='timeslot']", function(){
+        // Highlight chosen timeslot
+        $('#timeslots .btn').removeClass('active');
+        $(this).parent().addClass('active');
+
+        // Fill in data
+        timeFrom.val($(this).data('from'));
+        timeTo.val($(this).data('to'));
     });
 });

@@ -1260,7 +1260,7 @@ defined('TYPO3_MODE') or die();
     // non-cacheable actions
     array(
         'InquiryStep1' => 'new,create',
-        'InquiryStep2' => 'new,create',
+        'InquiryStep2' => 'new,create,ajaxCall',
         'InquiryStep3' => 'new,create',
     )
 );
