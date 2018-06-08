@@ -7,7 +7,14 @@
     <dl class="dl-horizontal">
         <dt>{f:if(condition: newInquiryStep1.appointment.title, then: newInquiryStep1.appointment.title)}:</dt>
         <dd>
-            <f:if condition="newInquiryStep2.date">{newInquiryStep2.date -> f:format.date(format: 'l, d.m.Y')}</f:if>
+            <f:if condition="{newInquiryStep2.timeslot.date}">
+                {newInquiryStep2.timeslot.date -> f:format.date(format: 'l, d.m.Y')}<br>
+            </f:if>
+            <f:if condition="{newInquiryStep2.timeslot.timeFrom} && {newInquiryStep2.timeslot.timeTo}">
+                <f:translate key="form.label.timeFormat" arguments="{
+											0: '{f:format.date(date: newInquiryStep2.timeslot.timeFrom, format: \'H:i\')}',
+											1: '{f:format.date(date: newInquiryStep2.timeslot.timeTo, format: \'H:i\')}'}" />
+            </f:if>
         </dd>
     </dl>
 

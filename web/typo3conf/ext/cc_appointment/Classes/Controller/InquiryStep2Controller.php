@@ -98,7 +98,7 @@ class InquiryStep2Controller extends ActionController
             // Get data from session
             $inquiryStep2data = unserialize($this->frontendController->fe_user->getKey('ses', self::sessionKey));
 
-            if ($inquiryStep2data instanceof InquiryStep1) {
+            if ($inquiryStep2data instanceof InquiryStep2) {
 
                 $sessionData = $inquiryStep2data;
             }
@@ -160,7 +160,7 @@ class InquiryStep2Controller extends ActionController
             $start  = $openingtime->getTimeFrom();
             $end    = $openingtime->getTimeTo();
 
-            while ($start + $slotLength < $end) {
+            while ($start + $slotLength <= $end) {
 
                 // Create new available timeslot
                 $timeslot = new Timeslot();
@@ -218,6 +218,33 @@ class InquiryStep2Controller extends ActionController
     }
 
     /**
+     * Get all unavailable days of week (days without timeslots available).
+     *
+     * @param Appointment $appointment Chosen appointment
+     * @param DateTime $date Picked in calendar, otherwise current date
+     * @return array $dowDisabled days of week to disable
+     */
+    public function getCalendarDisabled(Appointment $appointment, DateTime $date)
+    {
+        $dowDisabled = [];
+
+        // Iterate through whole week
+        for ($i = 0; $i < 7; $i++) {
+
+            $tempDate           = clone $date;
+            $dateToCheck        = $tempDate->modify('+' . $i . ' days');
+            $timeslotsForDate = $this->getTimeslotsByDate($appointment, $dateToCheck);
+
+            if (empty($timeslotsForDate)) {
+
+                $dowDisabled[] = $dateToCheck->format('w');
+            }
+        }
+
+        return implode(",", $dowDisabled);
+    }
+
+    /**
      * action new
      *
      * @return void
@@ -232,14 +259,22 @@ class InquiryStep2Controller extends ActionController
         $inquiryStep2data = $this->getSessionData();
         $this->view->assign('newInquiryStep2', $inquiryStep2data);
 
-        // Use date of session if available, otherwise use today
-        $date = (!empty($inquiryStep2data) ? $inquiryStep2data->getDate() : new DateTime());
+        $today          = new DateTime();
+        $date           = (!empty($inquiryStep2data) ? $inquiryStep2data->getTimeslot()->getDate() : $today);
+        $appointment    = $inquiryStep1data->getAppointment();
 
-        // Assign timeslots to choose from
-        $timeslots = $this->getTimeslotsAvailable($inquiryStep1data->getAppointment(), $date);
+        // Assign available timeslots
+        $timeslots = $this->getTimeslotsAvailable($appointment, $date);
         $this->view->assign('timeslots', $timeslots);
 
-        //
+        // Assign calendar settings
+        $calendar = [
+            'disabled'  => $this->getCalendarDisabled($appointment, $date),
+            'default'   => $date->format('Y-m-d'),
+            'min'       => $today->format('Y-m-d'),
+            'max'       => $today->modify('+' . $appointment->getLeadTime() . ' days')->format('Y-m-d')
+        ];
+        $this->view->assign('calendar', $calendar);
     }
 
     /**
@@ -257,7 +292,6 @@ class InquiryStep2Controller extends ActionController
         $appointment    = $this->appointmentRepository->findByUid($appointmentUid);
         $date           = DateTime::createFromFormat('d.m.Y', $ajaxArguments['date']);
 
-
         if (!empty($appointment) && !empty($date)) {
 
             $timeslots = $this->getTimeslotsAvailable($appointment, $date);
@@ -268,9 +302,11 @@ class InquiryStep2Controller extends ActionController
                 $timeTo     = $timeslot->getTimeTo();
 
                 $timeslotsArray[] = [
-                    'from'  => $timeFrom,
-                    'to'    => $timeFrom,
-                    'label' => LocalizationUtility::translate(
+                    'appointment' => $appointmentUid,
+                    'date'        => $timeslot->getDate()->format('d.m.Y'),
+                    'from'        => $timeFrom,
+                    'to'          => $timeTo,
+                    'label'       => LocalizationUtility::translate(
                         'form.label.timeFormat',
                         'cc_appointment',
                         [
@@ -290,10 +326,13 @@ class InquiryStep2Controller extends ActionController
     protected function initializeCreateAction(){
 
         if ($this->arguments->hasArgument('newInquiryStep2')) {
-
-            // Converting the date string to a \DateTime object
             $newInquiryStep2 = $this->arguments->getArgument('newInquiryStep2');
-            $newInquiryStep2->getPropertyMappingConfiguration()->forProperty('date')->setTypeConverterOption(
+            $newInquiryStep2->getPropertyMappingConfiguration()->allowProperties('timeslot');
+            $newInquiryStep2->getPropertyMappingConfiguration()->forProperty('timeslot')->allowProperties('appointment', 'date', 'timeFrom', 'timeTo');
+            $newInquiryStep2->getPropertyMappingConfiguration()->allowCreationForSubProperty('timeslot');
+            $newInquiryStep2->getPropertyMappingConfiguration()->allowModificationForSubProperty('timeslot');
+            // Converting the date string to a \DateTime object
+            $newInquiryStep2->getPropertyMappingConfiguration()->forProperty('timeslot.date')->setTypeConverterOption(
                         'TYPO3\\CMS\\Extbase\\Property\\TypeConverter\\DateTimeConverter',
                         \TYPO3\CMS\Extbase\Property\TypeConverter\DateTimeConverter::CONFIGURATION_DATE_FORMAT,
                         'd.m.Y');
@@ -304,7 +343,7 @@ class InquiryStep2Controller extends ActionController
      * Saves data of step 2 to user session and redirect to step 3.
      *
      * @param InquiryStep2 $newInquiryStep2
-     * @ignorevalidation $newInquiryStep1
+     * @ignorevalidation $newInquiryStep2
      * @return void
      */
     public function createAction(InquiryStep2 $newInquiryStep2)
@@ -315,5 +354,4 @@ class InquiryStep2Controller extends ActionController
 
         $this->redirect('new', 'InquiryStep3');
     }
-
 }

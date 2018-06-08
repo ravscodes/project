@@ -7,13 +7,13 @@
 			<!-- Appointment Start -->
 
 			<trans-unit id="appointment" xml:space="preserve">
-				<target>Termin</target>
+				<target>Termintyp</target>
 			</trans-unit>
 			<trans-unit id="appointment.title" xml:space="preserve">
-				<target>Termin-Bezeichnung</target>
+				<target>Bezeichnung</target>
 			</trans-unit>
 			<trans-unit id="appointment.interval" xml:space="preserve">
-				<target>Termin-Dauer</target>
+				<target>Dauer</target>
 			</trans-unit>
 			<trans-unit id="appointment.interval.5" xml:space="preserve">
 				<target>5 Minuten</target>
@@ -148,10 +148,10 @@
 				<target>Generelle Informationen</target>
 			</trans-unit>
 			<trans-unit id="form.legend.calendar" xml:space="preserve">
-				<target>Wähle ein Datum</target>
+				<target>Tag auswählen</target>
 			</trans-unit>
 			<trans-unit id="form.legend.timeslots" xml:space="preserve">
-				<target>Wähle eine Uhrzeit</target>
+				<target>Verfügbare Termine</target>
 			</trans-unit>
 			<trans-unit id="form.legend.personal" xml:space="preserve">
 				<target>Persönliche Informationen</target>

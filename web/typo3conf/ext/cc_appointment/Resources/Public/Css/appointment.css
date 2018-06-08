@@ -1,26 +1,11 @@
-/*.datepicker.datepicker-inline {*/
-    /*width: 100%;*/
-    /*padding: 0;*/
-/*}*/
+.prev.disabled,
+.next.disabled {
+    visibility: hidden;
+}
 
-/*.datepicker table {*/
-    /*width: 100%;*/
-/*}*/
-
-/*.datepicker .datepicker-switch:hover {*/
-    /*background: none;*/
-    /*cursor: default;*/
-/*}*/
-
-/*.datepicker .dow,*/
-/*.datepicker .day,*/
-/*.datepicker .prev,*/
-/*.datepicker .next {*/
-    /*width: 40px;*/
-    /*height: 40px;*/
-/*}*/
-
-/*.datepicker th,*/
-/*.datepicker td {*/
-    /*text-align: center;*/
-/*}*/
+.picker-switch:hover,
+.picker-switch:active,
+.picker-switch:focus {
+    background: transparent !important;
+    cursor: default !important;
+}

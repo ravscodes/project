@@ -33,75 +33,25 @@ namespace Crossconcept\CcAppointment\Domain\Model;
 class InquiryStep2 extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
     /**
-     * Date to request
+     * Timeslot to request
      *
-     * @var \DateTime
-     * @validate DateTime
-     * @validate NotEmpty
+     * @var \Crossconcept\CcAppointment\Domain\Model\Timeslot
      */
-    protected $date;
+    protected $timeslot;
 
     /**
-     * TimeFrom to request
-     *
-     * @var int
-     * @validate NotEmpty
+     * @return \Crossconcept\CcAppointment\Domain\Model\Timeslot
      */
-    protected $timeFrom;
-
-    /**
-     * TimeTo to request
-     *
-     * @var int
-     * @validate NotEmpty
-     */
-    protected $timeTo;
-
-    /**
-     * @return \DateTime
-     */
-    public function getDate()
+    public function getTimeslot()
     {
-        return $this->date;
+        return $this->timeslot;
     }
 
     /**
-     * @param \DateTime $date
+     * @param \Crossconcept\CcAppointment\Domain\Model\Timeslot $timeslot
      */
-    public function setDate($date)
+    public function setTimeslot($timeslot)
     {
-        $this->date = $date;
-    }
-
-    /**
-     * @return int
-     */
-    public function getTimeFrom()
-    {
-        return $this->timeFrom;
-    }
-
-    /**
-     * @param int $timeFrom
-     */
-    public function setTimeFrom($timeFrom)
-    {
-        $this->timeFrom = $timeFrom;
-    }
-
-    /**
-     * @return int
-     */
-    public function getTimeTo()
-    {
-        return $this->timeTo;
-    }
-
-    /**
-     * @param int $timeTo
-     */
-    public function setTimeTo($timeTo)
-    {
-        $this->timeTo = $timeTo;
+        $this->timeslot = $timeslot;
     }
 }

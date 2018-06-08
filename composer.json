@@ -18,7 +18,8 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"Crossconcept\\CcAppointment\\": "web/typo3conf/ext/cc_appointment/Classes/"
+			"Crossconcept\\CcAppointment\\": "web/typo3conf/ext/cc_appointment/Classes/",
+			"Crossconcept\\CcFluidmailer\\": "web/typo3conf/ext/cc_fluidmailer/Classes/"
 		}
 	}
 }

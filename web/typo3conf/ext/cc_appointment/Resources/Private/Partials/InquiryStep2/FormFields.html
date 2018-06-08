@@ -15,7 +15,8 @@
 
 	<f:comment><!-- JS Assets --></f:comment>
 	<v:asset.script path="EXT:cc_appointment/Resources/Public/JavaScript/Vendor/moment.min.js" name="moment-js" dependencies="jquery" />
-	<v:asset.script path="EXT:cc_appointment/Resources/Public/JavaScript/Vendor/bootstrap-datetimepicker.min.js" name="bootstrap-datetimepicker-js" dependencies="moment-js" />
+	<v:asset.script path="EXT:cc_appointment/Resources/Public/JavaScript/Vendor/moment.locale.de.js" name="moment-locale-de" dependencies="moment-js" />
+	<v:asset.script path="EXT:cc_appointment/Resources/Public/JavaScript/Vendor/bootstrap-datetimepicker.min.js" name="bootstrap-datetimepicker-js" dependencies="moment-js, moment-locale-de" />
 	<v:asset.script path="EXT:cc_appointment/Resources/Public/JavaScript/appointment.js" name="ccappointment-custom-js" dependencies="bootstrap-datetimepicker-js" />
 
 </div>
@@ -25,7 +26,14 @@
 	<fieldset>
 		<legend>{f:translate(key: 'form.legend.calendar')}</legend>
 		<div class="form-group form-group-inline-datepicker">
-			<f:form.hidden id="calendar" property="date" value="{newInquiryStep2.date -> f:format.date(format: 'd.m.Y')}" />
+			<input type="hidden"
+				   id="calendar"
+				   name="date"
+				   value="{calendar.default}"
+				   data-min="{calendar.min}"
+				   data-max="{calendar.max}"
+				   data-default="{calendar.default}"
+				   data-disabled="{calendar.disabled}" />
 		</div>
 	</fieldset>
 </f:section>
@@ -33,20 +41,27 @@
 <f:comment><!-- Render timeslots--></f:comment>
 <f:section name="Timeslots">
 
-	<f:form.hidden id="appointment" name="appointment" value="{newInquiryStep1.appointment.uid}"/>
-	<f:form.hidden id="timeFrom" property="timeFrom" value="{newInquiryStep2.timeFrom}" />
-	<f:form.hidden id="timeTo" property="timeTo" value="{newInquiryStep2.timeTo}" />
+	<f:form.hidden id="timeslotAppointment" property="timeslot.appointment" value="{newInquiryStep1.appointment.uid}"/>
+	<f:form.hidden id="timeslotDate" 		property="timeslot.date" 		value="{newInquiryStep2.timeslot.date -> f:format.date(format: 'd.m.Y')}"/>
+	<f:form.hidden id="timeslotFrom" 		property="timeslot.timeFrom" 	value="{newInquiryStep2.timeslot.timeFrom}" />
+	<f:form.hidden id="timeslotTo" 			property="timeslot.timeTo" 		value="{newInquiryStep2.timeslot.timeTo}" />
+
 	<fieldset>
 		<legend>{f:translate(key: 'form.legend.timeslots')}</legend>
-		<div class="timeslotWrapper form-group{f:render(partial: 'FormErrorsClass', arguments: {object: 'newInquiryStep2.timeslot'})}">
+		<div id="timeslotWrapper" class="form-group{f:render(partial: 'FormErrorsClass', arguments: {object: 'newInquiryStep2.timeslot'})}">
 			<div id="timeslotError" class="alert alert-info text-center{f:if(condition: timeslots, then: ' hidden')}">
 				<f:translate key="form.label.timeslots.unavailable" />
 			</div>
 			<div class="row text-center" id="timeslots">
 				<f:for each="{timeslots}" as="timeslot">
 					<div class="col-lg-6">
-						<label for="{timeslot.timeFrom}" class="btn btn-default btn-block">
-							<input class="hidden" type="radio" name="timeslot" id="{timeslot.timeFrom}" data-from="{timeslot.timeFrom}" data-to="{timeslot.timeTo}" />
+						<label for="{timeslot.timeFrom}" class="btn btn-default btn-block{f:if(condition: '{timeslot.timeFrom} == {newInquiryStep2.timeslot.timeFrom}', then: ' active')}">
+							<input class="hidden" type="radio" name="timeslot" id="{timeslot.timeFrom}"
+								   data-appointment="{timeslot.appointment.uid}"
+								   data-date="{timeslot.date -> f:format.date(format: 'd.m.Y')}"
+								   data-from="{timeslot.timeFrom}"
+								   data-to="{timeslot.timeTo}" />
+
 							<f:translate key="form.label.timeFormat" arguments="{
 											0: '{f:format.date(date: timeslot.timeFrom, format: \'H:i\')}',
 											1: '{f:format.date(date: timeslot.timeTo, format: \'H:i\')}'}" />

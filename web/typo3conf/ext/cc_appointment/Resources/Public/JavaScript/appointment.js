@@ -1,28 +1,28 @@
 $( document ).ready(function() {
 
     // Initialize calendar widget
-    var calendar        = $('#calendar'),
-        currentLanguage = document.documentElement.lang,
-        today           = new Date();
+    var calendar = $('#calendar');
 
     calendar.datetimepicker({
-        inline: true,
-        keepOpen: true,
-        format: 'DD.MM.YYYY',
-        viewMode: 'days',
-        locale: currentLanguage,
-        defaultDate: ((!calendar.val()) ? today : calendar.val()),
-        minDate: today
+        inline:             true,
+        keepOpen:           true,
+        format:             'DD.MM.YYYY',
+        viewMode:           'days',
+        locale:             'de',
+        defaultDate:        calendar.data('default'),
+        minDate:            calendar.data('min'),
+        maxDate:            calendar.data('max'),
+        daysOfWeekDisabled: calendar.data('disabled').split(',')
     });
 
     // Configure Ajax call
-    var appointment     = $('#appointment').val(),
-        timeslotWrapper = $('#timeslotWrapper'),
-        timeslotError   = $('#timeslotError'),
-        timeslots       = $('#timeslots'),
-        timeFrom        = $('#timeFrom'),
-        timeTo          = $('#timeTo');
-
+    var timeslotAppointment = $('#timeslotAppointment'),
+        timeslotDate        = $('#timeslotDate'),
+        timeslotFrom        = $('#timeslotFrom'),
+        timeslotTo          = $('#timeslotTo'),
+        timeslotWrapper     = $('#timeslotWrapper'),
+        timeslotError       = $('#timeslotError'),
+        timeslots           = $('#timeslots');
 
     // Clear timeslots
     function clearTimeslots() {
@@ -53,6 +53,8 @@ $( document ).ready(function() {
                         name: 'timeslot'
                     }
                 )
+                .attr('data-appointment', obj['appointment'])
+                .attr('data-date', obj['date'])
                 .attr('data-from', obj['from'])
                 .attr('data-to', obj['to'])
                 .prependTo(label);
@@ -73,7 +75,7 @@ $( document ).ready(function() {
                 cache: false,
                 data: {
                     arguments: {
-                        'appointmentUid': appointment,
+                        'appointmentUid': timeslotAppointment.val(),
                         'date': date
                     }
                 },
@@ -96,13 +98,21 @@ $( document ).ready(function() {
         service.ajaxCall($(this).val());
     });
 
+    // Avoid picker switch
+    $('.datepicker .picker-switch').on('click', function (e) {
+        e.stopImmediatePropagation();
+        $(this).removeAttr('title');
+    });
+
     timeslots.on('change', "input[name='timeslot']", function(){
         // Highlight chosen timeslot
         $('#timeslots .btn').removeClass('active');
         $(this).parent().addClass('active');
 
         // Fill in data
-        timeFrom.val($(this).data('from'));
-        timeTo.val($(this).data('to'));
+        timeslotAppointment.val($(this).data('appointment'));
+        timeslotDate.val($(this).data('date'));
+        timeslotFrom.val($(this).data('from'));
+        timeslotTo.val($(this).data('to'));
     });
 });

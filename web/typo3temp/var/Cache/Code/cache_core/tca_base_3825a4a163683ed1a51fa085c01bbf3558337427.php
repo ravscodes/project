@@ -11126,7 +11126,7 @@ return array (
             'default' => 0,
             'range' => 
             array (
-              'lower' => 1524175200,
+              'lower' => 1526248800,
             ),
             'behaviour' => 
             array (
@@ -11148,7 +11148,7 @@ return array (
             'default' => 0,
             'range' => 
             array (
-              'lower' => 1524175200,
+              'lower' => 1526248800,
             ),
             'behaviour' => 
             array (
@@ -11239,6 +11239,7 @@ return array (
           array (
             'type' => 'inline',
             'foreign_table' => 'tx_ccappointment_domain_model_openingtime',
+            'MM' => 'tx_ccappointment_domain_model_appoinment_openingtime_mon_mm',
             'minitems' => 0,
             'maxitems' => 4,
             'appearance' => 
@@ -11262,6 +11263,7 @@ return array (
           array (
             'type' => 'inline',
             'foreign_table' => 'tx_ccappointment_domain_model_openingtime',
+            'MM' => 'tx_ccappointment_domain_model_appoinment_openingtime_tue_mm',
             'minitems' => 0,
             'maxitems' => 4,
             'appearance' => 
@@ -11285,6 +11287,7 @@ return array (
           array (
             'type' => 'inline',
             'foreign_table' => 'tx_ccappointment_domain_model_openingtime',
+            'MM' => 'tx_ccappointment_domain_model_appoinment_openingtime_wed_mm',
             'minitems' => 0,
             'maxitems' => 4,
             'appearance' => 
@@ -11308,6 +11311,7 @@ return array (
           array (
             'type' => 'inline',
             'foreign_table' => 'tx_ccappointment_domain_model_openingtime',
+            'MM' => 'tx_ccappointment_domain_model_appoinment_openingtime_thu_mm',
             'minitems' => 0,
             'maxitems' => 4,
             'appearance' => 
@@ -11331,6 +11335,7 @@ return array (
           array (
             'type' => 'inline',
             'foreign_table' => 'tx_ccappointment_domain_model_openingtime',
+            'MM' => 'tx_ccappointment_domain_model_appoinment_openingtime_fri_mm',
             'minitems' => 0,
             'maxitems' => 4,
             'appearance' => 
@@ -11354,6 +11359,7 @@ return array (
           array (
             'type' => 'inline',
             'foreign_table' => 'tx_ccappointment_domain_model_openingtime',
+            'MM' => 'tx_ccappointment_domain_model_appoinment_openingtime_sat_mm',
             'minitems' => 0,
             'maxitems' => 4,
             'appearance' => 
@@ -11377,6 +11383,7 @@ return array (
           array (
             'type' => 'inline',
             'foreign_table' => 'tx_ccappointment_domain_model_openingtime',
+            'MM' => 'tx_ccappointment_domain_model_appoinment_openingtime_sun_mm',
             'minitems' => 0,
             'maxitems' => 4,
             'appearance' => 
@@ -11536,7 +11543,7 @@ return array (
             'default' => 0,
             'range' => 
             array (
-              'lower' => 1524175200,
+              'lower' => 1526248800,
             ),
             'behaviour' => 
             array (
@@ -11558,7 +11565,7 @@ return array (
             'default' => 0,
             'range' => 
             array (
-              'lower' => 1524175200,
+              'lower' => 1526248800,
             ),
             'behaviour' => 
             array (

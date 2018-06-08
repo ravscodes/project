@@ -142,7 +142,6 @@ class InquiryStep3Controller extends ActionController
         // Check if data of inquiryStep2 is available in session and assign it to view
         $inquiryStep2data = $this->inquiryStep2Controller->getSessionData();
         $this->view->assign('newInquiryStep2', $inquiryStep2data);
-        \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($inquiryStep2data);
 
         // Check if data of inquiryStep3 is available in session and assign it to view
         $inquiryStep3data = $this->getSessionData();
